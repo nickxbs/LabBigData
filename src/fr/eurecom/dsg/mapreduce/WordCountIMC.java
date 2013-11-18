@@ -1,90 +1,126 @@
 package fr.eurecom.dsg.mapreduce;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-/**
- * Word Count example of MapReduce job. Given a plain text in input, this job
- * counts how many occurrences of each word there are in that text and writes
- * the result on HDFS.
- * 
- */
+
+
 public class WordCountIMC extends Configured implements Tool {
 
-  private int numReducers;
-  private Path inputPath;
-  private Path outputDir;
+	  private int numReducers;
+	  private Path inputPath;
+	  private Path outputDir;
+	  
+	static class WCMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
-  @Override
-  public int run(String[] args) throws Exception {
-    
-    Job job = null; // TODO: define new job instead of null using conf e setting
-                    // a name
+		private HashMap<String, Integer> partialResults;
+		
+		@Override
+		protected void setup(Context context) throws IOException,
+				InterruptedException {
+			super.setup(context);
+			this.partialResults = new HashMap<String, Integer>();
+		}
 
-    // TODO: set job input format
-    // TODO: set map class and the map output key and value classes
-    // TODO: set reduce class and the reduce output key and value classes
-    // TODO: set job output format
-    // TODO: add the input file as job input (from HDFS)
-    // TODO: set the output path for the job results (to HDFS)
-    // TODO: set the number of reducers. This is optional and by default is 1
-    // TODO: set the jar class
+		@Override
+		protected void map(LongWritable key, Text value, Context context)
+				throws IOException, InterruptedException {
+			
+			String line = value.toString();
+			String[] words = line.split("\\s+");
+			for(String word : words) {				
+				if (this.partialResults.containsKey(word))
+					this.partialResults.put(word, this.partialResults.get(word)+1);
+				else
+					this.partialResults.put(word, 1);
+			}
+		}
+		
+		@Override
+		protected void cleanup(Context context) throws IOException,
+				InterruptedException {
+		
+			for (Entry<String, Integer> entry : this.partialResults.entrySet())
+				context.write(new Text(entry.getKey()), new IntWritable(entry.getValue()));
+			this.partialResults.clear();
+			
+			super.cleanup(context);
+		}
+	}
 
-    return job.waitForCompletion(true) ? 0 : 1; // this will execute the job
-  }
+	static class WCReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
-  public WordCountIMC (String[] args) {
-    if (args.length != 3) {
-      System.out.println("Usage: WordCountIMC <num_reducers> <input_path> <output_path>");
-      System.exit(0);
-    }
-    this.numReducers = Integer.parseInt(args[0]);
-    this.inputPath = new Path(args[1]);
-    this.outputDir = new Path(args[2]);
-  }
-  
-  public static void main(String args[]) throws Exception {
-    int res = ToolRunner.run(new Configuration(), new WordCountIMC(args), args);
-    System.exit(res);
-  }
+		@Override
+		protected void reduce(Text key, Iterable<IntWritable> values, Context context)
+				throws IOException, InterruptedException {
+			int sum = 0;
+			for (IntWritable value : values)
+				sum += value.get();
+			context.write(key,new IntWritable(sum));
+		}
+	}
+
+	@Override
+	public int run(String[] args) throws Exception {
+		
+		Configuration conf = this.getConf();
+		
+		Job job = new Job(conf,"Word Count in memory combiner");
+		
+		job.setInputFormatClass(TextInputFormat.class);
+		
+		job.setMapperClass(WCMapper.class);		
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(IntWritable.class);
+		
+		job.setReducerClass(WCReducer.class);
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(IntWritable.class);
+		job.setOutputFormatClass(TextOutputFormat.class);		
+
+		FileInputFormat.addInputPath(job, this.inputPath);
+		FileOutputFormat.setOutputPath(job, this.outputDir);
+		
+		job.setNumReduceTasks(this.numReducers);
+		
+		job.setJarByClass(WordCountIMC.class);
+
+		job.waitForCompletion(true);
+		
+		return 0;
+	}
+	 public WordCountIMC (String[] args) {
+		    if (args.length != 3) {
+		    	 this.numReducers = 2;
+		    	    this.inputPath = new Path("/home/student/INPUT/text/quote.txt");
+		    	    this.outputDir = new Path("/home/student/OUTPUT/wordcount/");
+		    }
+		    else{
+		    this.numReducers = Integer.parseInt(args[0]);
+		    this.inputPath = new Path(args[1]);
+		    this.outputDir = new Path(args[2]);
+		    }
+		  }
+	
+	public static void main(String args[]) throws Exception {
+		ToolRunner.run(new Configuration(), new WordCountIMC(args), args);
+	}
 }
 
-class WCIMCMapper extends Mapper<Object, // TODO: change Object to input key
-                                         // type
-                                 Object, // TODO: change Object to input value type
-                                 Object, // TODO: change Object to output key type
-                                 Object> { // TODO: change Object to output value type
-
-  @Override
-  protected void map(Object key, // TODO: change Object to input key type
-                     Object value, // TODO: change Object to input value type
-                     Context context) throws IOException, InterruptedException {
-
-    // * TODO: implement the map method (use context.write to emit results). Use
-    // the in-memory combiner technique
-  }
-
-}
-
-class WCIMCReducer extends Reducer<Object, // TODO: change Object to input key
-                                           // type
-                                   Object, // TODO: change Object to input value type
-                                   Object, // TODO: change Object to output key type
-                                   Object> { // TODO: change Object to output value type
-
-  @Override
-  protected void reduce(Object key, // TODO: change Object to input key type
-                        Iterable<Object> values, // TODO: change Object to input value type
-                        Context context) throws IOException, InterruptedException {
-
-    // TODO: implement the reduce method (use context.write to emit results)
-  }
-}

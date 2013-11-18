@@ -17,25 +17,26 @@ import org.apache.hadoop.io.WritableUtils;
  */
 public class TextPair implements WritableComparable<TextPair> {
 
-// TODO: add the pair objects as TextPair fields
+
+	private Text _first;
+	private Text _second;
 
 public void set(Text first, Text second) {
-  // TODO: implement the set method that changes the Pair content
+	_first=first;
+	_second=second;
 }
 
 public Text getFirst() {
-  // TODO: implement the first getter
-  return null;
+return _first;
 }
 
 public Text getSecond() {
-  // TODO: implement the second getter
-  return null;
+return _second;
 }
   
 public TextPair() {
-  // TODO: implement the constructor, empty constructor MUST be implemented
-  //       for deserialization
+	_first= new Text();
+	_second= new Text();
 }
 
 public TextPair(String first, String second) {
@@ -48,39 +49,43 @@ public TextPair(Text first, Text second) {
 
 @Override
 public void write(DataOutput out) throws IOException {
-  // TODO: write to out the serialized version of this such that
-  //       can be deserializated in future. This will be use to write to HDFS
+	  _first.write(out);
+	  _second.write(out);
 }
 
 @Override
 public void readFields(DataInput in) throws IOException {
-  // TODO: read from in the serialized version of a Pair and deserialize it
+	  _first.readFields(in);
+	  _second.readFields(in);
 }
 
 @Override
 public int hashCode() {
-  // TODO: implement hash
-  return 0;
+	return _first.hashCode() * 163 + _second.hashCode();
 }
 
 @Override
 public boolean equals(Object o) {
-  // TODO: implement equals
-  return false;
-}
-
-@Override
-public int compareTo(TextPair tp) {
- // TODO: implement the comparison between this and tp
- return 0;
+ if (o instanceof TextPair) {
+   TextPair tp = (TextPair) o;
+   return _first.equals(tp.getFirst()) && _second.equals(tp.getSecond());
+ }
+ return false;
 }
 
 @Override
 public String toString() {
-  // TODO: implement toString for text output format
-  return super.toString();
+ return _first + "\t" + _second;
 }
 
+@Override
+public int compareTo(TextPair tp) {
+ int cmp = _first.compareTo(tp.getFirst());
+ if (cmp != 0) {
+   return cmp;
+ }
+ return _second.compareTo(tp.getSecond());
+}
 
 
 

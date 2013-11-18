@@ -75,6 +75,10 @@ public class WordCount extends Configured implements Tool {
   }
   
   public static void main(String args[]) throws Exception {
+	  //hadoop jar mrlab2.jar fr.eurecom.dsg.mapreduce.WordCount 2 INPUT/text/quote.txt OUTPUT/wordcount
+	  
+	  //hadoop jar WordCount.jar fr.eurecom.dsg.mapreduce.WordCount 3 INPUT/text/quote.txt  OUTPUT/wordcount/ hadoop jar WordCount.jar fr.eurecom.dsg.mapreduce.WordCountIMC 3  INPUT/text/quote.txt OUTPUT/wordcount/ hadoop jar WordCount.jar fr.eurecom.dsg.mapreduce.WordCountCombiner 3 INPUT/text/quote.txt OUTPUT/wordcount/ 
+
     int res = ToolRunner.run(new Configuration(), new WordCount(args), args);
     System.exit(res);
   }
@@ -83,8 +87,7 @@ public class WordCount extends Configured implements Tool {
 class WCMapper extends Mapper<LongWritable, Text, Text, IntWritable> { // TODO: change Object to output value type
 
   @Override
-  protected void map(LongWritable key, Text value, Context context)
-		  throws IOException, InterruptedException {
+  protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		String line = value.toString();
 		String[] words = line.split("\\s+");
 		for(String word : words)

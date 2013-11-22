@@ -69,7 +69,7 @@ public class PageRank extends Configured implements Tool {
                 //look at first value
                 if(sp[0].equalsIgnoreCase("NODES")){
                     nodes = null;
-                    nodes = sp[1];
+                    nodes = val.toString().replaceAll("NODES ", "");
                 }else if(sp[0].equalsIgnoreCase("VALUE")){
                     s =s+Double.parseDouble(sp[1]) ;
                 }
@@ -161,9 +161,10 @@ public class PageRank extends Configured implements Tool {
                 while(itr.hasNext()){
                     int key = itr.next();
                     Double val = imap.get(key);
-                    if(Math.abs(_map.get(key)- val)>0.001){
+                    if(Math.abs(_map.get(key)- val)>0.05){
                         //values aren't the same... we aren't at convergence yet
                         isdone = false;
+                        break;
                     }
                 }
             }

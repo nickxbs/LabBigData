@@ -33,16 +33,17 @@ public class Pair extends Configured implements Tool {
   
   @Override
   protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-	  String line = value.toString();
+		
+	  	String line = value.toString();
 		line = line.replaceAll("[^a-zA-Z0-9_]+", " ");
 		line = line.replaceAll("^\\s+", "");
-		String[] words = line.split("\\s+");
-		int i =0;
-		for(String word : words)
-		{
-			if(i>0)
-				context.write(new TextPair(words[i-1],word), new IntWritable(1));
-			i++;
+		String[] tokens = line.split("\\s+");
+		for (int i = 0; i < tokens.length-1; i++) {
+			for (int j = Math.max(0, i - 1); j < Math.min(tokens.length, i + 2); j++) {
+				if (i == j)
+					continue;
+				context.write(new TextPair(tokens[i], tokens[j]),new IntWritable(1));
+			}
 		}
 	}	
 }

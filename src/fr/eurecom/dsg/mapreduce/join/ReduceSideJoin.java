@@ -1,18 +1,14 @@
-package fr.eurecom.dsg.mapreduce;
+package fr.eurecom.dsg.mapreduce.join;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
+
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -78,44 +74,6 @@ public class ReduceSideJoin extends Configured implements Tool {
 
 }
 
-class ReduceSideJoinMapper extends
-		Mapper<LongWritable, Text, TextPair, IntWritable> {
 
-	@Override
-	protected void map(LongWritable key, Text value, Context context)
-			throws IOException, InterruptedException {
 
-		String line = value.toString();
-		line = line.replaceAll("^\\s+", "");
-		String[] sp = line.split("\\s+");// splits on TAB
 
-		context.write(new TextPair(sp[1], "0"),
-				new IntWritable(Integer.parseInt(sp[0])));// followed
-		context.write(new TextPair(sp[0], "1"),
-				new IntWritable(Integer.parseInt(sp[1])));// follower
-	}
-}
-
-class ReduceSideJoinReducer extends
-		Reducer<TextPair, IntWritable, Text, IntWritable> {
-	protected List<Integer> follower = new ArrayList<Integer>();
-
-	@Override
-	protected void reduce(TextPair key, Iterable<IntWritable> values,
-			Context context) throws IOException, InterruptedException {
-		// List<Integer> follower = new ArrayList<Integer>();
-		if (key.getSecond().toString().equals("1") && !follower.isEmpty()) {
-
-			for (IntWritable value : values) {
-				for (Integer f : follower)
-					context.write(new Text(f.toString()),new IntWritable(value.get()));
-			}
-		} else {
-			follower.clear();
-			for (IntWritable value : values) {
-				follower.add(value.get());
-			}
-		}
-	}
-
-}

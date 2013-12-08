@@ -1,14 +1,11 @@
-package prjTriangle;
+package prjTriangleWiki;
 
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
-public class TriangleFinderPartitioner extends Partitioner<LongWritableTriplet, LongWritable> {
+public class Partitioner2 extends Partitioner<TextTriplet, Text> {
 	@Override
-	public int getPartition(LongWritableTriplet key, LongWritable value,	int numPartitions) {
-		// TODO: implement getPartition such that pairs with the same first element
-		//       will go to the same reducer. You can use toUnsigned as utility.
+	public int getPartition(TextTriplet key, Text value,	int numPartitions) {
 		return toUnsigned((key.getFirst().toString()+"|"+key.getSecond().toString()).hashCode())%numPartitions;
 	}
 

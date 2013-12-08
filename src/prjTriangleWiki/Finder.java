@@ -1,13 +1,9 @@
-package prjTriangle;
-
-import java.io.IOException;
+package prjTriangleWiki;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.RawComparator;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -18,14 +14,10 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import prjTriangle.LongWritableTriplet.TripleComparator;
-import prjTriangle.LongWritableTriplet.TripleGroupingComparator;
-import prjTriangle.TriangleFinderMapper;
-import prjTriangle.TriangleFinderReducer;
-
+//hadoop jar TriangleWiki.jar prjTriangleWiki.Finder 1 INPUT/ttter/twitter-big-sample.txt OUTPUT/twitterBig
 //hadoop jar Triangle.jar prjTriangle.TriangleFinder 1 INPUT/twitter/twitter-small.txt OUTPUT/twitter
 
-public class TriangleFinder extends Configured implements Tool {
+public class Finder extends Configured implements Tool {
 
 	private Path outputDir;
 	private Path inputPath;
@@ -37,17 +29,22 @@ public class TriangleFinder extends Configured implements Tool {
 		Configuration conf = this.getConf();
 
 		Job job = new Job(conf, "TriangleFinder");
-		job.setJarByClass(TriangleFinder.class);
+		job.setJarByClass(Finder.class);
 
 		job.setInputFormatClass(TextInputFormat.class);
 
-		job.setMapperClass(TriangleFinderMapper.class);
-		job.setMapOutputKeyClass(LongWritable.class);
-		job.setMapOutputValueClass(LongWritablePair.class);
+		job.setMapperClass(Mapper1.class);
+		job.setMapOutputKeyClass(TextPair.class);
+		job.setMapOutputValueClass(Text.class);
 
-		job.setReducerClass(TriangleFinderReducer.class);
+		job.setSortComparatorClass(Comparator1.class);
+		job.setGroupingComparatorClass(GroupingComparator1.class);
+		job.setPartitionerClass(Partitioner1.class);
+
+		job.setReducerClass(Reducer1.class);
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(LongWritable.class);
+		job.setOutputValueClass(Text.class);
+
 		job.setNumReduceTasks(this.numReducers);
 		job.setOutputFormatClass(TextOutputFormat.class);
 		Path in = this.inputPath;
@@ -64,24 +61,29 @@ public class TriangleFinder extends Configured implements Tool {
 		job.waitForCompletion(true);
 
 		Job job2 = new Job(conf, "TriangleFinder2");
-		job2.setJarByClass(TriangleFinder.class);
+		job2.setJarByClass(Finder.class);
 
 		job2.setInputFormatClass(TextInputFormat.class);
 
-		job2.setMapperClass(TriangleFinderMapper2.class);
-		job2.setMapOutputKeyClass(LongWritableTriplet.class);
-		job2.setMapOutputValueClass(LongWritable.class);
+		job2.setMapperClass(Mapper2.class);
+		job2.setMapOutputKeyClass(TextTriplet.class);
+		job2.setMapOutputValueClass(Text.class);
 		// job2.setPartitionerClass(TriangleFinderPartitioner.class);
-		job2.setReducerClass(TriangleFinderReducer2.class);
+		job2.setReducerClass(Reducer2.class);
 		job2.setOutputKeyClass(Text.class);
-		job2.setSortComparatorClass(TripleComparator.class);
-		job2.setGroupingComparatorClass(TripleGroupingComparator.class);
+		
+		job2.setSortComparatorClass(Comparator2.class);
+		job2.setGroupingComparatorClass(GroupingComparator2.class);
+		job2.setPartitionerClass(Partitioner2.class);
 
 		job2.setOutputValueClass(Text.class);
 		job2.setNumReduceTasks(this.numReducers);
 		job2.setOutputFormatClass(TextOutputFormat.class);
-		Path in2 = new Path(out.toString() + "/part-r-00000");
-		FileInputFormat.addInputPath(job2, in2);
+		for(Integer ix=0;ix<this.numReducers;ix++){
+			Path in2 = new Path(out.toString() + "/part-r-0000"+ix);
+			FileInputFormat.addInputPath(job2, in2);
+
+		}
 		FileInputFormat.addInputPath(job2, in);
 
 		// SequenceFileInputFormat.addInputPath(job2, in2);
@@ -96,7 +98,7 @@ public class TriangleFinder extends Configured implements Tool {
 
 	}
 
-	public TriangleFinder(String[] args) {
+	public Finder(String[] args) {
 		if (args.length != 3) {
 			this.numReducers = 1;
 			this.inputPath = new Path(
@@ -110,8 +112,7 @@ public class TriangleFinder extends Configured implements Tool {
 	}
 
 	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new TriangleFinder(args),
-				args);
+		int res = ToolRunner.run(new Configuration(), new Finder(args), args);
 		System.exit(res);
 	}
 

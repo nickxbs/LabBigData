@@ -5,11 +5,10 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.RawComparator;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.io.WritableUtils;
-
-
 
 public class LongWritableTriplet implements WritableComparable<LongWritableTriplet> {
 
@@ -43,6 +42,9 @@ public LongWritableTriplet() {
 }
 
 public LongWritableTriplet(Long first, Long second,Long ter) {
+	  this.set(new LongWritable(first), new LongWritable(second), new LongWritable(ter));
+	}
+public LongWritableTriplet(Integer first, Integer second,Integer ter) {
 	  this.set(new LongWritable(first), new LongWritable(second), new LongWritable(ter));
 	}
 public LongWritableTriplet(LongWritable first, LongWritable second,LongWritable ter) {
@@ -84,16 +86,22 @@ public String toString() {
 
 @Override
 public int compareTo(LongWritableTriplet tp) {
- int cmp = _first.compareTo(tp.getFirst());
- if (cmp != 0) {
-   return cmp;
- }
- cmp = _second.compareTo(tp.getSecond());
- if (cmp != 0) {
-   return cmp;
- }
+		   LongWritableTriplet la=this;
+		   LongWritableTriplet lb=tp;
+		   
+		  if(!la.getFirst().equals(lb.getFirst()))
+			  return (la.getFirst().compareTo(lb.getFirst()));
+		  else{
+			  if(!la.getSecond().equals(lb.getSecond()))
+				  return (la.getSecond().compareTo(lb.getSecond()));
+			  else{
+				  if(!la.getTer().equals(lb.getTer()))
+					  return (la.getTer().compareTo(lb.getTer()));
+			  	}
 
- return _ter.compareTo(tp.getTer());
+		  	}
+		  return 1;
+		  
 }
 
 
@@ -134,35 +142,67 @@ static {
 }
 
 /** Compare just the first element of the Pair */
-public static class FirstComparator extends WritableComparator {
- 
- private static final LongWritable.Comparator LongWritable_COMPARATOR = new LongWritable.Comparator();
- 
- public FirstComparator() {
-   super(LongWritableTriplet.class);
+public static class TripleComparator extends WritableComparator {
+
+ public TripleComparator() {
+   super(LongWritableTriplet.class,true);
  }
 
- @Override
- public int compare(byte[] b1, int s1, int l1,
-                    byte[] b2, int s2, int l2) {
-   
-   try {
-     int firstL1 = WritableUtils.decodeVIntSize(b1[s1]) + readVInt(b1, s1);
-     int firstL2 = WritableUtils.decodeVIntSize(b2[s2]) + readVInt(b2, s2);
-     return LongWritable_COMPARATOR.compare(b1, s1, firstL1, b2, s2, firstL2);
-   } catch (IOException e) {
-     throw new IllegalArgumentException(e);
-   }
- }
+
  
 @Override
-@SuppressWarnings("itsOK ")
  public int compare(WritableComparable a, WritableComparable b) {
    if (a instanceof LongWritableTriplet && b instanceof LongWritableTriplet) {
-     return ((LongWritableTriplet) a).getFirst().compareTo(((LongWritableTriplet) b).getFirst());
-   }
+	   LongWritableTriplet la=(LongWritableTriplet) a;
+	   LongWritableTriplet lb=(LongWritableTriplet) b;
+	   
+	  if(!la.getFirst().equals(lb.getFirst()))
+		  return (la.getFirst().compareTo(lb.getFirst()));
+	  else{
+		  if(!la.getSecond().equals(lb.getSecond()))
+			  return (la.getSecond().compareTo(lb.getSecond()));
+		  else{
+			  if(!la.getTer().equals(lb.getTer()))
+				  return (la.getTer().compareTo(lb.getTer()));
+		  	}
+
+	  	}
+	  }
+  
    return super.compare(a, b);
  }
 
 }
+public static class TripleGroupingComparator implements RawComparator<LongWritableTriplet> {
+
+
+
+
+
+	@Override
+	public int compare(LongWritableTriplet la, LongWritableTriplet lb) {
+		  if(!la.getFirst().equals(lb.getFirst()))
+			  return (la.getFirst().compareTo(lb.getFirst()));
+		  else{
+			  if(!la.getSecond().equals(lb.getSecond()))
+				  return (la.getSecond().compareTo(lb.getSecond()));
+			  else{
+				  return 0;
+			  	}
+
+		  	}
+	}
+
+
+
+	@Override
+	public int compare(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4,
+			int arg5) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	}
+
+
 }

@@ -29,7 +29,7 @@ public class Reducer2 extends Reducer<TextTriplet, Text, Text, Text> {
 	private void WriteContext(String first, String second, String ter,
 			Context context) throws IOException, InterruptedException {
 		// per evitare duplicazioni
-		if (first.compareTo(second) < 0 && first.compareTo(ter) <0 && second.compareTo(ter) <0) {
+		if ((first.compareTo(second) < 0 && second.compareTo(ter) <0) || (first.compareTo(second) > 0  && second.compareTo(ter) >0)) {
 			outText.set(first + " " + second + " " + ter);
 			context.write(outText, new Text());
 			return;

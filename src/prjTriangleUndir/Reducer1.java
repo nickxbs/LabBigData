@@ -1,4 +1,4 @@
-package prjTriangleWiki;
+package prjTriangleUndir;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -37,7 +37,7 @@ public class Reducer1 extends Reducer<TextPair, Text, Text, Text> {
 	private void WriteContext(Text key, Context context, String value)
 			throws IOException, InterruptedException {
 		for (String val : partialJoin) {
-			if ((val.compareTo(key.toString()) > 0 && key.toString().compareTo(value) > 0)	|| (val.compareTo(key.toString()) < 0 && key.toString().compareTo(value) < 0)) {
+			if ((val.compareTo(key.toString()) < 0 && key.toString().compareTo(value) < 0)) {
 				outText.set(val + " " + value);
 				context.write(outText, key);
 			}

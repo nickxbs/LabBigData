@@ -1,4 +1,4 @@
-package prjTriangleWiki;
+package prjTriangleUndir;
 
 import java.io.DataInput;
 import java.io.DataOutput;

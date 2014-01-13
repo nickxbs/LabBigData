@@ -1,0 +1,155 @@
+%%% LaTeX Template
+%%% This template can be used for both articles and reports.
+%%%
+%%% Copyright: http://www.howtotex.com/
+%%% Date: February 2011
+
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
+
+
+\usepackage[italian]{babel}															% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
+\usepackage{amsmath,amsfonts,amsthm}										% Math packages
+\usepackage[pdftex]{graphicx}														% Enable pdflatex
+%\usepackage{color,transparent}													% If you use color and/or transparency
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+\usepackage{epstopdf}																	% Converts .eps to .pdf
+\usepackage{subfig}																		% Subfigures
+\usepackage{booktabs}																	% Nicer tables
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
+
+  \usepackage{courier}
+
+%%% Advanced verbatim environment
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\DefineShortVerb{\|}								% delimiter to display inline verbatim text
+
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}								% Custom sectioning (see below)
+\allsectionsfont{%									% Change font of al section commands
+	\usefont{OT1}{bch}{b}{n}%					% bch-b-n: CharterBT-Bold font
+%	\hspace{15pt}%									% Uncomment for indentation
+	}
+
+\sectionfont{%										% Change font of \section command
+	\usefont{OT1}{bch}{b}{n}%					% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{0.8pt}%	% Horizontal rule below section
+	}
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}														% No page header
+\fancyfoot[C]{\thepage}										% Pagenumbering at center of footer
+\renewcommand{\headrulewidth}{0pt}				% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}															% Equationnumbering: section.eq#
+\numberwithin{figure}{section}																% Figurenumbering: section.fig#
+\numberwithin{table}{section}																% Tablenumbering: section.tab#
+
+
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+
+ \lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         %numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         %stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+    		frame=b,         
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+ }
+\lstloadlanguages{% Check Dokumentation for further languages ...
+         %[Visual]Basic
+         %Pascal
+         %C
+         %C++
+         %XML
+         %HTML
+         %Java
+{[Sharp]C}
+ }
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+%%% Title	
+\title{ \vspace{-1in} 	\usefont{OT1}{bch}{b}{n}
+		\huge \strut Implementazione di Finding Triangles con Hadoop MapReduce\strut \\
+		\Large \bfseries \strut Sistemi di elaborazione di grandi quantit\`a di dati 20013 \strut
+}
+\author{ 									\usefont{OT1}{bch}{m}{n}
+        Nicola Febbrari\\		\usefont{OT1}{bch}{m}{n}
+        Universit\`a degli Studi di Verona\\	\usefont{OT1}{bch}{m}{n}
+        Facolt\`a MM.FF.NN.\\
+        \texttt{nicola.febbrari@studenti.univr.it}
+}
+\date{13 gennaio 2014}
+
+%%% Begin document
+\begin{document}
+\maketitle
+\section{Introduzione}
+Lo scopo del prgetto \`e quello di implementare un algoritmo per calcolare il numero di triangoli presenti in un grafo, utilizzando le tecniche di MapReduce e il Framework Haddop.
+
+
+\section{Il problema}
+In seguito all'enorme diffusione avuto dai social network si e' verificata la necessità di analizzare le informazioni contenute in essi. Per sviluppare un' analisi su questo tipo di informazioni si è utilizzata un struttura matematica che consete una semplice rappresentazione, il GRAFO.
+Una caratteristica molto interessante di un grafo che rappresenta un soocial network e' il numero di triangoli contenuti in sesso. 
+Il numero di questi triangoli rapportato al totale dei nodi che costituiscono il grafo è un indice di quanto sia SOCIAL il grafo che rappresenta il social network. (anzianità della comunity)
+Tipicamente dati 3 nodi (A,B,C) in un grafo, dato un nodo  A che si relaziona sia con B che con C, nel grafo viene a formarsi un triangolo se esiste anche la relazione che lega B-C.
+
+\section{Strumenti e Framework}
+
+
+\section{Implementazioni}
+\paragraph{Algoritmo 2 Jobs}
+\paragraph{Algoritmo 1 Jobs}
+
+
+
+
+\paragraph{Ottimizzazioni}
+Ad ogni turno l'algoritmo decide quale sia la mossa migliore. Partendo da una situazione consolidata della Tavola, vengono elaborati i valori di ogni mossa possibile usando un calcolo ricorsivo sugli stati successivi generati da tutte le possibili combinazioni di mosse valide.\\
+La ricorsione percorre l'albero fino alle foglie, valuta il valore della foglia assegnandogli un +1 se la foglia rappresenta uno stato di vittoria, 0 se di pareggio o -1 in caso di sconfitta. 
+Dopo aver calcolato il valore di una foglia viene fatto \textit{ backtracking} sull'albero di gioco eventualmente aggiornando la scelta del nodo ottimo \textit{ MinMax} in base al livello dell'albero (nel caso di turno proprio turno Max nel caso di turno dell'avversario Min).
+
+\section{Complessit\`a}
+Per eseguire la ricerca viene fatta una vista in profondit\`a dell'albero di gioco. Nel Bantumi la dimensione dell'albero risulta ingestibile, infatti, se per ogni turno ci possono essere \textit{ m} mosse e una partita dura \textit{ t} turni, nello stato iniziale scorrere tutto l'albero ha una complessit\`a in tempo di $O(m^t)$.
+
+
+
+
+\section{Osservazioni}
+
+\end{document}

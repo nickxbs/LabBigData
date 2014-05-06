@@ -169,7 +169,7 @@ Esempio date le relazioni A - K, K - B e A - B  (in cui A<K<B ) il Job 1 elabora
     \caption{Il Job 1 elabora le relazioni rosse in cui K  in un caso \`e nodo  maggiore e nell altro caso minore. Il Job2 cerca la relazione blu A B.}
     \label{fig:verticalcell} 
 \end{figure}
-
+\paragraph{Job1 Mapper}
 Nella parte di mapper del primo Job come prima cosa escludo tutti gli archi che portano nello stesso nodo e poi definisco le relazioni solamente come da nodo minore a nodo maggiore in modo da evitare duplicazioni. La definizione di triangolo in un grafo non prende in considerazione la direzione delle relazioni fra i nodi e nel mio caso i nodi sono rappresentati da dei valori Long, quindi la relazione di ordinamento \`e immediata.\\ 
 In questa fase per ogni relazione mando in output 2 oggetti <<VALUE1,BOOL>,VALUE2>. Come KEY (<VALUE1,BOOL>) del VALUE (VALUE2) che passo al reducer uso un dato strutturato contenente il nodo e un valore booleano che identifica se il nodo VALUE \`e un nodo minore o maggiore di quello della KEY secondo la relazione di ordinamento definita. 
 
@@ -214,6 +214,8 @@ language=Java,
 			}
 		}
 }\end{lstlisting}
+\paragraph{Job1 Reducer}
+
 Per suddividere correttamente tutti gli elementi prodotti dal Mapper sono stati ridefiniti il SortComparator e il GroupingComparator.
 Il nuovo GroupingComparator ragruppa le chiavi valutando solamente il valore del nodo chiave K e garantendo che tutte le relazioni che contengono K come nodo maggiore o come nodo minore vengano elaborate dallo stesso reducer. Il SortComparator ridefinito invece ordina gli elementi in base al valore del nodo chiave K e in caso di uguale nodo chiave mette prima gli elementi con valore booleano false nella chiave.\\ Il reducer  garzie all'ordinamento esamina prima tutte le relazioni in cui il nodo chiave \'e nodo maggiore, queste coppie (nodo valore - nodo chiave) salvati in una lista L. Una volta che tutte le relazioni in cui il nodo chiave \'e nodo maggiore sono finite inizieranno le relazioni in cui il nodo chiave \'e nodo minore. Per ognuna di queste nuove relazioni (es. K-B) il reducer cicla la lista L mandando in output per ogni elemento (A-K) in L una relazione (A-B, K). Infatti la presenza della relazione A-B nel grafo chiuderebbe il triangolo A-K-B 
 
@@ -238,11 +240,12 @@ Il redoucer, grazie alla redifinizione del GroupinComparator1 (ragruppa le chiav
 		}
 	}
 \end{lstlisting}
+\paragraph{Job2 Mapper}
+Nella secondo Job l'output del primo Job viene unito nuovamente alla sorgente dati iniziale. Il secondo mapper in questo scorre l'unione dei 2 input, nel caso la relazione \'e una relazione presente nel grafo iniziale scrive in output un elemento ((A,B,false),0) se invece \'e generata dal Job 1 scrive in output  ((A,B,true),K) dove A,B sono nodi della relazione e K \'e nodo intermedio fra A e B calcolato da Job1.
+\paragraph{Job2 Reducer}
+Il secondo reducer ridefinendo in modo analogo al Reducer1 sia il SortComparator che il GroupingComparator scorre l'input prima cerca le relazioni AB che chiuderebbero un triangolo e poi per ogni relazione generata dal Job1 con output AB manda in output AKB.
 
-Nella seconda fase l'output del primo job viene unito nuovamente alla sorgente dati e se nella sorgente dati \'e presente un arco utile alla chiusura del triangolo i 3 nodi vngono scritti in output come triangolo trovato.
-Il Mapper 2 scorre l'unione dei 2 input scrive nel caso di input sorgente dati i 2 nodi con un valore booleano a false e nel caso di input derivato dal Reducer1 i 2 nodi della relazione mancante con un valore booleano a true. Il reducer dopo gli oppurtuni raggruppamenti e ordinamenti verifica quali relazioni mancanti sono presenti nella sorgente dati e quindi le scrive in output.
-
-\paragraph{Algoritmo single Job}
+\subsection{Algoritmo single Job}
 L'algoritmo a Job singolo \'e molto pi\'u complesso del precedente.
 L'idea \'e quella di costruire una suddivisione delle relazioni in input nei vari reducer definendo delle chiavi strutturate e abbinate ai vari task di Reduce. Questa suddivisione viene realizzata con una Hash sul valore del nodo stesso.
 Ogni trinagolo \'e formato da  3 nodi (x,y,z) i quali sono legati dalle relazioni A=(x,y), B=(x,z) e C=(y,z). In base a questo una relazione pu\'o essre una delle 3 relazioni che compongono il triangolo, quindi dato R=(u,v), R pu\'o essere una relazione di tipo A e quindi  il triangolo sarebbe (u,v,?) oppure di tipo B con (u,?,v) o C con (?,u,v).

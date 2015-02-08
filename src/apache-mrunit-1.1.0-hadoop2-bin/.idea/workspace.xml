@@ -2,222 +2,222 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47fd6d0d-5f93-469b-b468-4db977e4d6ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/prj/LabBigData/.idea/libraries/org_apache_hadoop_hadoop_mapreduce_client_core_2_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/prj/LabBigData/.idea/libraries/org_apache_hadoop_hadoop_core_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/prj/LabBigData/.idea/libraries/lib.xml" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/Dijkstra.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritableTriplet.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Reducer2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Mapper1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/OrderInversion$PartitionerTextPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Reducer1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongBit$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinReducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/LongWritablePair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/TriangleHHDegreeMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Partitioner1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Finder.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/GroupingComparator2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/TextTriplet.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Comparator2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Reducer2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Pair$PairReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/Reducer1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCountCombiner$WCMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/TriangleFinder.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritableTriplet$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/Tests/PageRankTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinPartitioner.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/TextTriplet.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritablePair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/LongLongLongLong.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Comparator2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Partitioner2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/Test/TriangleHHTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Partitioner2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/Finder.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/TriangleHHDegreeReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/TextPair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/PageRankMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/TriangleFinderReducer2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Partitioner1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/TextPair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/PageRankReducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/TextTriplet.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/LongLong.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/TextPair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Partitioner2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongLong$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/TextPair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCountCombiner.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Partitioner1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritablePair$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/Pair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/LongWritablePair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/TriangleFinderMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCountCombiner$WCReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Comparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/TriangleFinderMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongLong$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Reducer2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/PageRank.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Finder.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Mapper1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritableTriplet$TripleGroupingComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Reducer1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/LongWritablePair$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/LongWritablePair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Partitioner1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Partitioner2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/join/TextPair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/TextTriplet$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Mapper1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Partitioner2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/TriangleFinderMapper2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/StringToIntMapWritable.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Comparator2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/LongWritablePair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/DistributedCacheJoin.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/TextPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/Test/TriangleFinderTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/TextPair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCountIMC.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Partitioner1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Mapper2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Comparator1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/TextPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/WordCountIMC.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Comparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/Test/TriangleComputeDegreeTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Mapper2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/GroupingComparator1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Partitioner1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongBit$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Comparator1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCountIMC$WCMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Finder.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Pair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Dijkstra.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/OrderInversion$PairReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/TriangleFinderReducer2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WCReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Comparator1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/TriangleFinderPartitioner.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/TextPair$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongLongBit$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/GroupingComparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/GroupingComparator1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/TriangleComputeDegreeMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/TriangleHHDegreeReducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/GroupingComparator2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/Mapper1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/LongLong.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/LongWritablePair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Reducer2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/TextPair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Reducer2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/Comparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/LongWritablePair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoin.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Dijkstra$TheMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Finder.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/PageRankMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/WordCountCombiner.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/TriangleFinderReducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/Test/TriangleFinderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/TriangleHHDegreeMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/GroupingComparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/TriangleFinderPartitioner.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleUndir/LongWritablePair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/GroupingComparator1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Mapper2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/TriangleFinderMapper2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/TextTriplet$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/PageRank.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/TextPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/TextPair$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/join/ReduceSideJoin.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Finder.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/TriangleFinder.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinPartitioner.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/TextTriplet.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Reducer1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Mapper2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Reducer1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongBit.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/Test/TriangleFinderTest2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCountIMC$WCReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/OrderInversion$PairMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/GroupingComparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Comparator2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/GroupingComparator2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/LongBit.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Comparator2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/LongWritablePair$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/TextPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/LongWritablePair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WordCount.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/LongLongBit.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/TriangleComputeDegreeReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/LongWritablePair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/TextPair.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/TextTriplet.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Reducer2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/LongWritableTriplet.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/TextTriplet.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/join/TextPair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Tests/PageRankTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/GroupingComparator2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/TriangleFinderReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/StringToIntMapWritable.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongLongBit.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritableTriplet$TripleComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/GroupingComparator2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/Reducer1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/PageRankReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/LongLong.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Dijkstra$TheReducer.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/TextPair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/WCMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/LongWritablePair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/OrderInversion.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Mapper2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Mapper1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleSingleJob/Comparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Partitioner2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/OrderInversion.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleNumericUndir/GroupingComparator2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Mapper1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/TextPair$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/Tests/AllTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/TextTriplet$Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/Finder.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Reducer1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Tests/AllTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/fr/eurecom/dsg/mapreduce/Pair$PairMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangle/Test/TriangleFinderTest2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangle/LongWritablePair.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prj/Test/TriangleHHTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/DistributedCacheJoin.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/TriangleComputeDegreeReducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/Test/TriangleComputeDegreeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleNumericUndir/Mapper1.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleUndir/LongWritablePair$FirstComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prj/TriangleComputeDegreeMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/Comparator2.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/prjTriangleWiki/GroupingComparator1.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/bin/prjTriangleWiki/Mapper2.class" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/src/fr/eurecom/dsg/mapreduce/WordCount.java" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/prj/LabBigData/.idea/libraries/org_apache_mrunit_mrunit_1_0_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/prj/LabBigData/pom.xml" afterPath="$USER_HOME$/prj/LabBigData/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../.idea/libraries/org_apache_hadoop_hadoop_mapreduce_client_core_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../.idea/libraries/org_apache_hadoop_hadoop_core_1_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../.idea/libraries/lib.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/Dijkstra.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritableTriplet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Reducer2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Mapper1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/OrderInversion$PartitionerTextPair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Reducer1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongBit$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/join/ReduceSideJoinReducer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/LongWritablePair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/TriangleHHDegreeMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Partitioner1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Finder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/GroupingComparator2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/TextTriplet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Comparator2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Reducer2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Pair$PairReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/Reducer1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCountCombiner$WCMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/TriangleFinder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritableTriplet$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/Tests/PageRankTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/join/ReduceSideJoinPartitioner.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/TextTriplet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritablePair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/LongLongLongLong.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Comparator2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Partitioner2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/Test/TriangleHHTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Partitioner2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/Finder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/TriangleHHDegreeReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/TextPair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/PageRankMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/TriangleFinderReducer2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Partitioner1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/TextPair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/PageRankReducer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/TextTriplet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/LongLong.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/TextPair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Partitioner2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongLong$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/TextPair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCountCombiner.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Partitioner1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritablePair$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/Pair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/LongWritablePair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/TriangleFinderMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCountCombiner$WCReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Comparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/TriangleFinderMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongLong$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Reducer2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/PageRank.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Finder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Mapper1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritableTriplet$TripleGroupingComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Reducer1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/LongWritablePair$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/LongWritablePair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Partitioner1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Partitioner2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/join/TextPair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/TextTriplet$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Mapper1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Partitioner2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/TriangleFinderMapper2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/StringToIntMapWritable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Comparator2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/LongWritablePair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/DistributedCacheJoin.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/TextPair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/Test/TriangleFinderTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/TextPair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCountIMC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Partitioner1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Mapper2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Comparator1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/TextPair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/WordCountIMC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Comparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/Test/TriangleComputeDegreeTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Mapper2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/GroupingComparator1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Partitioner1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongBit$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Comparator1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCountIMC$WCMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Finder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Pair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Dijkstra.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/OrderInversion$PairReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/TriangleFinderReducer2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WCReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Comparator1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/TriangleFinderPartitioner.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/TextPair$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongLongBit$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/GroupingComparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/GroupingComparator1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/TriangleComputeDegreeMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/TriangleHHDegreeReducer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/GroupingComparator2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/Mapper1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/LongLong.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/LongWritablePair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Reducer2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/TextPair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Reducer2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/Comparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/LongWritablePair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoin.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Dijkstra$TheMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Finder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/PageRankMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/WordCountCombiner.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/TriangleFinderReducer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/Test/TriangleFinderTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/TriangleHHDegreeMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/GroupingComparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/TriangleFinderPartitioner.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleUndir/LongWritablePair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/GroupingComparator1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Mapper2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/TriangleFinderMapper2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/TextTriplet$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/PageRank.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/TextPair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/TextPair$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/join/ReduceSideJoin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Finder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/TriangleFinder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinPartitioner.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/TextTriplet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Reducer1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Mapper2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Reducer1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongBit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/Test/TriangleFinderTest2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCountIMC$WCReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/OrderInversion$PairMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/GroupingComparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Comparator2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/GroupingComparator2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/LongBit.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Comparator2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/LongWritablePair$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/ReduceSideJoinMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/TextPair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/LongWritablePair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WordCount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/LongLongBit.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/TriangleComputeDegreeReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/join/ReduceSideJoinMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/LongWritablePair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/TextPair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/TextTriplet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Reducer2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/LongWritableTriplet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/TextTriplet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/join/TextPair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Tests/PageRankTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/GroupingComparator2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/TriangleFinderReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/StringToIntMapWritable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongLongBit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritableTriplet$TripleComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/GroupingComparator2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/Reducer1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/PageRankReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/LongLong.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Dijkstra$TheReducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/TextPair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/WCMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/LongWritablePair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/OrderInversion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Mapper2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Mapper1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleSingleJob/Comparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Partitioner2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/OrderInversion.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleNumericUndir/GroupingComparator2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Mapper1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/TextPair$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/Tests/AllTests.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/TextTriplet$Comparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/Finder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Reducer1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Tests/AllTests.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/fr/eurecom/dsg/mapreduce/Pair$PairMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangle/Test/TriangleFinderTest2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangle/LongWritablePair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prj/Test/TriangleHHTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/DistributedCacheJoin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/TriangleComputeDegreeReducer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/Test/TriangleComputeDegreeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleNumericUndir/Mapper1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleUndir/LongWritablePair$FirstComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj/TriangleComputeDegreeMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/Comparator2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../prjTriangleWiki/GroupingComparator1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../bin/prjTriangleWiki/Mapper2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../fr/eurecom/dsg/mapreduce/WordCount.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../.idea/libraries/org_apache_mrunit_mrunit_1_0_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../pom.xml" afterPath="$PROJECT_DIR$/../../pom.xml" />
     </list>
     <ignored path="apache-mrunit-1.1.0-hadoop2-bin.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$USER_HOME$/prj/LabBigData/src/apache-mrunit-1.1.0-hadoop2-bin/out/" />
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -240,12 +240,12 @@
     <leaf />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/prj/LabBigData" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/prj/LabBigData/src/apache-mrunit-1.1.0-hadoop2-bin/src/main/java/org/apache/hadoop/mrunit/MapReduceDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/hadoop/mrunit/MapReduceDriver.java" />
       </list>
     </option>
   </component>
@@ -278,11 +278,18 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apache-mrunit-1.1.0-hadoop2-bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,7 +299,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/prj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -384,7 +391,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/prj/LabBigData/src/apache-mrunit-1.1.0-hadoop2-bin" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -404,7 +411,7 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/prj/LabBigData/src/apache-mrunit-1.1.0-hadoop2-bin" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -472,7 +479,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1215" height="1028" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

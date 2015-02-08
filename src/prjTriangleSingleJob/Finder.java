@@ -16,6 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import prjTriangle.TriangleFinder;
 
 //hadoop jar TriangleWiki.jar prjTriangleWiki.Finder 1 INPUT/ttter/twitter-big-sample.txt OUTPUT/twitterBig
 //hadoop jar Triangle.jar prjTriangle.TriangleFinder 1 INPUT/twitter/twitter-small.txt OUTPUT/twitter
@@ -31,7 +32,7 @@ public class Finder extends Configured implements Tool {
 		Configuration conf = this.getConf();
 		conf.setInt("b", this.b);
 
-		Job job = new Job(conf, "TriangleFinder");
+		Job job = Job.getInstance(conf);
 		job.setJarByClass(Finder.class);
 
 		job.setInputFormatClass(TextInputFormat.class);

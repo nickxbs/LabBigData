@@ -31,7 +31,6 @@ public class GroupingComparator1 extends WritableComparator {
 			}
 			return 0;
 		}
-
 		return super.compare(a, b);
 	}
 

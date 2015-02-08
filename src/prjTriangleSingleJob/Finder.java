@@ -1,7 +1,5 @@
 package prjTriangleSingleJob;
 
-import java.io.Console;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
@@ -9,6 +7,8 @@ import org.apache.hadoop.fs.Path;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.compress.CompressionCodec;
+import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
@@ -31,6 +31,8 @@ public class Finder extends Configured implements Tool {
 
 		Configuration conf = this.getConf();
 		conf.setInt("b", this.b);
+		//conf.setBoolean("mapred.compress.map.output",true);
+		//conf.setClass("mapred.map.output.compression.codec", GzipCodec.class, CompressionCodec.class);
 
 		Job job = Job.getInstance(conf);
 		job.setJarByClass(Finder.class);

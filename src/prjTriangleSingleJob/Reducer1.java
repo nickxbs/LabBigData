@@ -15,7 +15,7 @@ import org.javatuples.Triplet;
 public class Reducer1 extends
 		Reducer<LongLongLongLong, LongWritable, Text, Text> {
 
-	private Map<Pair<Long, Long>, List<Triplet<Long, Long, Long>>> partialJoin = new HashMap<Pair<Long, Long>, List<Triplet<Long, Long, Long>>>();
+	private Map<String, List<String>> partialJoin = new HashMap<String, List<String>>();
 	private Text outText = new Text();
 
 	@Override
@@ -27,23 +27,23 @@ public class Reducer1 extends
 		for (LongWritable valText : values) {
 			Long from = key.getfourth().get();
 			Long to = valText.get();
-			Pair<Long, Long> p = CreatePair(to, from);
-			if (partialJoin.containsKey(p)	&& key.getRel().toString().equals("C")) {
-				WriteContext(partialJoin.get(p), context);
-				partialJoin.remove(p);
+			Long[] p = CreatePair(to, from);
+			if (partialJoin.containsKey(p[0].toString()+"|"+p[1].toString())	&& key.getRel().toString().equals("C")) {
+				WriteContext(partialJoin.get(p[0].toString()+"|"+p[1].toString()), context);
+				partialJoin.remove(p[0].toString()+"|"+p[1].toString());
 			}
 			for (Long tmpTo : tmpList) {
-				Pair<Long, Long> l = CreatePair(to, tmpTo);
+				Long[] l = CreatePair(to, tmpTo);
 				if (!to.equals(tmpTo) && key.getRel().toString().equals("B")) {
-					Triplet<Long, Long, Long> t  = new Triplet<Long, Long, Long>(from, l.getValue0(),l.getValue1());
-					if(partialJoin.containsKey(l)){
-						if(!partialJoin.get(l).contains(t))
-							partialJoin.get(l).add(t);
+					Long[] t  = new Long[]{from, l[0],l[1]};
+					if(partialJoin.containsKey(l[0].toString()+"|"+l[1].toString())){
+						if(!partialJoin.get(l[0].toString()+"|"+l[1].toString()).contains(t[0].toString()+"|"+t[1].toString()+"|"+t[2].toString()))
+							partialJoin.get(l[0].toString()+"|"+l[1].toString()).add(t[0].toString()+"|"+t[1].toString()+"|"+t[2].toString());
 					}
 					else{
-						List<Triplet<Long, Long, Long>> lt= new LinkedList<Triplet<Long, Long, Long>>();
-						lt.add(new Triplet<Long, Long, Long>(from, l.getValue0(),l.getValue1()));						
-						partialJoin.put(l,lt);						
+						List<String> lt= new LinkedList<String>();
+						lt.add(from+"|"+l[0]+"|"+l[1]);						
+						partialJoin.put(l[0].toString()+"|"+l[1].toString(),lt);						
 					}
 						
 				}
@@ -54,15 +54,15 @@ public class Reducer1 extends
 		}
 	}
 
-	private Pair<Long, Long> CreatePair(Long to, Long tmpTo) {
+	private Long[] CreatePair(Long to, Long tmpTo) {
 		if (tmpTo < to)
-			return new Pair<Long, Long>(tmpTo, to);
-		return new Pair<Long, Long>(to, tmpTo);
+			return new Long[]{tmpTo, to};
+		return new Long[]{to, tmpTo};
 	}
 
-	private void WriteContext(List<Triplet<Long, Long, Long>> val, Context context)
+	private void WriteContext(List<String> val, Context context)
 			throws IOException, InterruptedException {
-		for(Triplet<Long, Long, Long> t:val)
-		context.write(new Text(t.toString()), new Text());
+		for(String t:val)
+		context.write(new Text(t), new Text());
 	}
 }

@@ -27,5 +27,6 @@
 	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/mockito-all-1.8.5.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/mrunit-1.0.0-hadoop2.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/javatuples-1.2/javatuples-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

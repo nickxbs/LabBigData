@@ -64,8 +64,8 @@ public class WordCount extends Configured implements Tool {
   public WordCount (String[] args) {
     if (args.length != 3) {
     	 this.numReducers = 2;
-    	    this.inputPath = new Path("/home/student/INPUT/text/quote.txt");
-    	    this.outputDir = new Path("/home/student/OUTPUT/wordcount/");
+    	    this.inputPath = new Path("INPUT/text/quote.txt");
+    	    this.outputDir = new Path("OUTPUT/wordcount/");
     }
     else{
     this.numReducers = Integer.parseInt(args[0]);
@@ -90,9 +90,12 @@ class WCMapper extends Mapper<LongWritable, Text, Text, IntWritable> { // TODO: 
   protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		String line = value.toString();
 		String[] words = line.split("\\s+");
-		for(String word : words)
+		for(String word : words){
+			if(word.startsWith("p"))
 			context.write(new Text(word), new IntWritable(1));
-  }	
+			
+		}	
+	}	
 }
 
 class WCReducer extends Reducer<Text, IntWritable, Text, IntWritable>  { // TODO: change Object to output value type

@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="TriangleSingleJob:jar">
+  <artifact type="jar" name="TriangleSingleJob.jar">
     <output-path>$PROJECT_DIR$/out/artifacts/TriangleSingleJob_jar</output-path>
     <root id="archive" name="LabBigData.jar">
       <element id="module-output" name="LabBigData" />

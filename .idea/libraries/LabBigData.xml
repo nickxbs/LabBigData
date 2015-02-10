@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="LabBigData">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/LabBigData_jar/LabBigData.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

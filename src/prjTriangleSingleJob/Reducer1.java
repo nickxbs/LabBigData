@@ -16,8 +16,6 @@ public class Reducer1 extends
 		Reducer<LongLongLongLong, LongWritable, Text, Text> {
 
 	private Map<Pair<Long, Long>, List<Triplet<Long, Long, Long>>> partialJoin = new HashMap<Pair<Long, Long>, List<Triplet<Long, Long, Long>>>();
-	private Text outText = new Text();
-
 	@Override
 	protected void reduce(LongLongLongLong key, Iterable<LongWritable> values,
 			Context context) throws IOException, InterruptedException {
@@ -51,6 +49,8 @@ public class Reducer1 extends
 			if (!tmpList.contains(to)&& key.getRel().toString().equals("A")) {
 				tmpList.add(to);
 			}
+			System.out.println("tmpList "+tmpList.size());
+			System.out.println("partialJoin "+partialJoin.size());
 		}
 	}
 

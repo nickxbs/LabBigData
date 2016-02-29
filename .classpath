@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/usr/lib/commons-logging-1.1.3/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/commons-lang-2.6/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/commons-cli-1.2/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/logging-log4j-1.2.9/log4j-1.2.9.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/hadoop-auth-0.23.9/hadoop-auth-0.23.9.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jackson-core-1.0.1/jackson-core-asl-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/jackson-mapper-1.0.1/jackson-mapper-asl-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/commons-configuration-1.10/commons-configuration-1.10.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/commons-httpclient-3.1/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/avro-1.3.3/avro-1.3.3.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/guava-15.0/guava-15.0.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/hadoop/hadoop-common.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/hadoop-0.20-mapreduce/hadoop-core.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/hadoop-hdfs/hadoop-hdfs.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/usr/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/mockito-all-1.8.5.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/mrunit-0.9.0-incubating-hadoop2.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/mockito-all-1.8.5.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/apache-mrunit-1.0.0-hadoop2/lib/mrunit-1.0.0-hadoop2.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/javatuples-1.2/javatuples-1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

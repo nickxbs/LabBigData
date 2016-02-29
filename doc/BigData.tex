@@ -17,7 +17,7 @@
 \usepackage{epstopdf}																	% Converts .eps to .pdf
 \usepackage{subfig}																		% Subfigures
 \usepackage{booktabs}																	% Nicer tables
-\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc} 
 \usepackage{listings}
 \usepackage{xcolor}
 \lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
@@ -111,12 +111,12 @@
 %%% Title	
 \title{ \vspace{-1in} 	\usefont{OT1}{bch}{b}{n}
 		\huge \strut Implementazione di Finding Triangles con Hadoop MapReduce\strut \\
-		\Large \bfseries \strut Sistemi di elaborazione di grandi quantit\`a di dati 20013 \strut
+		\Large \bfseries \strut Sistemi di elaborazione di grandi quantità di dati 2013 \strut
 }
 \author{ 									\usefont{OT1}{bch}{m}{n}
         Nicola Febbrari\\		\usefont{OT1}{bch}{m}{n}
-        Universit\`a degli Studi di Verona\\	\usefont{OT1}{bch}{m}{n}
-        Facolt\`a MM.FF.NN.\\
+        Università degli Studi di Verona\\	\usefont{OT1}{bch}{m}{n}
+        Facoltà MM.FF.NN.\\
         \texttt{nicola.febbrari@studenti.univr.it}
 }
 \date{13 gennaio 2014}
@@ -125,41 +125,53 @@
 \begin{document}
 \maketitle
 \section{Introduzione}
-Lo scopo del prgetto \`e quello di implementare un algoritmo per calcolare il numero di triangoli presenti in un grafo, utilizzando le tecniche di MapReduce e il Framework Haddop.
+Lo scopo del progetto è quello di implementare un algoritmo per calcolare il numero di triangoli presenti in un grafo, utilizzando le tecniche di MapReduce e il Framework Haddop.
 
 
 \section{Il problema}
-In seguito all'enorme diffusione avuta dai social network si \`e verificata la necessit\`a di analizzare le informazioni contenute in essi. Per sviluppare un' analisi su questo tipo di informazioni si \`e utilizzata un struttura matematica che consete una semplice rappresentazione, il GRAFO.
-Una caratteristica molto interessante di un grafo che rappresenta un soocial network e' il numero di triangoli contenuti in sesso. 
-Il numero di questi triangoli rapportato al totale dei nodi che costituiscono il grafo è un indice di quanto sia SOCIAL il grafo che rappresenta il social network. (anzianità della comunity)
-Tipicamente dati 3 nodi (A,B,C) in un grafo, dato un nodo  A che si relaziona sia con B che con C, nel grafo viene a formarsi un triangolo se esiste anche la relazione che lega B-C.
-
+I social network negli ultimi anni hanno avuto una notevole diffusione, l'aumento esponenziale del numero di utenti che interagistcono con questi sistemi 
+ha avuto come diretta conseguenza un  incremento della quantità di dati che devono essere registrati, gestiti ed ovviamente elaborati.
+Il businnes ha subito capito quanto fossero imprtanti tutte queste informazioni e per questo motivo negli ultimi c'è stato un grosso hype su come sia 
+possibile recuperare, elaborare e dedurre nuove informazioni a partire da una base di informazioni enorme.\\
+Un social network può essere rappresentato matematicamente da un grafo e una caratteristica molto interessante di questo grafo e' il numero di 
+triangoli\footnote{Dati 3 nodi (A,B,C) in un grafo, se un nodo A si relaziona sia con B che con C, nel grafo viene a formarsi un triangolo se esiste anche la relazione che lega B con C.} 
+contenuti in sesso. 
+Il numero di questi triangoli rapportato al totale dei nodi che costituiscono il grafo è un indice di quanto sia \emph{SOCIAL} il social network rappresentato dal grafo analizzato.\\
+La conoscenza di questa informazione potrebbe essere utilizzata su larga scala per valutare particolari aspetti sociologigi o più semplicemente epr scopi commerciali.\\
+\\
+\\
 \section{Strumenti e Framework}
 \paragraph{Sistema}
-Apache Hadoop \`e un framework opensource utilizzato per l' elaborazione di grandi quantit\`a di dati. 
-Si basa su MapReduce, un paradigma di programmazione parallela con il quale è possibile realizzare algoritmi applicabili a sitemi distributi e con alto grado di scalabilit\`a.
+Apache Hadoop è un framework opensource utilizzato per l' elaborazione di grandi quantità di dati. 
+Si basa su MapReduce, un paradigma di programmazione parallela con il quale è possibile realizzare algoritmi applicabili a sitemi distributi e con alto grado di scalabilità.
 
 \paragraph{Sviluppo}
 L'implementazione dell 'algoritmo di Finding Triangles  è stata realizzata scrivedo un programma Java che utilizza ed estende le Hadoop API di Base.
 \paragraph{Testing}
-Come suite di testing \`e stato utilizzato MRUnit una libreria Java che consente di fare Unit test sui jobs di MapReduce.
+Come suite di testing è stato utilizzato MRUnit una libreria Java che consente di fare Unit test sui jobs di MapReduce.
 \paragraph{UI}
-Come tool di supporto \`e stato utilizzato Hue, un' inerfaccia web-based per la gestione ed il monitoraggio del file sistem di Hadoop (HDFS) e dei jobs MapReduce.
+Come tool di supporto è stato utilizzato Hue, un' inerfaccia web-based per la gestione ed il monitoraggio del file sistem di Hadoop (HDFS) e dei jobs MapReduce.
 \paragraph{Versioning}
-Come sistema di versioning \`e stato utilizzato GitHub, un servizio web che utilizza la piattaforma GIT.
+Come sistema di versioning è stato utilizzato Git e GitHub come spazio di hosting dei files sorgenti.
 \paragraph{Sorgente dati}
-Come sistema di versioning \`e stato utilizzato GitHub, un servizio web che utilizza la piattaforma GIT.
-
-
+Come sistema di versioning è stato utilizzato GitHub, un servizio web che utilizza la piattaforma GIT.
 
 
 \section{Implementazioni}
 \subsection{Algoritmo 2 Jobs}
-L'algoritmo a 2 Jobs prevede un prima fase in cui viene elaborata tutta la sorgente dati e viene creata in output la combinazione di tutti i possibili triangoli a meno dell'ultimo arco necessario per chiudere il triangolo.\\
-\\
-(IMMAGINE)\\
-\\
-Nella parte di mapper del primo Job prima escludo tutti gli archi che portano nello stesso nodo e poi definisco le relazioni solamente come da nodo minore a nodo maggiore in modo da evitare duplicazioni (la definizione di triangolo non prende in consiferazione la direzione delle relazioni). Come key del valore che passo al reducer uso un dato strutturato contenente il nodo e un valore booleano che mi identifica se il nodo value è un nodo padre o figlio secondo la mia ridefinizione di relazione.
+L'algoritmo a 2 Jobs prevede un prima fase in cui vengono elaborate tutte le relazioni e viene creata in output la combinazione di tutti i possibili triangoli a meno dell'ultimo arco necessario per chiudere il triangolo.\\
+Esempio date le relazioni A - K, K - B e A - B  (in cui A<K<B ) il Job 1 elabora le relazioni in cui K è nodo in un caso maggiore o minore unendo queste relazioni trova al coppia A - B che verrà cercate nel Job2. Se questa relazione è presente allora esiste sicuramente il atriangolo A K B
+
+
+\begin{figure}[h]
+\centering
+        \includegraphics[totalheight=6cm]{Graph1.png}
+    \caption{Il Job 1 elabora le relazioni rosse in cui K  in un caso è nodo  maggiore e nell altro caso minore. Il Job2 cerca la relazione blu A B.}
+    \label{fig:verticalcell} 
+\end{figure}
+\paragraph{Job1 Mapper}
+Nella parte di mapper del primo Job come prima cosa escludo tutti gli archi che portano nello stesso nodo e poi definisco le relazioni solamente come da nodo minore a nodo maggiore in modo da evitare duplicazioni. La definizione di triangolo in un grafo non prende in considerazione la direzione delle relazioni fra i nodi e nel mio caso i nodi sono rappresentati da dei valori Long, quindi la relazione di ordinamento è immediata.\\ 
+In questa fase per ogni relazione mando in output 2 oggetti <<VALUE1,BOOL>,VALUE2>. Come KEY (<VALUE1,BOOL>) del VALUE (VALUE2) che passo al reducer uso un dato strutturato contenente il nodo e un valore booleano che identifica se il nodo VALUE è un nodo minore o maggiore di quello della KEY secondo la relazione di ordinamento definita. 
 
 \lstset{
 language=Java,
@@ -202,7 +214,12 @@ language=Java,
 			}
 		}
 }\end{lstlisting}
-Il redoucer, grazie alla redifinizione del GroupinComparator1 (ragruppa le chiavi valutando solamente il valore del nodo della chiave) e  del Comparator1 (ordina le chiavi mettendo prima quelle con valore false ) tutti gli output del task di Map. Prima salva in una lista l'elenco dei nodi padre del nodo chiave, una volta che tutti i nodi sono stati ciclati per ogni nodo figlio scrive in output la terna di valori con la coppia nodo padre - nodo figlio che completerebbe il triangolo.
+\paragraph{Job1 Reducer}
+
+Per suddividere correttamente tutti gli elementi prodotti dal Mapper sono stati ridefiniti il SortComparator e il GroupingComparator.
+Il nuovo GroupingComparator ragruppa le chiavi valutando solamente il valore del nodo chiave K e garantendo che tutte le relazioni che contengono K come nodo maggiore o come nodo minore vengano elaborate dallo stesso reducer. Il SortComparator ridefinito invece ordina gli elementi in base al valore del nodo chiave K e in caso di uguale nodo chiave mette prima gli elementi con valore booleano false nella chiave.\\ Il reducer  garzie all'ordinamento esamina prima tutte le relazioni in cui il nodo chiave è nodo maggiore, queste coppie (nodo valore - nodo chiave) salvati in una lista L. Una volta che tutte le relazioni in cui il nodo chiave è nodo maggiore sono finite inizieranno le relazioni in cui il nodo chiave è nodo minore. Per ognuna di queste nuove relazioni (es. K-B) il reducer cicla la lista L mandando in output per ogni elemento (A-K) in L una relazione (A-B, K). Infatti la presenza della relazione A-B nel grafo chiuderebbe il triangolo A-K-B 
+
+Il redoucer, grazie alla redifinizione del GroupinComparator1 (ragruppa le chiavi valutando solamente il valore del nodo della chiave) e  del Comparator1 (ordina le chiavi mettendo prima quelle con valore false ) tutti gli output del task di Map. Prima salva in una lista l'elenco dei nodi padre del nodo chiave, una volta che tutti i nodi sono stati ciclati, per ogni nodo figlio, scrive in output la terna di valori con la coppia nodo padre - nodo figlio che completerebbe il triangolo.
 \begin{lstlisting}[label=Reducer1,caption=Implementazione del Reducer1]	
 	@Override
 	protected void reduce(LongBit key, Iterable<LongWritable> values, Context context)
@@ -223,75 +240,21 @@ Il redoucer, grazie alla redifinizione del GroupinComparator1 (ragruppa le chiav
 		}
 	}
 \end{lstlisting}
+\paragraph{Job2 Mapper}
+Nella secondo Job l'output del primo Job viene unito nuovamente alla sorgente dati iniziale. Il secondo mapper in questo scorre l'unione dei 2 input, nel caso la relazione è una relazione presente nel grafo iniziale scrive in output un elemento ((A,B,false),0) se invece è generata dal Job 1 scrive in output  ((A,B,true),K) dove A,B sono nodi della relazione e K è nodo intermedio fra A e B calcolato da Job1.
+\paragraph{Job2 Reducer}
+Il secondo reducer ridefinendo in modo analogo al Reducer1 una seconda versione del SortComparator e del GroupingComparator, scorre l'input prima cerca le relazioni AB che chiuderebbero un triangolo e poi per ogni relazione generata dal Job1 con output AB manda in output AKB.
 
-Nella seconda fase l'output del primo job viene unito nuovamente alla sorgente dati e se nella sorgente dati è presente un arco utile alla chiusura del triangolo i 3 nodi vngono scritti in output come triangolo trovato.
-Il Mapper 2 scorre l'unione dei 2 input scrive nel caso di input sorgente dati i 2 nodi con un valore booleano a false e nel caso di input derivato dal Reducer1 i 2 nodi della relazione mancante con un valore booleano a true. Il reducer dopo gli oppurtuni raggruppamenti e ordinamenti verifica quali relazioni mancanti sono presenti nella sorgente dati e quindi le scrive in output.
+\subsection{Algoritmo single Job}
+L'algoritmo a Job singolo è molto più complesso del precedente.
+L'idea è quella di costruire una suddivisione delle relazioni in input nei vari reducer definendo delle chiavi strutturate e abbinate ai vari task di Reduce. Questa suddivisione viene realizzata definendo una funzione Hash sul valore del nodo stesso.
+Ogni trinagolo è formato da  3 nodi (x,y,z) i quali sono legati dalle 3 relazioni A=(x,y), B=(x,z) e C=(y,z). In base a questo ogni relazione presente nel grafo può essre una delle 3 che compongono il triangolo, quindi dato R=(u,v), R può essere una relazione di tipo A e quindi  il triangolo sarebbe (u,v,?) oppure di tipo B con (u,?,v) o C con (?,u,v).
+\paragraph{SingleJob Mapper}
+Il task di Map divide le relazioni in input in tante parti quante le possibili casistiche in cui la relazione può essere utilizzata per completare un triangolo.\\
+Per implementare questa suddivisione, come prima cosa, viene definito un paramentro bk che indica quanti sono i possibili valori in output della funzione hash. In base a questo parametro ogni relazione di input R(x,y) viene distribuita nei rispettivi 3bk reducers utilizzando la funzione di hash h e seguindo questo schema: (h(x),h(y),1<=i<=b) impotizzando che R sia di tipo A , (h(x),1<=i<=b,h(y)) se R fosse di tipo B e (1<=i<=b,h(x),h(y)) se R fosse di tipo C. Ogni relazione R viene inclusa in tutti i possibili reducer in cui potrebbe essere utilizzata per il completamento di un triangolo.
 
-\paragraph{Algoritmo single Job}
-L'algoritmo a Job singolo \'e molto pi\'u complesso del precedente.
 
-For a very large graph, we want to use parallelism to speed the computation.
-We can express triangle-finding as a multiway join and use the technique of
-Section 2.5.3 to optimize the use of a single MapReduce job to count triangles.
-It turns out that this use is one where the multiway join technique of that section
-is generally much more efficient than taking two two-way joins. Moreover, the
-total execution time of the parallel algorithm is essentially the same as the
-execution time on a single processor using the algorithm of Section 10.6.2.
-To begin, assume that the nodes of a graph are numbered 1, 2, . . . , n. We
-use a relation E to represent edges. To avoid representing each edge twice,
-we assume that if E(A,B) is a tuple of this relation, then not only is there
-an edge between nodes A and B, but also, as integers, we have A < B.3
-This requirement also eliminates loops (edges from a node to itself), which we
-generally assume do not exist in social-network graphs anyway, but which could
-lead to triangles that really do not involve three different nodes.
-Using this relation, we can express the set of triangles of the graph whose
-edges are E by the natural join
-To understand this join, we have to recognize that the attributes of the relation
-E are given different names in each of the three uses of E. That is, we imagine
-there are three copies of E, each with the same tuples, but with a different
-schemas. In SQL, this join would be written using a single relation E(A,B) as
-follows:
-SELECT e1.A, e1.B, e2.B
-FROM E e1, E e2, E e3
-WHERE e1.A = e2.A AND e1.B = e3.A AND e2.B = e3.B
-In this query, the equated attributes e1.A and e2.A are represented in our join
-by the attribute X. Also, e1.B and e3.A are each represented by Y ; e2.B and
-e3.B are represented by Z.
-Notice that each triangle appears once in this join. The triangle consisting
-of nodes v1, v2, and v3 is generated when X, Y , and Z are these three nodes in
-numerical order, i.e., X < Y < Z. For instance, if the numerical order of the
-nodes is v1 < v2 < v3, then X can only be v1, Y is v2, and Z is v3.
-The technique of Section 2.5.3 can be used to optimize the join of Equation
-10.1. Recall the ideas in Example 2.9, where we considered the number
-of ways in which the values of each attribute should be hashed. In the present
-example, the matter is quite simple. The three occurrences of relation E surely
-have the same size, so by symmetry, attributes X, Y , and Z will each be hashed
-to the same number of buckets. In particular, if we hash nodes to b buckets,
-then there will be b3 reducers. Each Reduce task is associated with a sequence
-of three bucket numbers (x, y, z), where each of x, y, and z is in the range 1 to
-b.
-The Map tasks divide the relation E into as many parts as there are Map
-tasks. Suppose one Map task is given the tuple E(u, v) to send to certain
-Reduce tasks. First, think of (u, v) as a tuple of the join term E(X, Y ). We
-can hash u and v to get the bucket numbers for X and Y , but we don t know
-the bucket to which Z hashes. Thus, we must send E(u, v) to all Reducer tasks
-that correspond to a sequence of three bucket numbers ..h(u), h(v), z for any
-of the b possible buckets z.
-But the same tuple E(u, v) must also be treated as a tuple for the term
-E(X,Z). We therefore also send the tuple E(u, v) to all Reduce tasks that
-correspond to a triple ..h(u), y, h(v) for any y. Finally, we treat E(u, v) as a
-tuple of the term E(Y,Z) and send that tuple to all Reduce tasks corresponding
-to a triple ..x, h(u), h(v) for any x. The total communication required is thus
-3b key-value pairs for each of the m tuples of the edge relation E. That is, the
-minimum communication cost is O(mb) if we use b3 Reduce tasks.
-Next, let us compute the total execution cost at all the Reduce tasks. Assume
-that the hash function distributes edges sufficiently randomly that the
-Reduce tasks each get approximately the same number of edges. Since the total
-number of edges distributed to the b3 Reduce tasks is O(mb), it follows that each
-task receives O(m/b2) edges. If we use the algorithm of Section 10.6.2 at each
-Reduce task, the total computation at a task is O..(m/b2)3/2, or O(m3/2/b3).
-Since there are b3 Reduce tasks, the total computation cost is O(m3/2), exactly
-as for the one-processor algorithm of Section 10.6.2.\\
+ 
 \begin{lstlisting}[label=Mapper,caption=Implementazione del Mapper single Job]
 	@Override
 	public void map(LongWritable key, Text value, Context context)
@@ -324,7 +287,9 @@ as for the one-processor algorithm of Section 10.6.2.\\
 		}
 	}
 \end{lstlisting}
-
+\paragraph{SingleJob Reducer}
+Il reducer, doppo una opportuna ridefinizione delle classi di Gruouping e Ordinamento, si limita semplicemente a scorrere tutti gli elementi in input. L'ordinamente e definito in modo da analizzare, per ogni nodo, prima le possili relazioni A e B. A questo punto viene utilizzata HashTable in memoria che memorizza il possibile trinagolo composto dalle relazioni A e B e per ogni trinagolo si definisce una chiave formata dai nodi della relazione mancante per il completamento del triangolo (relazione di tipo C). Quando il reducer trova una relazione di tipo C in input controlla se esiste una chiave con nella Hashtable con quella relazione e se ne trova una elimina l'elemento dalla HashTable e mette in output il triangolo.
+ 
 
 \begin{lstlisting}[label=Reducer,caption=Implementazione del Reducer single Job]
 	@Override
@@ -367,7 +332,7 @@ as for the one-processor algorithm of Section 10.6.2.\\
 \paragraph{Ottimizzazioni}
 
 
-\section{Complessit\`a}
+\section{Complessità}
 \paragraph{Algoritmo 2 Jobs}
 \paragraph{Algoritmo Single Jobs}
 

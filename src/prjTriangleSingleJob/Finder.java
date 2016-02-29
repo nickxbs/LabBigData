@@ -1,7 +1,5 @@
 package prjTriangleSingleJob;
 
-import java.io.Console;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
@@ -9,6 +7,8 @@ import org.apache.hadoop.fs.Path;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.compress.CompressionCodec;
+import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
@@ -16,6 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import prjTriangle.TriangleFinder;
 
 //hadoop jar TriangleWiki.jar prjTriangleWiki.Finder 1 INPUT/ttter/twitter-big-sample.txt OUTPUT/twitterBig
 //hadoop jar Triangle.jar prjTriangle.TriangleFinder 1 INPUT/twitter/twitter-small.txt OUTPUT/twitter
@@ -30,8 +31,10 @@ public class Finder extends Configured implements Tool {
 
 		Configuration conf = this.getConf();
 		conf.setInt("b", this.b);
+		//conf.setBoolean("mapred.compress.map.output",true);
+		//conf.setClass("mapred.map.output.compression.codec", GzipCodec.class, CompressionCodec.class);
 
-		Job job = new Job(conf, "TriangleFinder");
+		Job job = Job.getInstance(conf);
 		job.setJarByClass(Finder.class);
 
 		job.setInputFormatClass(TextInputFormat.class);

@@ -28,7 +28,7 @@ public class Finder extends Configured implements Tool {
 
 		Configuration conf = this.getConf();
 
-		Job job = new Job(conf, "TriangleFinder");
+		Job job = Job.getInstance(conf);
 		job.setJarByClass(Finder.class);
 
 		job.setInputFormatClass(TextInputFormat.class);
@@ -60,7 +60,8 @@ public class Finder extends Configured implements Tool {
 
 		job.waitForCompletion(true);
 
-		Job job2 = new Job(conf, "TriangleFinder2");
+		Job job2 = Job.getInstance(conf);
+
 		job2.setJarByClass(Finder.class);
 
 		job2.setInputFormatClass(TextInputFormat.class);

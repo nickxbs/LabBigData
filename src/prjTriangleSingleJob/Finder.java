@@ -17,9 +17,12 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import prjTriangle.TriangleFinder;
+// sudo /home/cloudera/cloudera-manager --force --express
 
 //hadoop jar TriangleWiki.jar prjTriangleWiki.Finder 1 INPUT/ttter/twitter-big-sample.txt OUTPUT/twitterBig
 //hadoop jar Triangle.jar prjTriangle.TriangleFinder 1 INPUT/twitter/twitter-small.txt OUTPUT/twitter
+//hadoop jar LabBigData.jar   prjTriangleSingleJob.Finder 1 INPUT/twitter-verysmall.txt OUTPUT/twitter
+//HADOOP_HEAPSIZE=2000 hadoop jar LabBigData.jar   prjTriangleSingleJob.Finder 3 INPUT/twitter-big-sample.txt OUTPUT/twitter-big2
 
 public class Finder extends Configured implements Tool {
 

@@ -25,5 +25,8 @@
         <module name="LabBigData" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="LabBigData" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

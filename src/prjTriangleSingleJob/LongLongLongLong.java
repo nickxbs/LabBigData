@@ -4,23 +4,19 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.io.WritableComparator;
-import org.apache.hadoop.io.WritableUtils;
+import org.apache.hadoop.io.*;
 
 public class LongLongLongLong implements WritableComparable<LongLongLongLong> {
 
 	private Text _rel;
 
-	private LongWritable _first;
-	private LongWritable _second;
-	private LongWritable _third;
-	private LongWritable _fourth;
+	private IntWritable _first;
+	private IntWritable _second;
+	private IntWritable _third;
+	private IntWritable _fourth;
 	
 
-public void set(Text rel, LongWritable first, LongWritable second,LongWritable third,LongWritable fourth) {
+public void set(Text rel, IntWritable first, IntWritable second,IntWritable third,IntWritable fourth) {
 	_rel=rel;
 	_first=first;
 	_second=second;
@@ -30,30 +26,30 @@ public void set(Text rel, LongWritable first, LongWritable second,LongWritable t
 public Text getRel() {
 return _rel;
 }
-public LongWritable getFirst() {
+public IntWritable getFirst() {
 return _first;
 }
 
-public LongWritable getSecond() {
+public IntWritable getSecond() {
 return _second;
 }
-public LongWritable getthird() {
+public IntWritable getthird() {
 return _third;
 }
-public LongWritable getfourth() {
+public IntWritable getfourth() {
 return _fourth;
 }
   
 public LongLongLongLong() {
 	_rel=new Text();
-	_first= new LongWritable();
-	_second= new LongWritable();
-	_third= new LongWritable();
-	_fourth= new LongWritable();
+	_first= new IntWritable();
+	_second= new IntWritable();
+	_third= new IntWritable();
+	_fourth= new IntWritable();
 }
 
-public LongLongLongLong(String rel,Long first, Long second,Long third,Long fourth) {
-	  this.set(new Text(rel),new LongWritable(first), new LongWritable(second), new LongWritable(third), new LongWritable(fourth));
+public LongLongLongLong(String rel,Integer first, Integer second,Integer third,Integer fourth) {
+	  this.set(new Text(rel),new IntWritable(first), new IntWritable(second), new IntWritable(third), new IntWritable(fourth));
 	}
 
 @Override

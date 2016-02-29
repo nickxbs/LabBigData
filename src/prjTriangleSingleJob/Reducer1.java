@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -13,29 +16,31 @@ import org.javatuples.Pair;
 import org.javatuples.Triplet;
 
 public class Reducer1 extends
-		Reducer<LongLongLongLong, LongWritable, Text, Text> {
+		Reducer<LongLongLongLong, IntWritable, Text, Text> {
 
 	private Map<String, List<String>> partialJoin = new HashMap<String, List<String>>();
 	private Text outText = new Text();
+	private static final Log LOG = LogFactory.getLog(Mapper1.class);
+
 
 	@Override
-	protected void reduce(LongLongLongLong key, Iterable<LongWritable> values,
-			Context context) throws IOException, InterruptedException {
+	protected void reduce(LongLongLongLong key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 		//partialJoin.clear();
-		List<Long> tmpList = new LinkedList<Long>();
+		List<Integer> tmpList = new LinkedList<Integer>();
+		LOG.info("My message");
 
-		for (LongWritable valText : values) {
-			Long from = key.getfourth().get();
-			Long to = valText.get();
-			Long[] p = CreatePair(to, from);
+		for (IntWritable valText : values) {
+			Integer from = key.getfourth().get();
+			Integer to = valText.get();
+			Integer[] p = CreatePair(to, from);
 			if (partialJoin.containsKey(p[0].toString()+"|"+p[1].toString())	&& key.getRel().toString().equals("C")) {
 				WriteContext(partialJoin.get(p[0].toString()+"|"+p[1].toString()), context);
 				partialJoin.remove(p[0].toString()+"|"+p[1].toString());
 			}
-			for (Long tmpTo : tmpList) {
-				Long[] l = CreatePair(to, tmpTo);
+			for (Integer tmpTo : tmpList) {
+				Integer[] l = CreatePair(to, tmpTo);
 				if (!to.equals(tmpTo) && key.getRel().toString().equals("B")) {
-					Long[] t  = new Long[]{from, l[0],l[1]};
+					Integer[] t  = new Integer[]{from, l[0],l[1]};
 					if(partialJoin.containsKey(l[0].toString()+"|"+l[1].toString())){
 						if(!partialJoin.get(l[0].toString()+"|"+l[1].toString()).contains(t[0].toString()+"|"+t[1].toString()+"|"+t[2].toString()))
 							partialJoin.get(l[0].toString()+"|"+l[1].toString()).add(t[0].toString()+"|"+t[1].toString()+"|"+t[2].toString());
@@ -54,10 +59,10 @@ public class Reducer1 extends
 		}
 	}
 
-	private Long[] CreatePair(Long to, Long tmpTo) {
+	private Integer[] CreatePair(Integer to, Integer tmpTo) {
 		if (tmpTo < to)
-			return new Long[]{tmpTo, to};
-		return new Long[]{to, tmpTo};
+			return new Integer[]{tmpTo, to};
+		return new Integer[]{to, tmpTo};
 	}
 
 	private void WriteContext(List<String> val, Context context)

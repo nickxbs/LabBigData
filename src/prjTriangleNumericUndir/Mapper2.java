@@ -20,28 +20,12 @@ public class Mapper2 extends Mapper<LongWritable, Text, LongLongBit, LongWritabl
 		Long lp1=Long.parseLong(sp[1]);
 		
 		if (sp.length > 2) {
-			{
-				if (lp0 != lp1) {
-					if (lp0<lp1)
-						context.write(new LongLongBit(lp0, lp1, true),new LongWritable(Long.parseLong(sp[2])));
-					else
-						context.write(new LongLongBit(lp0, lp1, true),new LongWritable(Long.parseLong(sp[2])));
-				}
-			}
+			context.write(new LongLongBit(lp0, lp1, true),new LongWritable(Long.parseLong(sp[2])));
 		} else {
 			if (lp0<lp1)
 				context.write(new LongLongBit(lp0, lp1, false), new LongWritable(Long.parseLong("0"))); // li
-																					// inverto
-																					// per
-																					// match
-																					// key
 			else
 				context.write(new LongLongBit(lp1, lp0, false), new LongWritable(Long.parseLong("0"))); // li
-																					// inverto
-																					// per
-																					// match
-																					// key
-
 		}
 	}
 }

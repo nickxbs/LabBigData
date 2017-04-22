@@ -1,68 +1,84 @@
 package prjTriangleIntSingleJob;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.javatuples.Pair;
 import org.javatuples.Triplet;
 
+import java.io.IOException;
+import java.util.*;
+
 public class Reducer1 extends
 		Reducer<BucketItem, IntWritable, Text, Text> {
 
 	private Map<Pair<Integer, Integer>, List<Triplet<Integer, Integer, Integer>>> partialJoin = new HashMap<Pair<Integer, Integer>, List<Triplet<Integer, Integer, Integer>>>();
+
+	private int fromOld;
+	private List<Integer> tmpAList = new LinkedList<Integer>();
+	private Map<Pair<Integer, Integer>,Integer> tmpBList = new HashMap<Pair<Integer, Integer>, Integer>();
+
+	private void Init(int from){
+		tmpAList = new LinkedList<Integer>();
+		fromOld=from;
+	}
+
 	@Override
 	protected void reduce(BucketItem key, Iterable<IntWritable> values,
 			Context context) throws IOException, InterruptedException {
 		//partialJoin.clear();
-		List<Integer> tmpList = new LinkedList<Integer>();
-
-		for (IntWritable valText : values) {
-			int from = key.getfourth().get();
-			int to = valText.get();
-			Pair<Integer, Integer> p = CreatePair(to, from);
-			if (partialJoin.containsKey(p)	&& key.getRel().toString().equals("C")) {
-				WriteContext(partialJoin.get(p), context);
-				partialJoin.remove(p);
+		String typeRel = key.getTypeRel().toString();
+		if(typeRel == "A"){
+			Init(key.getFrom().get());
+			for (IntWritable valText : values) {
+				tmpAList.add(valText.get());
 			}
-			for (int tmpTo : tmpList) {
-				Pair<Integer, Integer> l = CreatePair(to, tmpTo);
-				if (to!=tmpTo && key.getRel().toString().equals("B")) {
-					Triplet<Integer, Integer, Integer> t  = new Triplet<Integer, Integer, Integer>(from, l.getValue0(),l.getValue1());
-					if(partialJoin.containsKey(l)){
-						if(!partialJoin.get(l).contains(t))
-							partialJoin.get(l).add(t);
+		}
+		if(typeRel == "B"){
+			if(fromOld!=key.getFrom().get()){
+				Init(key.getFrom().get());
+			}else{
+				for (IntWritable valC : values) {
+					for (int vB : tmpAList) {
+						int vC=valC.get();
+						if(vB<vC){
+							tmpBList.put(new Pair<Integer, Integer>(vB,vC), key.getFrom().get());
+						}
 					}
-					else{
-						List<Triplet<Integer, Integer, Integer>> lt= new LinkedList<Triplet<Integer, Integer, Integer>>();
-						lt.add(new Triplet<Integer, Integer, Integer>(from, l.getValue0(),l.getValue1()));						
-						partialJoin.put(l,lt);						
-					}
-						
 				}
 			}
-			if (!tmpList.contains(to)&& key.getRel().toString().equals("A")) {
-				tmpList.add(to);
+		}
+		if(typeRel == "C"){
+			int vB=key.getFrom().get();
+			for (IntWritable valC : values) {
+				int vC=valC.get();
+				Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vB,vC);
+				if(tmpBList.containsKey(pair)){
+					int vA = tmpBList.get(pair);
+					//ok trovato triangoloù
+					WriteContext(vA,vB,vC,context);
+				}
+
 			}
-			System.out.println("tmpList "+tmpList.size());
-			System.out.println("partialJoin "+partialJoin.size());
+			for(Iterator<Map.Entry<Pair<Integer,Integer>,Integer>> it = tmpBList.entrySet().iterator(); it.hasNext(); ) {
+				Map.Entry<Pair<Integer,Integer>,Integer> entry = it.next();
+				Pair<Integer,Integer> k=entry.getKey();
+				if(vB>k.getValue0()) {
+					it.remove();
+				}
+			}
 		}
 	}
 
 	private Pair<Integer, Integer> CreatePair(int to, int tmpTo) {
-		if (tmpTo < to)
+		if (tmpTo < to) {
 			return new Pair<Integer, Integer>(tmpTo, to);
+		}
 		return new Pair<Integer, Integer>(to, tmpTo);
 	}
 
-	private void WriteContext(List<Triplet<Integer, Integer, Integer>> val, Context context)
+	private void WriteContext(Integer a, Integer b, Integer c, Context context)
 			throws IOException, InterruptedException {
-		for(Triplet<Integer, Integer, Integer> t:val)
-		context.write(new Text(t.toString()), new Text());
+		context.write(new Text(a.toString()+ "\t"+b.toString()+ "\t"+c.toString()+ "\t"), new Text());
 	}
 }

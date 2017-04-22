@@ -21,23 +21,25 @@ public class Reducer1 extends Reducer<LongBit, LongWritable, LongLong, LongWrita
 
 		for (LongWritable valText : values) {
 			Long val = valText.get();
-			if (!key.getSecond().get())// link from
+			if (key.getSecond().get())// link from
 			{
 				if (!partialJoin.contains(val))
 					partialJoin.add(val);
-			} else // link to
-			{
-				WriteContext(k, context, val);
 			}
 		}
+		for (Long val : partialJoin)
+		{
+			WriteContext(k, context, val);
+		}
+
 
 	}
 
 	private void WriteContext(LongWritable key, Context context, Long value)
 			throws IOException, InterruptedException {
 		for (Long val : partialJoin) {
-			if (val < key.get() && key.get()<value) {
-				outText.set(val, value);
+			if (val>value) {
+				outText.set(value,val);
 				context.write(outText, key);
 			}
 		}

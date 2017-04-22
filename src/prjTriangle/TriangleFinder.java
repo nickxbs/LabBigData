@@ -36,7 +36,7 @@ public class TriangleFinder extends Configured implements Tool {
 
 		Configuration conf = this.getConf();
 
-		Job job = new Job(conf, "TriangleFinder");
+		Job job = Job.getInstance(conf, "TriangleFinder");
 		job.setJarByClass(TriangleFinder.class);
 
 		job.setInputFormatClass(TextInputFormat.class);
@@ -63,7 +63,7 @@ public class TriangleFinder extends Configured implements Tool {
 
 		job.waitForCompletion(true);
 
-		Job job2 = new Job(conf, "TriangleFinder2");
+		Job job2 = Job.getInstance(conf, "TriangleFinder2");
 		job2.setJarByClass(TriangleFinder.class);
 
 		job2.setInputFormatClass(TextInputFormat.class);

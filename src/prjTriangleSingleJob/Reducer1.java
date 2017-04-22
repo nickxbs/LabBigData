@@ -17,16 +17,12 @@ import org.javatuples.Triplet;
 
 public class Reducer1 extends
 		Reducer<LongLongLongLong, IntWritable, Text, Text> {
+	//private Map<Pair<Long, Long>, List<Triplet<Long, Long, Long>>> partialJoin = new HashMap<Pair<Long, Long>, List<Triplet<Long, Long, Long>>>();
 
-<<<<<<< HEAD
-	private Map<Pair<Long, Long>, List<Triplet<Long, Long, Long>>> partialJoin = new HashMap<Pair<Long, Long>, List<Triplet<Long, Long, Long>>>();
-=======
 	private Map<String, List<String>> partialJoin = new HashMap<String, List<String>>();
 	private Text outText = new Text();
 	private static final Log LOG = LogFactory.getLog(Mapper1.class);
 
-
->>>>>>> 6b2c26c26c809723d0eef73ae4b7dfe7ae6c25d3
 	@Override
 	protected void reduce(LongLongLongLong key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 		//partialJoin.clear();

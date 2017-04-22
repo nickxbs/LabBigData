@@ -1,155 +1,131 @@
 package prjTriangleIntSingleJob;
 
+import org.apache.hadoop.io.*;
+
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.io.WritableComparator;
-import org.apache.hadoop.io.WritableUtils;
-
 public class BucketItem implements WritableComparable<BucketItem> {
 
-	private Text _rel;
+	private Text _typeRel;
+	private IntWritable _bucketIndex;
+	private IntWritable _from;
 
-	private IntWritable _first;
-	private IntWritable _second;
-	private IntWritable _third;
-	private IntWritable _fourth;
-	
 
-public void set(Text rel, IntWritable first, IntWritable second,IntWritable third,IntWritable fourth) {
-	_rel=rel;
-	_first=first;
-	_second=second;
-	_third=third;
-	_fourth=fourth;
-}
-public Text getRel() {
-return _rel;
-}
-public IntWritable getFirst() {
-return _first;
-}
-
-public IntWritable getSecond() {
-return _second;
-}
-public IntWritable getthird() {
-return _third;
-}
-public IntWritable getfourth() {
-return _fourth;
-}
-  
-public BucketItem() {
-	_rel=new Text();
-	_first= new IntWritable();
-	_second= new IntWritable();
-	_third= new IntWritable();
-	_fourth= new IntWritable();
-}
-
-public BucketItem(String rel,int first, int second,int third,int fourth) {
-	  this.set(new Text(rel),new IntWritable(first), new IntWritable(second), new IntWritable(third), new IntWritable(fourth));
+	public Text getTypeRel() {
+		return _typeRel;
+	}
+	public IntWritable getBucketIndex() {
+		return _bucketIndex;
+	}
+	public IntWritable getFrom() {
+		return _from;
 	}
 
-@Override
-public void write(DataOutput out) throws IOException {
-	  _rel.write(out);
-	  _first.write(out);
-	  _second.write(out);
-	  _third.write(out);
-	  _fourth.write(out);
-}
+	public BucketItem() {
+		_typeRel=new Text();
+		_bucketIndex= new IntWritable();
+		_from= new IntWritable();
 
-@Override
-public void readFields(DataInput in) throws IOException {
-	  _rel.readFields(in);
-	  _first.readFields(in);
-	  _second.readFields(in);
-	  _third.readFields(in);
-	  _fourth.readFields(in);
+	}
 
-}
+	public BucketItem(String rel,int indexBucket, int from) {
+		this.set(new Text(rel),  new IntWritable(indexBucket), new IntWritable(from));
+	}
 
-@Override
-public int hashCode() {
-	return _first.hashCode() * 163 + _second.hashCode();
-}
+	private void set(Text rel, IntWritable indexBucket, IntWritable from) {
+		_typeRel=rel;
+		_bucketIndex=indexBucket;
+		_from=from;
 
-@Override
-public boolean equals(Object o) {
- if (o instanceof BucketItem) {
-	 BucketItem tp = (BucketItem) o;
-   return _first.equals(tp.getFirst()) && _second.equals(tp.getSecond()) && _third.equals(tp.getthird()) && _fourth.equals(tp.getfourth()) ;
- }
- return false;
-}
+	}
 
-@Override
-public String toString() {
- return _first + "\t" + _second+ "\t" +_third;
-}
+	public void write(DataOutput out) throws IOException {
+		_typeRel.write(out);
+		_bucketIndex.write(out);
+		_from.write(out);
+	}
 
-@Override
-public int compareTo(BucketItem tp) {
-	BucketItem la=this;
-	BucketItem lb=tp;
-		   
-		  if(!la.getFirst().equals(lb.getFirst()))
-			  return (la.getFirst().compareTo(lb.getFirst()));
-		  else{
-			  if(!la.getSecond().equals(lb.getSecond()))
-				  return (la.getSecond().compareTo(lb.getSecond()));
-			  else{
-				  if(!la.getthird().equals(lb.getthird()))
-					  return (la.getthird().compareTo(lb.getthird()));
-			  	}
 
-		  	}
-		  return 1;
-		  
-}
+	public void readFields(DataInput in) throws IOException {
+		_typeRel.readFields(in);
+		_bucketIndex.readFields(in);
+		_from.readFields(in);
+	}
+
+	public int hashCode() {
+		return _bucketIndex.hashCode() * 163* 163 + _from.hashCode() * 163 + _typeRel.hashCode();
+	}
+
+
+	public boolean equals(Object o) {
+		if (o instanceof BucketItem) {
+			BucketItem tp = (BucketItem) o;
+			return _bucketIndex.equals(tp.getBucketIndex()) && _from.equals(tp.getFrom()) && _typeRel.equals(tp.getTypeRel()) ;
+		}
+		return false;
+	}
+
+
+	public String toString() {
+		return _bucketIndex + "\t" + _from;
+	}
+
+
+	public int compareTo(BucketItem tp) {
+		BucketItem la=this;
+		BucketItem lb=tp;
+
+		if(!la.getBucketIndex().equals(lb.getBucketIndex()))
+			return (la.getBucketIndex().compareTo(lb.getBucketIndex()));
+		else{
+			if(!la.getFrom().equals(lb.getFrom()))
+				return (la.getFrom().compareTo(lb.getFrom()));
+			else{
+				if(!la.getTypeRel().equals(lb.getTypeRel()))
+					return (la.getTypeRel().compareTo(lb.getTypeRel()));
+			}
+		}
+		return 1;
+	}
 
 
 
 // DO NOT TOUCH THE CODE BELOW
 
-/** Compare two pairs based on their values */
-public static class Comparator extends WritableComparator {
- 
-  /** Reference to standard Hadoop LongWritable comparator */
-  private static final IntWritable.Comparator LongWritable_COMPARATOR = new IntWritable.Comparator();
- 
-  public Comparator() {
-    super(BucketItem.class);
-  }
+	/** Compare two pairs based on their values */
+	public static class Comparator extends WritableComparator {
 
-  @Override
-  public int compare(byte[] b1, int s1, int l1,
-                     byte[] b2, int s2, int l2) {
-   
-    try {
-      int firstL1 = WritableUtils.decodeVIntSize(b1[s1]) + readVInt(b1, s1);
-      int firstL2 = WritableUtils.decodeVIntSize(b2[s2]) + readVInt(b2, s2);
-      int cmp = LongWritable_COMPARATOR.compare(b1, s1, firstL1, b2, s2, firstL2);
-      if (cmp != 0) {
-        return cmp;
-      }
-      return LongWritable_COMPARATOR.compare(b1, s1 + firstL1, l1 - firstL1,
-                                     b2, s2 + firstL2, l2 - firstL2);
-    } catch (IOException e) {
-      throw new IllegalArgumentException(e);
-    }
-  }
-}
+		/** Reference to standard Hadoop LongWritable comparator */
+		private static final IntWritable.Comparator LongWritable_COMPARATOR = new IntWritable.Comparator();
 
-static {
- WritableComparator.define(BucketItem.class, new Comparator());
-}
+		public Comparator() {
+			super(BucketItem.class);
+		}
+
+		@Override
+		public int compare(byte[] b1, int s1, int l1,
+						   byte[] b2, int s2, int l2) {
+
+			try {
+				int firstL1 = WritableUtils.decodeVIntSize(b1[s1]) + readVInt(b1, s1);
+				int firstL2 = WritableUtils.decodeVIntSize(b2[s2]) + readVInt(b2, s2);
+				int cmp = LongWritable_COMPARATOR.compare(b1, s1, firstL1, b2, s2, firstL2);
+				if (cmp != 0) {
+					return cmp;
+				}
+				return LongWritable_COMPARATOR.compare(b1, s1 + firstL1, l1 - firstL1,
+						b2, s2 + firstL2, l2 - firstL2);
+			} catch (IOException e) {
+				throw new IllegalArgumentException(e);
+			}
+		}
+	}
+
+	static {
+		WritableComparator.define(BucketItem.class, new Comparator());
+	}
 
 
 }

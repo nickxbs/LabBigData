@@ -15,20 +15,8 @@ public class GroupingComparator1 extends WritableComparator {
 			BucketItem la = (BucketItem) a;
 			BucketItem lb = (BucketItem) b;
 
-			if (!la.getFirst().equals(lb.getFirst()))
-				return (la.getFirst().compareTo(lb.getFirst()));
-			else {
-				if (!la.getSecond().equals(lb.getSecond()))
-					return (la.getSecond().compareTo(lb.getSecond()));
-				else {
-					if (!la.getthird().equals(lb.getthird()))
-						return (la.getthird().compareTo(lb.getthird()));
-					else {
-						if (!la.getfourth().equals(lb.getfourth()))
-							return (la.getfourth().compareTo(lb.getfourth()));
-					}
-				}
-			}
+			if (!la.getBucketIndex().equals(lb.getBucketIndex()))
+				return (la.getBucketIndex().compareTo(lb.getBucketIndex()));
 			return 0;
 		}
 		return super.compare(a, b);

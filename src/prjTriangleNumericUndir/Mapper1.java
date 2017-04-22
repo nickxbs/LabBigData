@@ -21,18 +21,10 @@ public class Mapper1 extends Mapper<LongWritable, Text, LongBit, LongWritable> {
 		Long lp1=Long.parseLong(sp[1]);
 		if (lp0!= lp1) {
 			if (lp0 < lp1) {
-				textP.set(lp1, false);
-				text.set(lp0);
-				context.write(textP, text);// "0" link_from
-
 				textP.set(lp0, true);
 				text.set(lp1);
 				context.write(textP, text);// "1" link_to
 			} else {
-				textP.set(lp0, false);
-				text.set(lp1);
-				context.write(textP, text);// "0" link_from
-
 				textP.set(lp1, true);
 				text.set(lp0);
 				context.write(textP, text);// "1" link_to

@@ -4,7 +4,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -14,6 +14,8 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import org.javatuples.Pair;
+import org.javatuples.Triplet;
 
 //hadoop jar TriangleWiki.jar prjTriangleWiki.Finder 1 INPUT/ttter/twitter-big-sample.txt OUTPUT/twitterBig
 //hadoop jar Triangle.jar prjTriangle.TriangleFinder 1 INPUT/twitter/twitter-small.txt OUTPUT/twitter
@@ -23,20 +25,17 @@ public class Finder extends Configured implements Tool {
 	private Path outputDir;
 	private Path inputPath;
 	private int b;
-	@Override
+
 	public int run(String[] args) throws Exception {
 
-		Configuration conf = this.getConf();
-		conf.setInt("b", this.b);
-
-		Job job = new Job(conf, "TriangleFinder");
+		Job job = new Job(super.getConf());
 		job.setJarByClass(Finder.class);
 
 		job.setInputFormatClass(TextInputFormat.class);
 
 		job.setMapperClass(Mapper1.class);
 		job.setMapOutputKeyClass(BucketItem.class);
-		job.setMapOutputValueClass(LongWritable.class);
+		job.setMapOutputValueClass(IntWritable.class);
 		Path in = this.inputPath;
 		FileInputFormat.addInputPath(job, in);
 		
@@ -62,23 +61,21 @@ public class Finder extends Configured implements Tool {
 		job.waitForCompletion(true);
 
 		return 1;
-
 	}
 
-	public Finder(String[] args) {
-		if (args.length < 3) {
-			this.b=2;
-			this.inputPath=new Path("/home/student/INPUT/twitter/twitter-verysmall.txt");
-			this.outputDir = new Path("/home/student/OUTPUT/twitter");
-		} else {
-			this.b=Integer.parseInt(args[args.length-3]);
-			this.inputPath = new Path(args[args.length-2]);
-			this.outputDir = new Path(args[args.length-1]);
-		}
+	public Finder() {
+			this.b=1;
+			this.inputPath = new Path("INPUT/twitter/twitter-small.txt");
+			this.outputDir = new Path("OUTPUT/twitter-small");
+
+//		this.b=10;
+//		this.inputPath = new Path("INPUT/twitter/twitter-big-sample.txt");
+//		this.outputDir = new Path("OUTPUT/twitterbig");
+
 	}
 
 	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new Finder(args), args);
+		int res = ToolRunner.run(new Configuration(), new Finder(), args);
 		System.exit(res);
 	}
 

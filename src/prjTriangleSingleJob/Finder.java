@@ -16,7 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-import prjTriangle.TriangleFinder;
+
 // sudo /home/cloudera/cloudera-manager --force --express
 
 //hadoop jar TriangleWiki.jar prjTriangleWiki.Finder 1 INPUT/ttter/twitter-big-sample.txt OUTPUT/twitterBig
@@ -74,20 +74,14 @@ public class Finder extends Configured implements Tool {
 	}
 
 	public Finder(String[] args) {
-		if (args.length < 3) {
-			this.b=2;
-			this.inputPath=new Path("/home/student/INPUT/twitter/twitter-verysmall.txt");
-			this.outputDir = new Path("/home/student/OUTPUT/twitter");
-		} else {
-			this.b=Integer.parseInt(args[args.length-3]);
-			this.inputPath = new Path(args[args.length-2]);
-			this.outputDir = new Path(args[args.length-1]);
-		}
+			this.b=Integer.parseInt(args[0]);
+			this.inputPath = new Path(args[1]);
+			this.outputDir = new Path(args[2]);
 	}
 
 	public static void main(String[] args) throws Exception {
 		int res = ToolRunner.run(new Configuration(), new Finder(args), args);
 		System.exit(res);
 	}
-
 }
+ 

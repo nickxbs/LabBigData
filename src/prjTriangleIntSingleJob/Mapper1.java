@@ -23,16 +23,19 @@ public class Mapper1 extends
 		this.buckets = conf.getInt("b",2);
 		
 		String line = value.toString();
-		line = line.replaceAll("^\\s+", "");
-		String[] sp = line.split("\\s+");// splits on TAB
-		int lp0 = Integer.parseInt(sp[0]);
-		int lp1 = Integer.parseInt(sp[1]);
-		if (lp0 != lp1) {
-			if (lp0 < lp1) {
-				SetContext(context, lp0, lp1);
-			} else {
-				SetContext(context, lp1, lp0);
+		if(line.substring(0,1)!="#"){
+			line = line.replaceAll("^\\s+", "");
+			String[] sp = line.split("\\s+");// splits on TAB
+			int lp0 = Integer.parseInt(sp[0]);
+			int lp1 = Integer.parseInt(sp[1]);
+			if (lp0 != lp1) {
+				if (lp0 < lp1) {
+					SetContext(context, lp0, lp1);
+				} else {
+					SetContext(context, lp1, lp0);
+				}
 			}
+
 		}
 	}
 
@@ -40,9 +43,9 @@ public class Mapper1 extends
 			throws IOException, InterruptedException {
 		to.set(lp1);
 		for (int j = 0; j < buckets; j++) {
-			int aIndex= (int) ((Math.pow(buckets,2)* lp0 % buckets)+(buckets*(lp1 % buckets))+j);
-			int bIndex= (int) ((Math.pow(buckets,2)* lp0 % buckets)+(buckets*j)+(lp1 % buckets));
-			int cIndex= (int) ((Math.pow(buckets,2)* j)+(buckets*(lp0 % buckets))+lp1 % buckets);
+			int aIndex= (int) (((Math.pow(buckets,2))* (lp0 % buckets))+(buckets*(lp1 % buckets))+j);
+			int bIndex= (int) (((Math.pow(buckets,2))* (lp0 % buckets))+(buckets*(j   		   ))+(lp1 % buckets));
+			int cIndex= (int) (((Math.pow(buckets,2))* (j			 ))+(buckets*(lp0 % buckets))+(lp1 % buckets));
 			context.write(new BucketItem("A", aIndex, lp0), to);
 			context.write(new BucketItem("B", bIndex, lp0), to);
 			context.write(new BucketItem("C", cIndex, lp0), to);

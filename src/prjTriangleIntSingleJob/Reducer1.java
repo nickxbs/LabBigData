@@ -12,73 +12,109 @@ import java.util.*;
 public class Reducer1 extends
 		Reducer<BucketItem, IntWritable, Text, Text> {
 
-	private Map<Pair<Integer, Integer>, List<Triplet<Integer, Integer, Integer>>> partialJoin = new HashMap<Pair<Integer, Integer>, List<Triplet<Integer, Integer, Integer>>>();
 
-	private int fromOld;
+	private Integer fromOld;
 	private List<Integer> tmpAList = new LinkedList<Integer>();
-	private Map<Pair<Integer, Integer>,Integer> tmpBList = new HashMap<Pair<Integer, Integer>, Integer>();
+	//private List<Integer> tmpBListTmp = new ArrayList<Integer>();
+	private Map<Pair<Integer, Integer>,List<Integer>> tmpBList = new HashMap<Pair<Integer, Integer>, List<Integer>>();
 
 	private void Init(int from){
 		tmpAList = new LinkedList<Integer>();
 		fromOld=from;
 	}
+	private void cleanUp(int from){
+
+		for(Iterator<Map.Entry<Pair<Integer,Integer>,List<Integer>>> it = tmpBList.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<Pair<Integer,Integer>,List<Integer>> entry = it.next();
+			Pair<Integer,Integer> k=entry.getKey();
+			if(from>k.getValue0()) {
+				it.remove();
+			}
+		}
+
+		/*
+		for(Iterator<Integer> it = tmpBListTmp.iterator(); it.hasNext(); ) {
+			Integer entry = it.next();
+			if(from>entry) {
+				it.remove();
+			}
+		}*/
+	}
+	private int maxSize=0;
 
 	@Override
 	protected void reduce(BucketItem key, Iterable<IntWritable> values,
-			Context context) throws IOException, InterruptedException {
-		//partialJoin.clear();
-		String typeRel = key.getTypeRel().toString();
-		if(typeRel == "A"){
-			Init(key.getFrom().get());
-			for (IntWritable valText : values) {
-				tmpAList.add(valText.get());
+						  Context context) throws IOException, InterruptedException {
+
+		for (IntWritable valText : values) {
+
+			String typeRel = key.getTypeRel().toString();
+			int from =key.getFrom().get();
+			int to= valText.get();
+
+			if(typeRel.equals("A")){
+				if(fromOld==null || !fromOld.equals(from)) {
+					Init(from);
+				}
+				if(!tmpAList.contains(to)){
+					tmpAList.add(to);
+				}
 			}
-		}
-		if(typeRel == "B"){
-			if(fromOld!=key.getFrom().get()){
-				Init(key.getFrom().get());
-			}else{
-				for (IntWritable valC : values) {
+			//WriteContextStr(new Integer(from).toString()+"\t"+new Integer(to).toString()+"\t"+typeRel+new Integer(key.getBucketIndex().get()).toString() ,context);
+
+			if(typeRel.equals("B")){
+
+				if(fromOld !=null &&fromOld.equals(from)){
 					for (int vB : tmpAList) {
-						int vC=valC.get();
+						int vC=to;
+						Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vB,vC);
 						if(vB<vC){
-							tmpBList.put(new Pair<Integer, Integer>(vB,vC), key.getFrom().get());
+							/*if(!tmpBListTmp.contains(vC)){
+								tmpBListTmp.add(vC);
+							}*/
+							if(!tmpBList.containsKey(pair)){
+								List<Integer> listFrom= new LinkedList<Integer>();
+								listFrom.add(from);
+								tmpBList.put(pair, listFrom);
+							} else{
+								List<Integer> listFrom= tmpBList.get(pair);
+								if(!listFrom.contains(from))
+									listFrom.add(from);
+							}
 						}
 					}
 				}
 			}
-		}
-		if(typeRel == "C"){
-			int vB=key.getFrom().get();
-			for (IntWritable valC : values) {
-				int vC=valC.get();
+
+
+			if(typeRel.equals("C") && fromOld !=null ){
+				tmpAList= new LinkedList<Integer>();
+				//WriteContextStr("tmpBList: "+new Integer(tmpBList.size()).toString(),context);
+				//cleanUp(from);
+
+				int vB=from;
+				int vC=to;
 				Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vB,vC);
 				if(tmpBList.containsKey(pair)){
-					int vA = tmpBList.get(pair);
-					//ok trovato triangoloù
-					WriteContext(vA,vB,vC,context);
+						List<Integer> listvA = tmpBList.get(pair);
+						tmpBList.remove(pair);
+						for (int vA : listvA) {
+							//ok trovato triangolo
+							WriteContext(vA,vB,vC,context);
+						}
 				}
+				cleanUp(from);
 
 			}
-			for(Iterator<Map.Entry<Pair<Integer,Integer>,Integer>> it = tmpBList.entrySet().iterator(); it.hasNext(); ) {
-				Map.Entry<Pair<Integer,Integer>,Integer> entry = it.next();
-				Pair<Integer,Integer> k=entry.getKey();
-				if(vB>k.getValue0()) {
-					it.remove();
-				}
-			}
 		}
-	}
-
-	private Pair<Integer, Integer> CreatePair(int to, int tmpTo) {
-		if (tmpTo < to) {
-			return new Pair<Integer, Integer>(tmpTo, to);
-		}
-		return new Pair<Integer, Integer>(to, tmpTo);
 	}
 
 	private void WriteContext(Integer a, Integer b, Integer c, Context context)
 			throws IOException, InterruptedException {
 		context.write(new Text(a.toString()+ "\t"+b.toString()+ "\t"+c.toString()+ "\t"), new Text());
+	}
+	private void WriteContextStr(String a, Context context)
+			throws IOException, InterruptedException {
+		context.write(new Text(a.toString()), new Text());
 	}
 }

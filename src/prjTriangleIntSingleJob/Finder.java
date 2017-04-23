@@ -40,8 +40,8 @@ public class Finder extends Configured implements Tool {
 		FileInputFormat.addInputPath(job, in);
 		
 		job.setSortComparatorClass(Comparator1.class);
-		job.setGroupingComparatorClass(GroupingComparator1.class);
-		//job.setPartitionerClass(Partitioner1.class);
+		//job.setGroupingComparatorClass(GroupingComparator1.class);
+		job.setPartitionerClass(Partitioner1.class);
 
 		job.setReducerClass(Reducer1.class);
 		job.setOutputKeyClass(Text.class);
@@ -64,9 +64,12 @@ public class Finder extends Configured implements Tool {
 	}
 
 	public Finder() {
-			this.b=1;
-			this.inputPath = new Path("INPUT/twitter/twitter-small.txt");
-			this.outputDir = new Path("OUTPUT/twitter-small");
+			this.b=2;
+//			this.inputPath = new Path("INPUT/twitter/twitter-verysmall.txt");
+//			this.outputDir = new Path("OUTPUT/twitter-verysmall");
+
+			this.inputPath = new Path("INPUT/roads/roadNet-CA.txt");
+			this.outputDir = new Path("OUTPUT/roadNet-CA");
 
 //		this.b=10;
 //		this.inputPath = new Path("INPUT/twitter/twitter-big-sample.txt");

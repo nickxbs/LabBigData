@@ -4,10 +4,10 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
-public class Partitioner1 extends Partitioner<LongBit, LongWritable> {
+public class Partitioner1 extends Partitioner<LongWritable, LongWritable> {
 	@Override
-	public int getPartition(LongBit key, LongWritable value,	int numPartitions) {
-		return toUnsigned((key.getFirst().toString()).hashCode())%numPartitions;
+	public int getPartition(LongWritable from, LongWritable to,	int numPartitions) {
+		return toUnsigned((from.toString()).hashCode())%numPartitions;
 	}
 
 	/**

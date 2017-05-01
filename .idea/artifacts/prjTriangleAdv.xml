@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="prjTriangleAdv">
+    <output-path>$PROJECT_DIR$/out/artifacts/prjTriangleAdv</output-path>
+    <root id="archive" name="prjTriangleAdv.jar">
+      <element id="module-output" name="LabBigData" />
+      <element id="library" level="project" name="org.javatuples:javatuples:1.2" />
+    </root>
+  </artifact>
+</component>

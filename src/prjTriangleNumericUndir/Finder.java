@@ -35,7 +35,7 @@ public class Finder extends Configured implements Tool {
 		job.setInputFormatClass(TextInputFormat.class);
 
 		job.setMapperClass(Mapper1.class);
-		job.setMapOutputKeyClass(LongBit.class);
+		job.setMapOutputKeyClass(LongWritable.class);
 		job.setMapOutputValueClass(LongWritable.class);
 
 		job.setSortComparatorClass(Comparator1.class);
@@ -102,9 +102,8 @@ public class Finder extends Configured implements Tool {
 	public Finder(String[] args) {
 		if (args.length != 3) {
 			this.numReducers = 1;
-			this.inputPath = new Path(
-					"/home/student/INPUT/twitter/twitter-verysmall.txt");
-			this.outputDir = new Path("/home/student/OUTPUT/twitter");
+			this.inputPath = new Path("INPUT/youtube/youtube.txt");
+			this.outputDir = new Path("OUTPUT/youtube");
 		} else {
 			this.numReducers = Integer.parseInt(args[0]);
 			this.inputPath = new Path(args[1]);

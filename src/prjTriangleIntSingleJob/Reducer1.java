@@ -14,12 +14,12 @@ public class Reducer1 extends
 
 
 	private Integer fromOld;
-	private List<Integer> tmpAList = new LinkedList<Integer>();
+	private HashSet<Integer> tmpAList = new HashSet<Integer>();
 	//private List<Integer> tmpBListTmp = new ArrayList<Integer>();
 	private Map<Pair<Integer, Integer>,List<Integer>> tmpBList = new HashMap<Pair<Integer, Integer>, List<Integer>>();
 
 	private void Init(int from){
-		tmpAList = new LinkedList<Integer>();
+		tmpAList = new HashSet<Integer>();
 		fromOld=from;
 	}
 	private void cleanUp(int from){
@@ -45,10 +45,8 @@ public class Reducer1 extends
 	@Override
 	protected void reduce(BucketItem key, Iterable<IntWritable> values,
 						  Context context) throws IOException, InterruptedException {
-
+		String typeRel = key.getTypeRel().toString();
 		for (IntWritable valText : values) {
-
-			String typeRel = key.getTypeRel().toString();
 			int from =key.getFrom().get();
 			int to= valText.get();
 
@@ -69,9 +67,6 @@ public class Reducer1 extends
 						int vC=to;
 						Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vB,vC);
 						if(vB<vC){
-							/*if(!tmpBListTmp.contains(vC)){
-								tmpBListTmp.add(vC);
-							}*/
 							if(!tmpBList.containsKey(pair)){
 								List<Integer> listFrom= new LinkedList<Integer>();
 								listFrom.add(from);
@@ -88,7 +83,7 @@ public class Reducer1 extends
 
 
 			if(typeRel.equals("C") && fromOld !=null ){
-				tmpAList= new LinkedList<Integer>();
+				tmpAList= new HashSet<Integer>();
 				//WriteContextStr("tmpBList: "+new Integer(tmpBList.size()).toString(),context);
 				//cleanUp(from);
 
@@ -103,9 +98,10 @@ public class Reducer1 extends
 							WriteContext(vA,vB,vC,context);
 						}
 				}
-				cleanUp(from);
+				//cleanUp(from);
 
 			}
+
 		}
 	}
 

@@ -68,8 +68,12 @@ public class Finder extends Configured implements Tool {
 //			this.inputPath = new Path("INPUT/twitter/twitter-verysmall.txt");
 //			this.outputDir = new Path("OUTPUT/twitter-verysmall");
 
-			this.inputPath = new Path("INPUT/roads/roadNet-CA.txt");
-			this.outputDir = new Path("OUTPUT/roadNet-CA");
+			//this.inputPath = new Path("INPUT/roads/roadNet-CA.txt");
+			//this.outputDir = new Path("OUTPUT/roadNet-CA");
+
+		this.inputPath = new Path("INPUT/youtube/youtube.txt");
+		this.outputDir = new Path("OUTPUT/youtube");
+
 
 //		this.b=10;
 //		this.inputPath = new Path("INPUT/twitter/twitter-big-sample.txt");

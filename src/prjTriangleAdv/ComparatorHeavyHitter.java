@@ -16,7 +16,12 @@ public class ComparatorHeavyHitter extends WritableComparator {
 			BucketItem la = (BucketItem) a;
 			BucketItem lb = (BucketItem) b;
 			if((la.getFromDegree()).equals(lb.getFromDegree())){
-				return (la.getFrom()).compareTo(lb.getFrom());
+				if((la.getFrom()).equals(lb.getFrom())){
+					return (la.getTypeRel()).compareTo(lb.getTypeRel());
+				}
+				else {
+					return (la.getFrom()).compareTo(lb.getFrom());
+				}
 			} else{
 				return (la.getFromDegree()).compareTo(lb.getFromDegree());
 			}

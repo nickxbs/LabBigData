@@ -8,48 +8,106 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.javatuples.Pair;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
+import java.util.*;
 
 public class ReducerOthers extends
-		Reducer<BucketItem, IntWritable, Text, Text> {
+		Reducer<BucketItem, BucketItem, Text, Text> {
 	private static final Log _log = LogFactory.getLog(ReducerOthers.class);
 
-	private HashSet<Integer> nodes = new HashSet<Integer>();
-	private HashSet<Pair<Integer, Integer>> edges = new HashSet<Pair<Integer, Integer>>();
-	private Hashtable<Integer,ArrayList<Integer>> adjacent= new Hashtable<Integer, ArrayList<Integer>>();
+	private Integer fromOld;
+	private HashSet<Pair<Integer,Integer>> tmpAList = new HashSet<Pair<Integer,Integer>>();
+	//private List<Integer> tmpBListTmp = new ArrayList<Integer>();
+	private Map<Pair<Integer, Integer>,List<Integer>> tmpBList = new HashMap<Pair<Integer, Integer>, List<Integer>>();
 
+	private void Init(int from){
+		tmpAList = new HashSet<Pair<Integer,Integer>>();
+		fromOld=from;
+	}
+	private void cleanUp(int from){
+
+		for(Iterator<Map.Entry<Pair<Integer,Integer>,List<Integer>>> it = tmpBList.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<Pair<Integer,Integer>,List<Integer>> entry = it.next();
+			Pair<Integer,Integer> k=entry.getKey();
+			if(from==k.getValue0()) {
+				it.remove();
+			}
+		}
+
+		/*
+		for(Iterator<Integer> it = tmpBListTmp.iterator(); it.hasNext(); ) {
+			Integer entry = it.next();
+			if(from>entry) {
+				it.remove();
+			}
+		}*/
+	}
 	@Override
-	protected void reduce(BucketItem bucketItem, Iterable<IntWritable> values,
+	protected void reduce(BucketItem bucketItem, Iterable<BucketItem> values,
 						  Context context) throws IOException, InterruptedException {
 
-		Iterator<IntWritable> it = values.iterator();
+		Iterator<BucketItem> it = values.iterator();
 
 		//WriteDebug("\t NEW",context);
 		while(it.hasNext()) {
-
+			String typeRel = bucketItem.getTypeRel().toString();
 			int from =bucketItem.getFrom().get();
-			IntWritable toW=it.next();
-			int to= toW.get();
-			//WriteDebug(new Integer(from).toString()+"\t"+new Integer(to).toString()+"\t"+new Integer(bucketItem.getFromDegree().get()).toString() ,context);
-			//Populate edge
-			Pair myedge=new Pair(from,to);
-			if(!edges.contains(myedge)){
-				edges.add(myedge);
-			}
-			if(!nodes.contains(from)){
-				nodes.add(from);
-				ArrayList<Integer> toList=new ArrayList<Integer>();
-				toList.add(to);
-				adjacent.put(from,toList);
-			} else{
-				ArrayList<Integer> fromAdjecent=adjacent.get(from);
-				if(!fromAdjecent.contains(to)){
-					fromAdjecent.add(to);
+			int fromDegree =bucketItem.getFromDegree().get();
+			BucketItem toW=it.next();
+			int to= toW.getFrom().get();
+			int toDegree =toW.getFromDegree().get();
+
+			if(typeRel.equals("A")){
+				if(fromOld==null || !fromOld.equals(from)) {
+					Init(from);
+				}
+				Pair<Integer,Integer> p=new Pair<Integer, Integer>(to, toDegree);
+				if(!tmpAList.contains(p)){
+					tmpAList.add(p);
 				}
 			}
+			//WriteDebug(new Integer(from).toString()+"\t"+new Integer(to).toString()+"\t"+typeRel+new Integer(bucketItem.getBucketIndex().get()).toString() ,context);
+
+			if(typeRel.equals("B")){
+
+				if(fromOld !=null &&fromOld.equals(from)){
+					for (Pair<Integer,Integer> vPB : tmpAList) {
+						if(vPB.getValue1()<toDegree || (vPB.getValue1()==toDegree && vPB.getValue0()<to )){
+							Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vPB.getValue0(),to);
+							if(!tmpBList.containsKey(pair)){
+								List<Integer> listFrom= new LinkedList<Integer>();
+								listFrom.add(from);
+								tmpBList.put(pair, listFrom);
+							} else{
+								List<Integer> listFrom= tmpBList.get(pair);
+								if(!listFrom.contains(from))
+									listFrom.add(from);
+							}
+						}
+					}
+				}
+			}
+
+
+			if(typeRel.equals("C") && fromOld !=null ){
+				tmpAList= new HashSet<Pair<Integer, Integer>>();
+				//WriteContextStr("tmpBList: "+new Integer(tmpBList.size()).toString(),context);
+				//cleanUp(from);
+
+				int vB=from;
+				int vC=to;
+				Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vB,vC);
+				if(tmpBList.containsKey(pair)){
+					List<Integer> listvA = tmpBList.get(pair);
+					tmpBList.remove(pair);
+					for (int vA : listvA) {
+						//ok trovato triangolo
+						WriteContext(vA,vB,vC,context);
+					}
+				}
+				//cleanUp(from);
+
+			}
+			//cleanUp(from);
 		}
 	}
 

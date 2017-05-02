@@ -35,13 +35,14 @@ public class Finder extends Configured implements Tool {
 		Path outDegree = new Path(outPartial.toString() + "/degree");
 		Path tmpoutDegree = new Path(this.partialDir.toString() + "_partial-degree");
 
-		Path outCountPath = new Path(outPartial.toString() + "/countnodes");
+		Path outCountPath = new Path(outPartial.toString() + "/countedges");
 		Path tmpoutCountPath = new Path(this.partialDir.toString() + "_partial-countnodes");
 
-		Path inHH= new Path(this.partialDir.toString() + "_in-hh");
+		Path inPartial= new Path(this.partialDir.toString() + "_in-partial");
 		Path outHH= new Path(this.outputDir.toString() + "_out-hh");
+		Path outOther= new Path(this.outputDir.toString() + "_out-ot");
 /*
-		Job jobCountNodes = Job.getInstance(super.getConf(), "jobCountNodes");
+		Job jobCountNodes = Job.getInstance(super.getConf(), "jobCountEdges");
 		jobCountNodes.setJarByClass(Finder.class);
 
 		jobCountNodes.setInputFormatClass(TextInputFormat.class);
@@ -68,10 +69,7 @@ public class Finder extends Configured implements Tool {
 		if (dfs.exists(outCountPath))
 			dfs.delete(outCountPath, true);
 		FileUtil.copyMerge(dfs,tmpoutCountPath,dfs,outCountPath, false,getConf(),"");
-*/
 
-
-/*
 		Job jobDegree = Job.getInstance(super.getConf(), "RunDegree");
 		jobDegree.setJarByClass(Finder.class);
 
@@ -104,7 +102,6 @@ public class Finder extends Configured implements Tool {
 */
 
 
-/*
 		Job jobHH = Job.getInstance(super.getConf(), "jobHH");
 		jobHH.setJarByClass(Finder.class);
 
@@ -112,29 +109,26 @@ public class Finder extends Configured implements Tool {
 
 		jobHH.setMapperClass(MapperHeavyHitter.class);
 		jobHH.setMapOutputKeyClass(BucketItem.class);
-		jobHH.setMapOutputValueClass(IntWritable.class);
+		jobHH.setMapOutputValueClass(BucketItem.class);
 
-		jobHH.setGroupingComparatorClass(GroupingComparatorHeavyHitter.class);
+		//jobHH.setGroupingComparatorClass(GroupingComparatorHeavyHitter.class);
 		jobHH.setPartitionerClass(PartitionerBucket.class);
 		jobHH.setSortComparatorClass(ComparatorHeavyHitter.class);
 
-		jobHH.setReducerClass(ReducerHeavyHitter.class);
+		jobHH.setReducerClass(ReducerOthers.class);
 		jobHH.setOutputKeyClass(Text.class);
 		jobHH.setOutputValueClass(Text.class);
 
 		jobHH.setNumReduceTasks(((int) Math.pow(this.b, 3)));
 		jobHH.setOutputFormatClass(TextOutputFormat.class);
 
-
-		// SequenceFileOutputFormat.setOutputPath(job, out);
-		// job.setOutputFormatClass(SequenceFileOutputFormat.class);
-		if (dfs.exists(inHH))
-			dfs.delete(inHH, true);
+		if (dfs.exists(inPartial))
+			dfs.delete(inPartial, true);
 		FileUtil.copy(dfs,inSource,dfs,new Path(outPartial.toString() + "/source"),false,getConf());
-		FileUtil.copyMerge(dfs,outPartial,dfs,inHH, false,getConf(),"");
+		FileUtil.copyMerge(dfs,outPartial,dfs,inPartial, false,getConf(),"");
 
 
-		FileInputFormat.addInputPath(jobHH, inHH);
+		FileInputFormat.addInputPath(jobHH, inPartial);
 
 
 
@@ -143,7 +137,8 @@ public class Finder extends Configured implements Tool {
 		FileOutputFormat.setOutputPath(jobHH, outHH);
 		jobHH.waitForCompletion(true);
 
-		*/
+
+
 		Job jobOthers = Job.getInstance(super.getConf(), "jobOthers");
 		jobOthers.setJarByClass(Finder.class);
 
@@ -151,9 +146,9 @@ public class Finder extends Configured implements Tool {
 
 		jobOthers.setMapperClass(MapperOthers.class);
 		jobOthers.setMapOutputKeyClass(BucketItem.class);
-		jobOthers.setMapOutputValueClass(IntWritable.class);
+		jobOthers.setMapOutputValueClass(BucketItem.class);
 
-		jobOthers.setGroupingComparatorClass(GroupingComparatorHeavyHitter.class);
+		//jobOthers.setGroupingComparatorClass(GroupingComparatorHeavyHitter.class);
 		jobOthers.setPartitionerClass(PartitionerBucket.class);
 		jobOthers.setSortComparatorClass(ComparatorHeavyHitter.class);
 
@@ -164,22 +159,17 @@ public class Finder extends Configured implements Tool {
 		jobOthers.setNumReduceTasks(((int) Math.pow(this.b, 3)));
 		jobOthers.setOutputFormatClass(TextOutputFormat.class);
 
-
-		// SequenceFileOutputFormat.setOutputPath(job, out);
-		// job.setOutputFormatClass(SequenceFileOutputFormat.class);
-		if (dfs.exists(inHH))
-			dfs.delete(inHH, true);
+		if (dfs.exists(inPartial))
+			dfs.delete(inPartial, true);
 		FileUtil.copy(dfs,inSource,dfs,new Path(outPartial.toString() + "/source"),false,getConf());
-		FileUtil.copyMerge(dfs,outPartial,dfs,inHH, false,getConf(),"");
+		FileUtil.copyMerge(dfs,outPartial,dfs,inPartial, false,getConf(),"");
 
 
-		FileInputFormat.addInputPath(jobOthers, inHH);
+		FileInputFormat.addInputPath(jobOthers, inPartial);
 
-
-
-		if (dfs.exists(outHH))
-			dfs.delete(outHH, true);
-		FileOutputFormat.setOutputPath(jobOthers, outHH);
+		if (dfs.exists(outOther))
+			dfs.delete(outOther, true);
+		FileOutputFormat.setOutputPath(jobOthers, outOther);
 		jobOthers.waitForCompletion(true);
 
 		return 1;
@@ -187,8 +177,9 @@ public class Finder extends Configured implements Tool {
 
 	public Finder() {
 			this.b=2;
-			//this.inputPath = new Path("INPUT/twitter/twitter-small.txt");
-			//this.outputDir = new Path("OUTPUT/twitter-small");
+			//this.inputPath = new Path("INPUT/twitter/twitter-verysmall.txt");
+			//this.outputDir = new Path("OUTPUT/twitter-verysmall");
+			//this.partialDir = new Path("PARTIAL/twitter-verysmall");
 
 			//this.inputPath = new Path("INPUT/roads/roadNet-CA.txt");
 			//this.outputDir = new Path("OUTPUT/roadNet-CA");

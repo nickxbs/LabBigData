@@ -12,8 +12,8 @@ import java.util.Hashtable;
 import java.util.Map;
 
 public class MapperHeavyHitter extends
-        Mapper<LongWritable, Text, BucketItem, IntWritable> {
-    private IntWritable toW = new IntWritable();
+        Mapper<LongWritable, Text, BucketItem, BucketItem> {
+    private BucketItem toW = new BucketItem();
     private int buckets;
     private int count = 0;
     private double sqrt = 0;
@@ -32,7 +32,7 @@ public class MapperHeavyHitter extends
             line = line.replaceAll("^\\s+", "");
             String[] sp = line.split("\\s+");// splits on TAB
             int localCount = Integer.parseInt(sp[1]);
-            count+=localCount;
+            count += localCount;
             sqrt = Math.sqrt(count);
         }
         if (line.startsWith("DEGREE")) {
@@ -53,13 +53,12 @@ public class MapperHeavyHitter extends
             if (degreeMap.containsKey(lp0) && degreeMap.containsKey(lp1)) {
                 int dg0 = degreeMap.get(lp0);
                 int dg1 = degreeMap.get(lp1);
-
                 //questo emit lo faccio solo se sono entrambi nodi HeavyHitter degree > sqrt(count)
                 if (lp0 != lp1) {
-                    if (lp0 < lp1) {
-                        SetContext(context, lp0, dg0, lp1);
+                    if (dg0 < dg1 || (dg0 == dg1 && lp0 < lp1)) {
+                        SetContext(context, lp0, dg0, lp1, dg1);
                     } else {
-                        SetContext(context, lp1, dg1, lp0);
+                        SetContext(context, lp1, dg1, lp0, dg0);
                     }
                 }
 
@@ -67,9 +66,9 @@ public class MapperHeavyHitter extends
         }
     }
 
-    private void SetContext(Context context, int from, int fromDegree, int to)
+    private void SetContext(Context context, int from, int fromDegree, int to, int toDegree)
             throws IOException, InterruptedException {
-        toW.set(to);
+        toW = new BucketItem("", -1, to, toDegree);
         for (int j = 0; j < buckets; j++) {
             int aIndex = (int) (((Math.pow(buckets, 2)) * (from % buckets)) + (buckets * (to % buckets)) + j);
             context.write(new BucketItem("A", aIndex, from, fromDegree), toW);

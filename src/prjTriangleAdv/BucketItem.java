@@ -39,7 +39,7 @@ public class BucketItem implements WritableComparable<BucketItem> {
 		this.set(new Text(rel),  new IntWritable(indexBucket), new IntWritable(from),new IntWritable(fromDegree));
 	}
 
-	private void set(Text rel, IntWritable indexBucket, IntWritable from, IntWritable fromDegree) {
+	public void set(Text rel, IntWritable indexBucket, IntWritable from, IntWritable fromDegree) {
 		_typeRel=rel;
 		_bucketIndex=indexBucket;
 		_from=from;
@@ -63,7 +63,7 @@ public class BucketItem implements WritableComparable<BucketItem> {
 	}
 
 	public int hashCode() {
-		return _bucketIndex.hashCode() * 163* 163 + _from.hashCode() * 163 + _typeRel.hashCode();
+		return _bucketIndex.hashCode() * 163* 163*163 + _from.hashCode()*163 * 163+_fromDegree.hashCode()*163 + _typeRel.hashCode();
 	}
 
 
@@ -88,11 +88,11 @@ public class BucketItem implements WritableComparable<BucketItem> {
 		if(!la.getBucketIndex().equals(lb.getBucketIndex()))
 			return (la.getBucketIndex().compareTo(lb.getBucketIndex()));
 		else{
-			if(!la.getFrom().equals(lb.getFrom()))
-				return (la.getFrom().compareTo(lb.getFrom()));
+			if(!la.getFromDegree().equals(lb.getFromDegree()))
+				return (la.getFromDegree().compareTo(lb.getFromDegree()));
 			else{
-				if(!la.getTypeRel().equals(lb.getTypeRel()))
-					return (la.getTypeRel().compareTo(lb.getTypeRel()));
+				if(!la.getFrom().equals(lb.getFrom()))
+					return (la.getFrom().compareTo(lb.getFrom()));
 			}
 		}
 		return 1;

@@ -5,22 +5,22 @@
 %%% Date: February 2011
 
 %%% Preamble
-\documentclass[paper=a4, fontsize=11pt]	% Article class of KOMA-script with 11pt font and a4 format
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
 
 
 \usepackage[italian]{babel}															% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
-%\usepackage{amsmath,amsfonts,amsthm}										% Math packages
-%\usepackage[pdftex]{graphicx}														% Enable pdflatex
+\usepackage{amsmath,amsfonts,amsthm}										% Math packages
+\usepackage[pdftex]{graphicx}														% Enable pdflatex
 %\usepackage{color,transparent}													% If you use color and/or transparency
-%\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
-%\usepackage{epstopdf}																	% Converts .eps to .pdf
-%\usepackage{subfig}																		% Subfigures
-%\usepackage{booktabs}																	% Nicer tables
-%\usepackage[utf8x]{inputenc} 
-%\usepackage{listings}
-%\usepackage{xcolor}
-%\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+\usepackage{epstopdf}																	% Converts .eps to .pdf
+\usepackage{subfig}																		% Subfigures
+\usepackage{booktabs}																	% Nicer tables
+\usepackage[utf8x]{inputenc} 
+\usepackage{listings}
+\usepackage{xcolor}
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
 
   \usepackage{courier}
 
@@ -125,7 +125,7 @@
 \begin{document}
 \maketitle
 \section{Introduzione}
-Lo scopo del progetto è quello di implementare un algoritmo per calcolare il numero di triangoli presenti in un grafo, utilizzando le tecniche di MapReduce e il Framework Haddop.
+Lo scopo del progetto è quello di implementare un algoritmo per calcolare il numero di triangoli presenti in un grafo non diretto, utilizzando le tecniche di MapReduce e il Framework Haddop.
 
 
 \section{Il problema}
@@ -134,14 +134,13 @@ ha avuto come diretta conseguenza un  incremento della quantità di dati che dev
 Un social network può essere rappresentato matematicamente da un grafo e una caratteristica molto interessante di questo grafo e' il numero di 
 triangoli\footnote{Dati 3 nodi (A,B,C) in un grafo, se un nodo A si relaziona sia con B che con C, nel grafo viene a formarsi un triangolo se esiste anche la relazione che lega B con C.} 
 contenuti in sesso. 
-Il numero di questi triangoli rapportato al numero totale di triangoli che esisterebbero con una distribuzione casuale delle relazioni può essere un indice di quanto sia social il grafo analizzato.\\
-La conoscenza di questa informazione potrebbe essere utilizzata su larga scala per valutare particolari aspetti sociologigi o più semplicemente epr scopi commerciali.\\
+Il numero di questi triangoli rapportato al numero totale di triangoli che esisterebbero con una distribuzione casuale e uniforme delle relazioni può essere un indice di quanto sia social il grafo analizzato.\\
 \\
 \\
 \section{Strumenti e Framework}
-Per progettare, implementare e testare il programma per il conteggio dei triangoli presenti in un grafo ho utilizzeto:
+Per progettare, implementare e testare il programma ho utilizzato:
 \paragraph{Infrastruttura}
-Per semplicità e rapidita di configurazione o deciso di utilizzare Claudera, un distribuzione preconfigurata di Hadoop utlilizzando la versione Docker
+Per semplicità e rapidita di configurazione ho deciso di utilizzare Claudera come distribuzione di Hadoop nella sua versione per Docker.
 
 \paragraph{Ambiente di sviluppo}
 Il programma dovendo sfruttare il Framework Hadoop è stato scritto in Java sfruttando le API di Hadoop 2.6 Come IDE di sviluppo ho utilizzato IntelliJ.  
@@ -243,12 +242,13 @@ Questo algoritmo se dal punto di vista implementativo è stato estremamente semp
 
 \subsection{Algoritmo 4 Jobs}
 L'algoritmo a 4 Jobs prevede prima una fase in cui i primi 2 Jobs costuiscono una struttura dati che poi verrà usata negli ultimi 2 Jobs, i quali andranno ad eseguire il calcolo dei triangoli.
-\paragraph{Fase 1}
-Il primo Job si occupa semplicemente di contare il numero degli archi presente nel grafo.
-Il secondo Job analizza ogni node e ne calcola il grado
-\paragraph{Fase 2}
-Nella seconda fase viene eseguito l'algoritmo vero e proprio.
+\paragraph{Job 1}
+Il primo Job è molto semplice e per ogni arco emette un valore 1. Il redoucer conta tutti questi valori, ne fa la somma che poi scrive come output.
+\paragraph{Job 2}
+Il mapper del secondo Job per ogni arco (A,B) emette 2 valori (A 1 e B 1) un per ogni nodo che compone (A,B).\\
+Le funzioni di grouping e il partitioner mi garantiscono che tutti i valori di uno stesso nodo vengono accumulati nello stesso redoucer e nello stesso ciclo iterativo. Completato il ciclo scrive in output per ogni nodo la somma di tutti i valori emessi dal mapper. Questo valore rappresenta il grado del nodo.
 \paragraph{Job 3}
+Nella seconda fase viene eseguito l'algoritmo vero e proprio.\\
 Nel Job 3 l'algoritmo estrapola tutti quei triangoli che sono composti da nodi Heavy Hitter, ovvero con un grado maggiore alla radice di m dove m è il numero degli archi delgrafo.
 Il mapper utilizzando il lavoro dei Jobs precedenti costruisce un indice con i gradi di ogni nodo e successuvamente elimina dall'analisi tutti i nodi non HH.\\
 Con questo sottografo costruisce una suddivisione delle relazioni definendo delle chiavi strutturate e abbinate ai vari task di Reduce. Questa suddivisione viene realizzata definendo una funzione Hash sul valore del nodo stesso.\\
@@ -266,15 +266,14 @@ Grazie a questa caratteristica il mapper esclude le relazioni di tipo A e B in c
 Il reducer è lo stesso del Job4.
 
 
-
-\paragraph{Ottimizzazioni}
-
-
-\section{Complessità}
+\section{Valutazioni}
 \paragraph{Algoritmo 2 Jobs}
-\paragraph{Algoritmo Single Jobs}
+Semplice ma ha evidenziato problemi analizzando grafi di grandi dimensioni. 
+\paragraph{Algoritmo 4 Jobs}
+Più complesso ottimizzato dal punto di vista del tempo, tuttavia presenta sempre dei problemi nell'utilizzo della memoria. Sicuramente è possibile fare delle ottimizzazioni utilizzando delle strutture dati di opportune.\\ 
+Nella mia implementazione ho cercato di utilizzare le strutture dati che mi permettevano di avere tempi di accesso rapidi e che non utlizzassero troppa memoria. Purtroppo ho notato che eseuendo più volte il programma rimane allocata della memoria, questo mi fa presupporre che vi sono alcuni memory leak.\\
 
-
-\section{Osservazioni}
+\section{Sviluppi futuri}
+Oltre alle ottimizzazioni nell'utilizzo di strutture dati più performanti, mi sarebbe piaciuto generare come artefatto del processo un immagine dock pronta all'uso. Sarebbe interessante provare a fare un deploy per testare questo container in un ambiente cloud che supporta Docker.
 
 \end{document}

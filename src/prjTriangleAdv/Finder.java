@@ -41,7 +41,7 @@ public class Finder extends Configured implements Tool {
 		Path inPartial= new Path(this.partialDir.toString() + "_in-partial");
 		Path outHH= new Path(this.outputDir.toString() + "_out-hh");
 		Path outOther= new Path(this.outputDir.toString() + "_out-ot");
-/*
+
 		Job jobCountNodes = Job.getInstance(super.getConf(), "jobCountEdges");
 		jobCountNodes.setJarByClass(Finder.class);
 
@@ -99,7 +99,6 @@ public class Finder extends Configured implements Tool {
 		if (dfs.exists(outDegree))
 			dfs.delete(outDegree, true);
 		FileUtil.copyMerge(dfs,tmpoutDegree,dfs,outDegree, false,getConf(),"");
-*/
 
 
 		Job jobHH = Job.getInstance(super.getConf(), "jobHH");

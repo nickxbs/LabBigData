@@ -1,0 +1,1682 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  2 MAY 2017 23:55
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**BigData.tex
+(./BigData.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+Runaway argument?
+! Paragraph ended before \@fileswith@ptions was complete.
+<to be read again> 
+                   \par 
+l.9 
+    
+? r
+OK, entering \nonstopmode...
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.301     \@empty}
+                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\@ifundefined ...dafter \ifx \csname #1\endcsname 
+                                                  \relax \expandafter \@firs...
+l.301     \@empty}
+                  
+I'm ignoring this, since I wasn't doing a \csname.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.301     \@empty}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no f in font nullfont!
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.301     \@empty}
+                  
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.310 \ProcessOptions*
+                      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\@use@ption ...sname ds@\CurrentOption \endcsname 
+                                                  
+l.310 \ProcessOptions*
+                      
+I'm ignoring this, since I wasn't doing a \csname.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.310 \ProcessOptions*
+                      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+<argument> ...csname ds@\CurrentOption \endcsname 
+                                                  \@empty \fi \fi 
+l.310 \ProcessOptions*
+                      
+I'm ignoring this, since I wasn't doing a \csname.
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2015/03/26 v1.3n Italian support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count79
+\U@D=\dimen102
+)
+\it@lettering=\count80
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 301--96
+[]
+ []
+
+\it@doublequoteactive=\count81
+\it@ISOcompliance=\count82
+)
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.310 \ProcessOptions*
+                      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+<argument> ...csname ds@\CurrentOption \endcsname 
+                                                  \relax 
+l.310 \ProcessOptions*
+                      
+I'm ignoring this, since I wasn't doing a \csname.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count83
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\MT@toks=\toks15
+\MT@count=\count84
+LaTeX Info: Redefining \textls on input line 774.
+\MT@outer@kern=\dimen103
+LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
+\MT@listname@count=\count85
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 916.
+LaTeX Info: Redefining \lslig on input line 916.
+\MT@outer@space=\skip41
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74    }
+         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.74    }
+         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `normalsize'
+(microtype)                in font set `basicmath' on input line 74.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `basicmath' on input line 74.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `basicmath' on input line 74.
+
+
+Package microtype Warning: Could not parse font size `large'
+(microtype)                in font set `basicmath' on input line 74.
+
+! Extra }, or forgotten \endgroup.
+\MT@clist@function ...,footnotesize,small,large}}}
+                                                  
+l.74    }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Package microtype Warning: Could not parse font size `ex'
+(microtype)                in font set `basicmath' on input line 74.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.74    }
+         
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74    }
+         
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 74.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 74.
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.74    }
+         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.74    }
+         
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+Package microtype Warning: Could not parse font size `sp'
+(microtype)                in font set `basicmath' on input line 74.
+
+
+Package microtype Warning: Could not parse font size `kn'
+(microtype)                in font set `basicmath' on input line 74.
+
+
+Package microtype Warning: Could not parse font size `tr'
+(microtype)                in font set `basicmath' on input line 74.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81    }
+         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.81    }
+         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `normalsize'
+(microtype)                in font set `basictext' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `basictext' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `basictext' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `large'
+(microtype)                in font set `basictext' on input line 81.
+
+! Extra }, or forgotten \endgroup.
+\MT@clist@function ...,footnotesize,small,large}}}
+                                                  
+l.81    }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Package microtype Warning: Could not parse font size `ex'
+(microtype)                in font set `basictext' on input line 81.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.81    }
+         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.81    }
+         
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+Package microtype Warning: Could not parse font size `sp'
+(microtype)                in font set `basictext' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `kn'
+(microtype)                in font set `basictext' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `tr'
+(microtype)                in font set `basictext' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 91.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 91.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 91.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 91.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 91.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 96.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 96.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 96.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 96.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 96.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99    { font = */*/*/*/* }
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.99    { font = */*/*/*/* }
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 99.
+
+! Extra }, or forgotten \endgroup.
+\MT@clist@function ...normalfont}{font=*/*/*/*/*}}
+                                                  
+l.99    { font = */*/*/*/* }
+                            
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `ex////'. Using `cmr' instead on input line 99.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `ex////'. Using `m' instead on input line 99.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `ex////'. Using `n' instead on input line 99.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `ex////'. Using `\normalsize' instead on input line 
+99.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99    { font = */*/*/*/* }
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.99    { font = */*/*/*/* }
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 99.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `sp////'. Using `cmr' instead on input line 99.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `sp////'. Using `m' instead on input line 99.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `sp////'. Using `n' instead on input line 99.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `sp////'. Using `\normalsize' instead on input line 
+99.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99    { font = */*/*/*/* }
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.99    { font = */*/*/*/* }
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 99.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `kn////'. Using `cmr' instead on input line 99.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `kn////'. Using `m' instead on input line 99.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `kn////'. Using `n' instead on input line 99.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `kn////'. Using `\normalsize' instead on input line 
+99.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99    { font = */*/*/*/* }
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.99    { font = */*/*/*/* }
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 99.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `tr////'. Using `cmr' instead on input line 99.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `tr////'. Using `m' instead on input line 99.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `tr////'. Using `n' instead on input line 99.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `tr////'. Using `\normalsize' instead on input line 
+99.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99    { font = */*/*/*/* }
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.99    { font = */*/*/*/* }
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 99.
+
+
+! Package microtype Error: The expansion set `basictext' is not declared.
+(microtype)                Cannot make it the default set. Using set
+(microtype)                `all' instead.
+
+See the microtype package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 ...icrotypeSetDefault[expansion] {basictext}
+                                                  
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+! Package microtype Error: The spacing set `basictext' is not declared.
+(microtype)                Cannot make it the default set. Using set
+(microtype)                `all' instead.
+
+See the microtype package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106 ...icrotypeSetDefault[spacing]   {basictext}
+                                                  
+(That was another \errmessage.)
+
+)
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.2190 \MT@ProcessOptionsWithKV{MT}
+                                   
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.24 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.24 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (21.0pt too wide) in paragraph at lines 74--24
+[]$[]$ 
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12PSNFSS-v9.2a(WaS)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28v1.5qLaTeX2epackageforverbatimenhancements
+\every@verbatim=\toks16
+\verbatim@line=\toks17
+\verbatim@in@stream=\read1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Styleoption:`fancyvrb'v2.7a,withDG/SPQRfixes,andfirstline=lastlinefix <2008/02/
+07>(tvz)
+\FV@CodeLineNo=\count86
+\FV@InFile=\read2
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count87
+\FV@StepNumber=\count88
+\FV@OutFile=\write3
+)
+! Missing control sequence inserted.
+<inserted text> 
+                \inaccessible 
+l.30 \DefineShortVerb{\|}
+                         								% delimiter to display inline verbatim text
+Please don't say `\def cs{...}', say `\def\cs{...}'.
+I've inserted an inaccessible control sequence so that your
+definition will be completed without mixing me up too badly.
+You can recover graciously from this error, if you're
+careful; see exercise 27.2 in The TeXbook.
+
+(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25v2.0.2Commandstochangeallsectionalheadingstyles
+
+
+LaTeX Warning: Command \underline  has changed.
+               Check if current package is valid.
+
+
+! Package sectsty Error: Thesectstypackagedoesn'tworkwith
+(sectsty)                thisdocumentclass.
+
+See the sectsty package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.296     scrartcl, scrbook, and scrreprt.}
+                                           
+Thesectstypackageonlyworkswiththefollowingclasses:
+thestandardLaTeXdocumentclasses
+article,report,andbook;and
+theKOMA-Scriptclasses
+scrartcl,scrbook,andscrreprt.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip42
+\f@ncyO@elh=\skip43
+\f@ncyO@erh=\skip44
+\f@ncyO@olh=\skip45
+\f@ncyO@orh=\skip46
+\f@ncyO@elf=\skip47
+\f@ncyO@erf=\skip48
+\f@ncyO@olf=\skip49
+\f@ncyO@orf=\skip50
+)
+! Undefined control sequence.
+l.56 \numberwithin
+                  {equation}{section}															% Equationnumbering: sec...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 \numberwithin{e
+                    quation}{section}															% Equationnumbering: sec...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.57 \numberwithin
+                  {figure}{section}																% Figurenumbering: sectio...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.58 \numberwithin
+                  {table}{section}																% Tablenumbering: section....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.61 \definecolor
+                 {pblue}{rgb}{0.13,0.13,1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.62 \definecolor
+                 {pgreen}{rgb}{0,0.5,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.63 \definecolor
+                 {pred}{rgb}{0.9,0,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.64 \definecolor
+                 {pgrey}{rgb}{0.46,0.45,0.48}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10v1.1eStandardLaTeXColor(DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driverfile:pdftex.def on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+! Bad character code (356).
+<to be read again> 
+                   \catcode 
+l.286 \catcode
+              64 11 % @
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6411).
+<to be read again> 
+                   \def 
+l.287 \def
+          \GPT@catcodes#1{%
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (910).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6411).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6112).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3210).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3312).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3412).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (356).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (363).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3714).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (384).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3912).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4012).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4112).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4212).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4312).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4412).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4512).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4612).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4712).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (5812).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (5912).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6012).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6112).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6212).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6312).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6411).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9112).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (920).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9312).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (947).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (958).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9612).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (1231).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (12412).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (1252).
+<to be read again> 
+                   \catcode 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (12613).
+<to be read again> 
+                   \let 
+l.371 \GPT@catcodes{}
+                     
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \let 
+l.371 \GPT@catcodes{}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   7
+l.385       \ifnum\expandafter`\pdftexrevision
+                                              <`n %
+I was expecting to see `<', `=', or `>'. Didn't.
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+
+! Bad character code (329).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3312).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3412).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (356).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3612).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3714).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3812).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (3912).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4012).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4112).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4211).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4312).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4412).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4512).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4612).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (4712).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (5812).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (5912).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6012).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6112).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6212).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6312).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6411).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9112).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (920).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9312).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (947).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9512).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (9612).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (1231).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (12413).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (1252).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (12612).
+<to be read again> 
+                   \catcode 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (356).
+<to be read again> 
+                   \relax 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Bad character code (6411).
+<to be read again> 
+                   \relax 
+l.1962 \GPT@AtEnd
+                 
+A character number must be between 0 and 255.
+I changed this one to zero.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.1962 \GPT@AtEnd
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+)
+! Undefined control sequence.
+l.152 \AtBeginDo
+                cument{\let\default@color\current@color}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.181   \define
+               color{black}{gray}{0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.182   \define
+               color{white}{gray}{1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.185   \define
+               color{red}{rgb}{1,0,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.186   \define
+               color{green}{rgb}{0,1,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.187   \define
+               color{blue}{rgb}{0,0,1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.190   \define
+               color{cyan}{cmyk}{1,0,0,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.191   \define
+               color{magenta}{cmyk}{0,1,0,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.192   \define
+               color{yellow}{cmyk}{0,0,1,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.194 \Gin@
+           codes
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+! Undefined control sequence.
+l.24 \ProvidesPa
+                ckage{xcolor}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Use of \c doesn't match its definition.
+l.42 \expandafter\edef\cs
+                         name XC@catcodes\endcsname
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Missing control sequence inserted.
+<inserted text> 
+                \inaccessible 
+l.42 \expandafter\edef\csn
+                          ame XC@catcodes\endcsname
+Please don't say `\def cs{...}', say `\def\cs{...}'.
+I've inserted an inaccessible control sequence so that your
+definition will be completed without mixing me up too badly.
+You can recover graciously from this error, if you're
+careful; see exercise 27.2 in The TeXbook.
+
+! Use of \c doesn't match its definition.
+l.43  {\ca
+          tcode33 \the\catcode33 % !
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 3215 strings out of 493013
+ 48213 string characters out of 6135683
+ 150596 words of memory out of 5000000
+ 6790 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,6n,43p,849b,1084s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

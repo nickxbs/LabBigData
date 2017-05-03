@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  2 MAY 2017 23:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  3 MAY 2017 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,1248 +6,231 @@ entering extended mode
 (./BigData.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-Runaway argument?
-! Paragraph ended before \@fileswith@ptions was complete.
-<to be read again> 
-                   \par 
-l.9 
-    
-? r
-OK, entering \nonstopmode...
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Document Class: scrartcl 2016/06/14 v3.21 KOMA-Script document class (article)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2016/06/14 v3.21 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2016/06/14 v3.21 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2016/06/14 v3.21 KOMA-Script package (loading files)
+
+Package scrlfile, 2016/06/14 v3.21 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+))) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2016/06/14 v3.21 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip41
+\scr@dte@tocline@numbox=\box26
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 130.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 131.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 132.
+Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input l
+ine 2052.
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2016/06/14 v3.21 KOMA-Script font size class option (11pt
+)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2016/06/14 v3.21 KOMA-Script package (type area)
+
+Package typearea, 2016/06/14 v3.21 KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip42
+\ta@div=\count79
+\ta@hblk=\skip43
+\ta@vblk=\skip44
+\ta@temp=\skip45
+\footheight=\skip46
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 17.3562pt
+(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1529.
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\scr@dte@part@maxnumwidth=\skip47
+\scr@dte@section@maxnumwidth=\skip48
+\scr@dte@subsection@maxnumwidth=\skip49
+\scr@dte@subsubsection@maxnumwidth=\skip50
+\scr@dte@paragraph@maxnumwidth=\skip51
+\scr@dte@subparagraph@maxnumwidth=\skip52
+LaTeX Info: Redefining \textsubscript on input line 4036.
+\abovecaptionskip=\skip53
+\belowcaptionskip=\skip54
+\c@pti@nb@sid@b@x=\box27
+\c@figure=\count86
+\c@table=\count87
+Class scrartcl Info: Redefining `\numberline' on input line 5049.
+\bibindent=\dimen102
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/04/23 3.9r The Babel package
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@classoptionslist 
-l.301     \@empty}
-                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-\@ifundefined ...dafter \ifx \csname #1\endcsname 
-                                                  \relax \expandafter \@firs...
-l.301     \@empty}
-                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.301     \@empty}
-                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no . in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no f in font nullfont!
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@classoptionslist 
-l.301     \@empty}
-                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@classoptionslist 
-l.310 \ProcessOptions*
-                      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-\@use@ption ...sname ds@\CurrentOption \endcsname 
-                                                  
-l.310 \ProcessOptions*
-                      
-I'm ignoring this, since I wasn't doing a \csname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@classoptionslist 
-l.310 \ProcessOptions*
-                      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-<argument> ...csname ds@\CurrentOption \endcsname 
-                                                  \@empty \fi \fi 
-l.310 \ProcessOptions*
-                      
-I'm ignoring this, since I wasn't doing a \csname.
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/04/23 3.9r Babel common definitions
-\babel@savecnt=\count79
-\U@D=\dimen102
+\babel@savecnt=\count88
+\U@D=\dimen103
 )
-\it@lettering=\count80
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 301--96
-[]
- []
-
-\it@doublequoteactive=\count81
-\it@ISOcompliance=\count82
-)
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@classoptionslist 
-l.310 \ProcessOptions*
-                      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-<argument> ...csname ds@\CurrentOption \endcsname 
-                                                  \relax 
-l.310 \ProcessOptions*
-                      
-I'm ignoring this, since I wasn't doing a \csname.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+\it@lettering=\count89
+\it@doublequoteactive=\count90
+\it@ISOcompliance=\count91
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count83
+\etb@tempcnta=\count92
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
-)
 \MT@toks=\toks15
-\MT@count=\count84
+\MT@count=\count93
 LaTeX Info: Redefining \textls on input line 774.
-\MT@outer@kern=\dimen103
+\MT@outer@kern=\dimen104
 LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
-\MT@listname@count=\count85
+\MT@listname@count=\count94
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 916.
 LaTeX Info: Redefining \lslig on input line 916.
-\MT@outer@space=\skip41
+\MT@outer@space=\skip55
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74    }
-         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.74    }
-         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `normalsize'
-(microtype)                in font set `basicmath' on input line 74.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `basicmath' on input line 74.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `basicmath' on input line 74.
-
-
-Package microtype Warning: Could not parse font size `large'
-(microtype)                in font set `basicmath' on input line 74.
-
-! Extra }, or forgotten \endgroup.
-\MT@clist@function ...,footnotesize,small,large}}}
-                                                  
-l.74    }
-         
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Package microtype Warning: Could not parse font size `ex'
-(microtype)                in font set `basicmath' on input line 74.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.74    }
-         
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74    }
-         
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 74.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 74.
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.74    }
-         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.74    }
-         
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-
-Package microtype Warning: Could not parse font size `sp'
-(microtype)                in font set `basicmath' on input line 74.
-
-
-Package microtype Warning: Could not parse font size `kn'
-(microtype)                in font set `basicmath' on input line 74.
-
-
-Package microtype Warning: Could not parse font size `tr'
-(microtype)                in font set `basicmath' on input line 74.
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81    }
-         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.81    }
-         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `normalsize'
-(microtype)                in font set `basictext' on input line 81.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `basictext' on input line 81.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `basictext' on input line 81.
-
-
-Package microtype Warning: Could not parse font size `large'
-(microtype)                in font set `basictext' on input line 81.
-
-! Extra }, or forgotten \endgroup.
-\MT@clist@function ...,footnotesize,small,large}}}
-                                                  
-l.81    }
-         
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Package microtype Warning: Could not parse font size `ex'
-(microtype)                in font set `basictext' on input line 81.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.81    }
-         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.81    }
-         
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-
-Package microtype Warning: Could not parse font size `sp'
-(microtype)                in font set `basictext' on input line 81.
-
-
-Package microtype Warning: Could not parse font size `kn'
-(microtype)                in font set `basictext' on input line 81.
-
-
-Package microtype Warning: Could not parse font size `tr'
-(microtype)                in font set `basictext' on input line 81.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `footnotesize' on input line 91.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `footnotesize' on input line 91.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `footnotesize' on input line 91.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `footnotesize' on input line 91.
-
-
-Package microtype Warning: Could not parse font size `small'
-(microtype)                in font set `footnotesize' on input line 91.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `scriptsize' on input line 96.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `scriptsize' on input line 96.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `scriptsize' on input line 96.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `scriptsize' on input line 96.
-
-
-Package microtype Warning: Could not parse font size `footnotesize'
-(microtype)                in font set `scriptsize' on input line 96.
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99    { font = */*/*/*/* }
-                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.99    { font = */*/*/*/* }
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `*'
-(microtype)                in font set `normalfont' on input line 99.
-
-! Extra }, or forgotten \endgroup.
-\MT@clist@function ...normalfont}{font=*/*/*/*/*}}
-                                                  
-l.99    { font = */*/*/*/* }
-                            
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Package microtype Warning: family axis is empty in font specification
-(microtype)                `ex////'. Using `cmr' instead on input line 99.
-
-
-Package microtype Warning: series axis is empty in font specification
-(microtype)                `ex////'. Using `m' instead on input line 99.
-
-
-Package microtype Warning: shape axis is empty in font specification
-(microtype)                `ex////'. Using `n' instead on input line 99.
-
-
-Package microtype Warning: size axis is empty in font specification
-(microtype)                `ex////'. Using `\normalsize' instead on input line 
-99.
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99    { font = */*/*/*/* }
-                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.99    { font = */*/*/*/* }
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `*'
-(microtype)                in font set `normalfont' on input line 99.
-
-
-Package microtype Warning: family axis is empty in font specification
-(microtype)                `sp////'. Using `cmr' instead on input line 99.
-
-
-Package microtype Warning: series axis is empty in font specification
-(microtype)                `sp////'. Using `m' instead on input line 99.
-
-
-Package microtype Warning: shape axis is empty in font specification
-(microtype)                `sp////'. Using `n' instead on input line 99.
-
-
-Package microtype Warning: size axis is empty in font specification
-(microtype)                `sp////'. Using `\normalsize' instead on input line 
-99.
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99    { font = */*/*/*/* }
-                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.99    { font = */*/*/*/* }
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `*'
-(microtype)                in font set `normalfont' on input line 99.
-
-
-Package microtype Warning: family axis is empty in font specification
-(microtype)                `kn////'. Using `cmr' instead on input line 99.
-
-
-Package microtype Warning: series axis is empty in font specification
-(microtype)                `kn////'. Using `m' instead on input line 99.
-
-
-Package microtype Warning: shape axis is empty in font specification
-(microtype)                `kn////'. Using `n' instead on input line 99.
-
-
-Package microtype Warning: size axis is empty in font specification
-(microtype)                `kn////'. Using `\normalsize' instead on input line 
-99.
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99    { font = */*/*/*/* }
-                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.99    { font = */*/*/*/* }
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `*'
-(microtype)                in font set `normalfont' on input line 99.
-
-
-Package microtype Warning: family axis is empty in font specification
-(microtype)                `tr////'. Using `cmr' instead on input line 99.
-
-
-Package microtype Warning: series axis is empty in font specification
-(microtype)                `tr////'. Using `m' instead on input line 99.
-
-
-Package microtype Warning: shape axis is empty in font specification
-(microtype)                `tr////'. Using `n' instead on input line 99.
-
-
-Package microtype Warning: size axis is empty in font specification
-(microtype)                `tr////'. Using `\normalsize' instead on input line 
-99.
-
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99    { font = */*/*/*/* }
-                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
-                                                  \fi \MT@ifdimen \MT@val {\...
-l.99    { font = */*/*/*/* }
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package microtype Warning: Could not parse font size `*'
-(microtype)                in font set `normalfont' on input line 99.
-
-
-! Package microtype Error: The expansion set `basictext' is not declared.
-(microtype)                Cannot make it the default set. Using set
-(microtype)                `all' instead.
-
-See the microtype package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.105 ...icrotypeSetDefault[expansion] {basictext}
-                                                  
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-
-! Package microtype Error: The spacing set `basictext' is not declared.
-(microtype)                Cannot make it the default set. Using set
-(microtype)                `all' instead.
-
-See the microtype package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.106 ...icrotypeSetDefault[spacing]   {basictext}
-                                                  
-(That was another \errmessage.)
-
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen105
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen106
 )
-! Missing \endcsname inserted.
-<to be read again> 
-                   \@classoptionslist 
-l.2190 \MT@ProcessOptionsWithKV{MT}
-                                   
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
-! Missing $ inserted.
-<inserted text> 
-                $
-l.24 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.24 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (21.0pt too wide) in paragraph at lines 74--24
-[]$[]$ 
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
-Package: courier 2005/04/12PSNFSS-v9.2a(WaS)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks17
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks18
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks19
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28v1.5qLaTeX2epackageforverbatimenhancements
-\every@verbatim=\toks16
-\verbatim@line=\toks17
-\verbatim@in@stream=\read1
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2008/02/07
-
-Styleoption:`fancyvrb'v2.7a,withDG/SPQRfixes,andfirstline=lastlinefix <2008/02/
-07>(tvz)
-\FV@CodeLineNo=\count86
-\FV@InFile=\read2
-\FV@TabBox=\box26
-\c@FancyVerbLine=\count87
-\FV@StepNumber=\count88
-\FV@OutFile=\write3
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip59
+\thm@postskip=\skip60
+\thm@headsep=\skip61
+\dth@everypar=\toks26
 )
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.30 \DefineShortVerb{\|}
-                         								% delimiter to display inline verbatim text
-Please don't say `\def cs{...}', say `\def\cs{...}'.
-I've inserted an inaccessible control sequence so that your
-definition will be completed without mixing me up too badly.
-You can recover graciously from this error, if you're
-careful; see exercise 27.2 in The TeXbook.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
-Package: sectsty 2002/02/25v2.0.2Commandstochangeallsectionalheadingstyles
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
-
-LaTeX Warning: Command \underline  has changed.
-               Check if current package is valid.
-
-
-! Package sectsty Error: Thesectstypackagedoesn'tworkwith
-(sectsty)                thisdocumentclass.
-
-See the sectsty package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.296     scrartcl, scrbook, and scrreprt.}
-                                           
-Thesectstypackageonlyworkswiththefollowingclasses:
-thestandardLaTeXdocumentclasses
-article,report,andbook;and
-theKOMA-Scriptclasses
-scrartcl,scrbook,andscrreprt.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip42
-\f@ncyO@elh=\skip43
-\f@ncyO@erh=\skip44
-\f@ncyO@olh=\skip45
-\f@ncyO@orh=\skip46
-\f@ncyO@elf=\skip47
-\f@ncyO@erf=\skip48
-\f@ncyO@olf=\skip49
-\f@ncyO@orf=\skip50
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-! Undefined control sequence.
-l.56 \numberwithin
-                  {equation}{section}															% Equationnumbering: sec...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.56 \numberwithin{e
-                    quation}{section}															% Equationnumbering: sec...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-l.57 \numberwithin
-                  {figure}{section}																% Figurenumbering: sectio...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.58 \numberwithin
-                  {table}{section}																% Tablenumbering: section....
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.61 \definecolor
-                 {pblue}{rgb}{0.13,0.13,1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.62 \definecolor
-                 {pgreen}{rgb}{0,0.5,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.63 \definecolor
-                 {pred}{rgb}{0.9,0,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.64 \definecolor
-                 {pgrey}{rgb}{0.46,0.45,0.48}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10v1.1eStandardLaTeXColor(DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package color Info: Driverfile:pdftex.def on input line 147.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
-
-! Bad character code (356).
-<to be read again> 
-                   \catcode 
-l.286 \catcode
-              64 11 % @
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6411).
-<to be read again> 
-                   \def 
-l.287 \def
-          \GPT@catcodes#1{%
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (910).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6411).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6112).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (3210).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (3312).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (3412).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (356).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (363).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (3714).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (384).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (3912).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4012).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4112).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4212).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4312).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4412).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4512).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4612).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (4712).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (5812).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (5912).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6012).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6112).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6212).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6312).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6411).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9112).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (920).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9312).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (947).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (958).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9612).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (1231).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (12412).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (1252).
-<to be read again> 
-                   \catcode 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (12613).
-<to be read again> 
-                   \let 
-l.371 \GPT@catcodes{}
-                     
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \let 
-l.371 \GPT@catcodes{}
-                     
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing = inserted for \ifnum.
-<to be read again> 
-                   7
-l.385       \ifnum\expandafter`\pdftexrevision
-                                              <`n %
-I was expecting to see `<', `=', or `>'. Didn't.
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -1255,428 +238,397 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count89
+\Gread@gobject=\count107
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-! Bad character code (329).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen116
+\captionmargin@=\dimen117
+\captionwidth=\dimen118
+\caption@tempdima=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+Package caption Info: KOMA-Script document class.
+\c@ContinuedFloat=\count108
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-! Bad character code (3312).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-! Bad character code (3412).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-! Bad character code (356).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-! Bad character code (3612).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-! Bad character code (3714).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-! Bad character code (3812).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
 
-! Bad character code (3912).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
-! Bad character code (4012).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count109
+\sf@farskip=\skip62
+\sf@captopadj=\dimen123
+\sf@capskip=\skip63
+\sf@nearskip=\skip64
+\c@subfigure=\count110
+\c@subfigure@save=\count111
+\c@lofdepth=\count112
+\c@subtable=\count113
+\c@subtable@save=\count114
+\c@lotdepth=\count115
+\sf@top=\skip65
+\sf@bottom=\skip66
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count116
+\@cmidlb=\count117
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count118
+\@lastruleclass=\count119
+\@thisrulewidth=\dimen136
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks27
+\inpenc@posthook=\toks28
 
-! Bad character code (4112).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
-! Bad character code (4211).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count120
+\uc@combtoks=\toks29
+\uc@combtoksb=\toks30
+\uc@temptokena=\toks31
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count121
+\lst@gtempboxa=\box30
+\lst@token=\toks32
+\lst@length=\count122
+\lst@currlwidth=\dimen137
+\lst@column=\count123
+\lst@pos=\count124
+\lst@lostspace=\dimen138
+\lst@width=\dimen139
+\lst@newlines=\count125
+\lst@lineno=\count126
+\lst@maxwidth=\dimen140
 
-! Bad character code (4312).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count127
+\lst@skipnumbers=\count128
+\lst@framebox=\box31
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-! Bad character code (4412).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-! Bad character code (4512).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks33
+\verbatim@line=\toks34
+\verbatim@in@stream=\read1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
 
-! Bad character code (4612).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count129
+\FV@InFile=\read2
+\FV@TabBox=\box32
+\c@FancyVerbLine=\count130
+\FV@StepNumber=\count131
+\FV@OutFile=\write3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
 
-! Bad character code (4712).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+Class scrartcl Warning: Usage of package `fancyhdr' together
+(scrartcl)              with a KOMA-Script class is not recommended.
+(scrartcl)              I'd suggest to use 
+(scrartcl)              package `scrlayer-scrpage'.
+(scrartcl)              Nevertheless, using requested
+(scrartcl)              package `fancyhdr' on input line 48.
 
-! Bad character code (5812).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip67
+\f@ncyO@elh=\skip68
+\f@ncyO@erh=\skip69
+\f@ncyO@olh=\skip70
+\f@ncyO@orh=\skip71
+\f@ncyO@elf=\skip72
+\f@ncyO@erf=\skip73
+\f@ncyO@olf=\skip74
+\f@ncyO@orf=\skip75
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./BigData.aux)
+\openout1 = `BigData.aux'.
 
-! Bad character code (5912).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Info: Redefining \it@ocap on input line 125.
+LaTeX Info: Redefining \it@ccap on input line 125.
 
-! Bad character code (6012).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+File italian.ldf warning: 
+italian.ldf    With OT1 encoding guillemets are poorly faked
+italian.ldf    Use T1 encoding
+italian.ldf    or specify a font with command \CaporaliFrom
+italian.ldf    See the documentation concerning the babel-italian typesetting 
+italian.ldf    on input line 125.
 
-! Bad character code (6112).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
+LaTeX Info: Redefining \microtypecontext on input line 125.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count132
+\scratchdimen=\dimen141
+\scratchbox=\box33
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen142
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks36
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+ (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+\c@lstlisting=\count138
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 127.
 
-! Bad character code (6212).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
 
-! Bad character code (6312).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6411).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9112).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (920).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9312).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (947).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9512).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (9612).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (1231).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (12413).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (1252).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (12612).
-<to be read again> 
-                   \catcode 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (356).
-<to be read again> 
-                   \relax 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Bad character code (6411).
-<to be read again> 
-                   \relax 
-l.1962 \GPT@AtEnd
-                 
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.1962 \GPT@AtEnd
-                 
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1bch.fd
+File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-bch.cfg
+File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-! Undefined control sequence.
-l.152 \AtBeginDo
-                cument{\let\default@color\current@color}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+LaTeX Font Info:    Font shape `OT1/bch/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/bch/b/n' tried instead on input line 127.
 
-! Undefined control sequence.
-l.181   \define
-               color{black}{gray}{0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 127.
 
-! Undefined control sequence.
-l.182   \define
-               color{white}{gray}{1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 127.
 
-! Undefined control sequence.
-l.185   \define
-               color{red}{rgb}{1,0,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 127.
 
-! Undefined control sequence.
-l.186   \define
-               color{green}{rgb}{0,1,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-l.187   \define
-               color{blue}{rgb}{0,0,1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `pcr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-! Undefined control sequence.
-l.190   \define
-               color{cyan}{cmyk}{1,0,0,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 132--140
 
-! Undefined control sequence.
-l.191   \define
-               color{magenta}{cmyk}{0,1,0,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ []
 
-! Undefined control sequence.
-l.192   \define
-               color{yellow}{cmyk}{0,0,1,0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-l.194 \Gin@
-           codes
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 132--140
 
-) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-! Undefined control sequence.
-l.24 \ProvidesPa
-                ckage{xcolor}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ []
 
-! Use of \c doesn't match its definition.
-l.42 \expandafter\edef\cs
-                         name XC@catcodes\endcsname
-If you say, e.g., `\def\a1{...}', then you must always
-put `1' after `\a', since control sequence names are
-made up of letters only. The macro here has not been
-followed by the required stuff, so I'm ignoring it.
 
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.42 \expandafter\edef\csn
-                          ame XC@catcodes\endcsname
-Please don't say `\def cs{...}', say `\def\cs{...}'.
-I've inserted an inaccessible control sequence so that your
-definition will be completed without mixing me up too badly.
-You can recover graciously from this error, if you're
-careful; see exercise 27.2 in The TeXbook.
+Underfull \hbox (badness 10000) in paragraph at lines 132--140
 
-! Use of \c doesn't match its definition.
-l.43  {\ca
-          tcode33 \the\catcode33 % !
-(That makes 100 errors; please try again.) 
+ []
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<Graph1.png, id=14, 602.25pt x 451.6875pt>
+File: Graph1.png Graphic file (type png)
+ <use Graph1.png>
+Package pdftex.def Info: Graph1.png used on input line 161.
+(pdftex.def)             Requested size: 227.62596pt x 170.71652pt.
+ [2 <./Graph1.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Overfull \hbox (6.0pt too wide) in paragraph at lines 183--183
+[][][][][][][] 
+ []
+
+[3]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 216--216
+[][][][][][][] 
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
+
+ []
+
+[6] (./BigData.aux) ) 
 Here is how much of TeX's memory you used:
- 3215 strings out of 493013
- 48213 string characters out of 6135683
- 150596 words of memory out of 5000000
- 6790 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 11686 strings out of 493013
+ 181115 string characters out of 6135683
+ 424393 words of memory out of 5000000
+ 14954 multiletter control sequences out of 15000+600000
+ 29029 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,43p,849b,1084s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,11n,51p,8818b,1152s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/share/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on BigData.pdf (6 pages, 149012 bytes).
+PDF statistics:
+ 70 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 23558 words of extra memory for PDF output out of 24883 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!

@@ -111,15 +111,15 @@
 %%% Title	
 \title{ \vspace{-1in} 	\usefont{OT1}{bch}{b}{n}
 		\huge \strut Implementazione di Finding Triangles con Hadoop MapReduce\strut \\
-		\Large \bfseries \strut Sistemi di elaborazione di grandi quantità di dati 2013 \strut
+		\Large \bfseries \strut Sistemi di elaborazione di grandi quantità di dati 2016 \strut
 }
 \author{ 									\usefont{OT1}{bch}{m}{n}
         Nicola Febbrari\\		\usefont{OT1}{bch}{m}{n}
         Università degli Studi di Verona\\	\usefont{OT1}{bch}{m}{n}
-        Facoltà MM.FF.NN.\\
+        Facoltà di Scienze\\
         \texttt{nicola.febbrari@studenti.univr.it}
 }
-\date{13 gennaio 2014}
+\date{3 maggio 2017}
 
 %%% Begin document
 \begin{document}
@@ -253,10 +253,10 @@ Nella seconda fase viene eseguito l'algoritmo vero e proprio.\\
 Nel Job 3 l'algoritmo estrapola tutti quei triangoli che sono composti da nodi Heavy Hitter, ovvero con un grado maggiore alla radice di m dove m è il numero degli archi delgrafo.
 Il mapper utilizzando il lavoro dei Jobs precedenti costruisce un indice con i gradi di ogni nodo e successuvamente elimina dall'analisi tutti i nodi non HH.\\
 Con questo sottografo costruisce una suddivisione delle relazioni definendo delle chiavi strutturate e abbinate ai vari task di Reduce. Questa suddivisione viene realizzata definendo una funzione Hash sul valore del nodo stesso.\\
-Come prima cosa viene definita una relazione di ordinamento dei nodi in base al grado.
-Ogni trinagolo è formato da  3 nodi (x,y,z) i quali sono legati dalle 3 relazioni typeA=(x,y) con x\lly, typeB=(x,z) con x\llz e typeC=(y,z) ocn y\llz. Ogni relazione presente nel grafo può essre una delle 3 che compongono il triangolo, quindi dato R=(u,v), R può essere una relazione typeA e quindi  il triangolo sarebbe (u,v,?) oppure typeB con (u,?,v) o typeC con (?,u,v).
+Come prima cosa viene definita una relazione $\prec$ di ordinamento dei nodi in base al grado.\\
+Ogni trinagolo è formato da  3 nodi (x,y,z) i quali sono legati dalle 3 relazioni typeA=(x,y) con x$\prec$y, typeB=(x,z) con x$\prec$z e typeC=(y,z) ocn y$\prec$z. Ogni relazione presente nel grafo può essre una delle 3 che compongono il triangolo, quindi dato R=(u,v), R può essere una relazione typeA e quindi  il triangolo sarebbe (u,v,?) oppure typeB con (u,?,v) o typeC con (?,u,v).
 Il task di Map per sfruttare il parallelismo dei redoucer divide le relazioni in tante parti quante le possibili casistiche in cui la relazione può essere utilizzata per completare un triangolo.\\
-Per implementare questa suddivisione, come prima cosa, viene definito un paramentro b che indica quanti sono i possibili valori in output della funzione hash. In base a questo parametro ogni relazione di input R(x,y) viene distribuita nei rispettivi 3bk Reducers utilizzando la funzione di hash h e seguendo questo schema: (h(x),h(y),1\lei\llb) impotizzando che R sia di tipo A , (h(x),1\lei\leb,h(y)) se R fosse di tipo B e (1\lei\leb,h(x),h(y)) se R fosse di tipo C. Ogni relazione R viene inclusa in tutti i possibili reducer in cui potrebbe essere utilizzata per il completamento di un triangolo.
+Per implementare questa suddivisione, come prima cosa, viene definito un paramentro b che indica quanti sono i possibili valori in output della funzione hash. In base a questo parametro ogni relazione di input R(x,y) viene distribuita nei rispettivi 3bk Reducers utilizzando la funzione di hash h e seguendo questo schema: (h(x),h(y),1$\leq$i$\leq$b) impotizzando che R sia di tipo A , (h(x),1$\leq$i$\leq$b,h(y)) se R fosse di tipo B e (1$\leq$i$\leq$b,h(x),h(y)) se R fosse di tipo C. Ogni relazione R viene inclusa in tutti i possibili reducer in cui potrebbe essere utilizzata per il completamento di un triangolo.
 Il reducer, doppo una opportuna ridefinizione delle classi di Gruouping e Ordinamento, scorrere tutti gli elementi in input. L'ordinamente è definito in modo da analizzare, per ogni nodo a, prima le possili relazioni di tipo A, per ognuna di esse viene inserito il nodo destinazione b in una Lista LAa. Successivamente vengono analizzate le relazioni di a di tipo B con c come nodo di destinazione, per ognuna di esse viene preso creata una Map in cui la chiave è la copia formata da ogni elemento di Laa e c e il valore è il nodo a.
 L'analisi successiva della relazione di tipo C fra a e d, se nella Map esiste una chiave formata dalla coppia a,d con valore e allora nel grafo esisterà un triangolo e,a,d.
 L'ordinamento con cui viene eseguita questa analisi consente di ottimizzare lo spazio di memoria utilizzato e ci garantisce che ogni triangolo viene rilevato solo una volta.

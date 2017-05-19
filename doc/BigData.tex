@@ -140,104 +140,41 @@ Il numero di questi triangoli rapportato al numero totale di triangoli che esist
 \section{Strumenti e Framework}
 Per progettare, implementare e testare il programma ho utilizzato:
 \paragraph{Infrastruttura}
-Per semplicità e rapidita di configurazione ho deciso di utilizzare Claudera come distribuzione di Hadoop nella sua versione per Docker.
+Per semplicità e rapidità di configurazione ho deciso di utilizzare Claudera come distribuzione di Hadoop nella sua versione per Docker.
 
 \paragraph{Sviluppo}
 Dovendo utilizzare il Framework Hadoop è il programma è stato scritto in Java utilizzando le API di Hadoop 2.6\\
 L' IDE di sviluppo utilizzato è IntelliJ.  
 
 \paragraph{Versioning}
-Come sistema di versioning è stato utilizzato Git e GitHub come spazio di hosting dei files sorgenti.
+Come sistema di versioning ho  utilizzato Git e GitHub come spazio di hosting dei files sorgenti.
 
 
 \section{Implementazioni}
 \subsection{Algoritmo 2 Jobs}
 L'algoritmo a 2 Jobs prevede un prima fase in cui vengono elaborate tutte le relazioni e viene creata in output la combinazione di tutti i possibili triangoli a meno dell'ultimo arco necessario per chiudere il triangolo.\\
-Esempio date le relazioni A - K, K - B e A - B  (in cui A<K<B ) il Job 1 elabora le relazioni in cui K è nodo in un caso maggiore o minore unendo queste relazioni trova al coppia A - B che verrà cercate nel Job2. Se questa relazione è presente allora esiste sicuramente il atriangolo A K B
 
 
 \begin{figure}[h]
 \centering
         \includegraphics[totalheight=6cm]{Graph1.png}
-    \caption{Il Job 1 elabora le relazioni rosse in cui K  in un caso è nodo  maggiore e nell altro caso minore. Il Job2 cerca la relazione blu A B.}
+    \caption{Il Job 1 elabora le relazioni rosse in cui K è il nodo minore del triangolo. Il Job2 cerca la relazione blu A B.}
     \label{fig:verticalcell} 
 \end{figure}
 \paragraph{Job1 Mapper}
-Nella parte di mapper del primo Job come prima cosa escludo tutti gli archi che portano nello stesso nodo e poi definisco le relazioni solamente come da nodo minore a nodo maggiore in modo da evitare duplicazioni. La definizione di triangolo in un grafo non prende in considerazione la direzione delle relazioni fra i nodi e nel mio caso i nodi sono rappresentati da dei valori Long, quindi la relazione di ordinamento è immediata.\\ 
-In questa fase per ogni relazione mando in output 2 oggetti <<VALUE1,BOOL>,VALUE2>. Come KEY (<VALUE1,BOOL>) del VALUE (VALUE2) che passo al reducer uso un dato strutturato contenente il nodo e un valore booleano che identifica se il nodo VALUE è un nodo minore o maggiore di quello della KEY secondo la relazione di ordinamento definita. 
+Nella fase di mapper del primo Job viene caricato il file di testo e per ogni relazione contenuta in esso viene emessa in output una copia di valori in cui la chiave è il nodo minore e come valore il nodo maggiore. L'ordinamento presente del file di testo non viene valutato per in questo caso stiamo lavorando su grafi non diretti.
 
-\lstset{
-language=Java,
-  showspaces=false,
-  showtabs=false,
-  breaklines=true,
-  showstringspaces=false,
-  breakatwhitespace=true,
-  commentstyle=\color{pgreen},
-  keywordstyle=\color{pblue},
-  stringstyle=\color{pred},
-  basicstyle=\ttfamily,
-  moredelim=[il][\textcolor{pgrey}]{$$},
-  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
-}
-\begin{lstlisting}[label=Mapper1,caption=Implementazione del Mapper1]
-@Override
-	public void map(LongWritable key, Text value, Context context)
-			throws IOException, InterruptedException {
-		String line = value.toString();
-		String[] sp = line.split("\s+");// splits on TAB
-		Long lp0=Long.parseLong(sp[0]);
-		Long lp1=Long.parseLong(sp[1]);
-		if (lp0!= lp1) { 	//exclude self relation
-			if (lp0 < lp1) {
-				textP.set(lp1, false);
-				text.set(lp0);
-				context.write(textP, text);// "0" link_from
-				textP.set(lp0, true);
-				text.set(lp1);
-				context.write(textP, text);// "1" link_to
-			} else {
-				textP.set(lp0, false);
-				text.set(lp1);
-				context.write(textP, text);// "0" link_from
-
-				textP.set(lp1, true);
-				text.set(lp0);
-				context.write(textP, text);// "1" link_to
-			}
-		}
-}\end{lstlisting}
+\paragraph{Job1 GroupComparator}
+Il GroupComparator raggruppa tutte le coppie generate dal mapper e per ogni possibile chiave crea una lista con i valori delle coppie aventi la stessa chiave
 \paragraph{Job1 Reducer}
 
-Per suddividere correttamente tutti gli elementi prodotti dal Mapper sono stati ridefiniti il SortComparator e il GroupingComparator.
-Il nuovo GroupingComparator ragruppa le chiavi valutando solamente il valore del nodo chiave K e garantendo che tutte le relazioni che contengono K come nodo maggiore o come nodo minore vengano elaborate dallo stesso reducer. Il SortComparator ridefinito invece ordina gli elementi in base al valore del nodo chiave K e in caso di uguale nodo chiave mette prima gli elementi con valore booleano false nella chiave.\\ Il reducer  garzie all'ordinamento esamina prima tutte le relazioni in cui il nodo chiave è nodo maggiore, queste coppie (nodo valore - nodo chiave) salvati in una lista L. Una volta che tutte le relazioni in cui il nodo chiave è nodo maggiore sono finite inizieranno le relazioni in cui il nodo chiave è nodo minore. Per ognuna di queste nuove relazioni (es. K-B) il reducer cicla la lista L mandando in output per ogni elemento (A-K) in L una relazione (A-B, K). Infatti la presenza della relazione A-B nel grafo chiuderebbe il triangolo A-K-B 
+Il reducer  elabora l'input raggruppato dal GroupComparator e per ogni valore in cui K è chiave costruisce una lista L in cui aggiunge tutti i valori della lista abbinati a K. Quando la costruzione della lista è terminata e tutti i valori abbinati alla chiave K sono stati inseriti esegue il processo di scrittura dell'output delle coppie chiave- valore in cui la chiavi sono date dalla combinazione di tutte le possibili coppie di valori presenti in L, mentre il valore è il nodo K.
 
-Il redoucer, grazie alla redifinizione del GroupinComparator1 (ragruppa le chiavi valutando solamente il valore del nodo della chiave) e  del Comparator1 (ordina le chiavi mettendo prima quelle con valore false ) tutti gli output del task di Map. Prima salva in una lista l'elenco dei nodi padre del nodo chiave, una volta che tutti i nodi sono stati ciclati, per ogni nodo figlio, scrive in output la terna di valori con la coppia nodo padre - nodo figlio che completerebbe il triangolo.
-\begin{lstlisting}[label=Reducer1,caption=Implementazione del Reducer1]	
-	@Override
-	protected void reduce(LongBit key, Iterable<LongWritable> values, Context context)
-			throws IOException, InterruptedException {
-		partialJoin.clear();
-		LongWritable k = key.getFirst();
-
-		for (LongWritable valText : values) {
-			Long val = valText.get();
-			if (!key.getSecond().get())// link from
-			{
-				if (!partialJoin.contains(val))
-					partialJoin.add(val);
-			} else // link to
-			{
-				WriteContext(k, context, val);
-			}
-		}
-	}
-\end{lstlisting}
 \paragraph{Job2 Mapper}
-Nella secondo Job l'output del primo Job viene unito nuovamente alla sorgente dati iniziale. Il secondo mapper in questo scorre l'unione dei 2 input, nel caso la relazione è una relazione presente nel grafo iniziale scrive in output un elemento ((A,B,false),0) se invece è generata dal Job 1 scrive in output  ((A,B,true),K) dove A,B sono nodi della relazione e K è nodo intermedio fra A e B calcolato da Job1.
+Nella secondo Job l'output del primo Job viene unito nuovamente alla sorgente dati iniziale. Il secondo mapper scorre  l'input, nel caso in cui la relazione è una relazione presente nel grafo iniziale scrive in output un elemento ((A,B,false),0) se invece è generata dal Job 1 scrive in output  ((A,B,true),K) dove A,B sono nodi della relazione e K è nodo minore che rappresenta il valore della coppia chiave-valore generata dal Job1.
 \paragraph{Job2 Reducer}
-Il secondo reducer ridefinendo in modo analogo al Reducer1 una seconda versione del SortComparator e del GroupingComparator, scorre l'input prima cerca le relazioni AB che chiuderebbero un triangolo e poi per ogni relazione generata dal Job1 con output AB manda in output AKB.
-Questo algoritmo se dal punto di vista implementativo è stato estremamente semplice tuttavia testato con grafi ad elevato numero di nodi e con una grande densità di triangoli  si è rilevatoinefficiente.
+Il secondo reducer ridefinendo in modo analogo al Reducer1 una seconda versione del SortComparator e del GroupingComparator, scorre l'input prima cerca le relazioni AB che chiuderebbero un triangolo e poi per ogni relazione generata dal Job1 con output AB manda in output KAB.
+Questo algoritmo se dal punto di vista implementativo è stato estremamente semplice tuttavia testato con grafi ad elevato numero di nodi e con una grande densità di triangoli  si è rivelato inefficiente.
 
 
 

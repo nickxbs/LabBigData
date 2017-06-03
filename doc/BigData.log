@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  3 JUN 2017 15:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  3 JUN 2017 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,14 +582,8 @@ File: Graph1.png Graphic file (type png)
 Package pdftex.def Info: Graph1.png used on input line 153.
 (pdftex.def)             Requested size: 227.62596pt x 170.71652pt.
  [2 <./Graph1.png>]
-[3]
-Overfull \hbox (35.93016pt too wide) in paragraph at lines 203--204
-[] \OT1/bch/b/n/10.95 You-tu-be so-cial net-work and ground-truth com-mu-ni-tie
-s[][] \OT1/cmr/m/n/10.95 (-20) http://snap.stanford.edu/data/com-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 210--212
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
 
  []
 
@@ -599,11 +593,11 @@ See the caption package documentation for explanation.
 
 [5] (./BigData.aux) ) 
 Here is how much of TeX's memory you used:
- 11310 strings out of 493013
- 177839 string characters out of 6135683
+ 11323 strings out of 493013
+ 178063 string characters out of 6135683
  403393 words of memory out of 5000000
- 14583 multiletter control sequences out of 15000+600000
- 29151 words of font info for 117 fonts, out of 8000000 for 9000
+ 14595 multiletter control sequences out of 15000+600000
+ 32329 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,11n,51p,8818b,644s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
@@ -618,10 +612,10 @@ ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
 s/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on BigData.pdf (5 pages, 151230 bytes).
+Output written on BigData.pdf (5 pages, 152935 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 25094 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 25606 words of extra memory for PDF output out of 29859 (max. 10000000)
 

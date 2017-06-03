@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  19 MAY 2017 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  3 JUN 2017 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,17 +564,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--140
+Underfull \hbox (badness 10000) in paragraph at lines 132--136
 
  []
 
@@ -582,50 +572,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--140
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 <Graph1.png, id=14, 602.25pt x 451.6875pt>
 File: Graph1.png Graphic file (type png)
  <use Graph1.png>
-Package pdftex.def Info: Graph1.png used on input line 160.
+Package pdftex.def Info: Graph1.png used on input line 153.
 (pdftex.def)             Requested size: 227.62596pt x 170.71652pt.
  [2 <./Graph1.png>]
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
+[3] [4]
+Overfull \hbox (35.93016pt too wide) in paragraph at lines 206--207
+[] \OT1/bch/b/n/10.95 You-tu-be so-cial net-work and ground-truth com-mu-ni-tie
+s[][] \OT1/cmr/m/n/10.95 (-20) http://snap.stanford.edu/data/com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
-[4]
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 109.
 See the caption package documentation for explanation.
 
 [5] (./BigData.aux) ) 
 Here is how much of TeX's memory you used:
- 11304 strings out of 493013
- 177750 string characters out of 6135683
- 406393 words of memory out of 5000000
- 14581 multiletter control sequences out of 15000+600000
- 28361 words of font info for 114 fonts, out of 8000000 for 9000
+ 11310 strings out of 493013
+ 177839 string characters out of 6135683
+ 403393 words of memory out of 5000000
+ 14583 multiletter control sequences out of 15000+600000
+ 29151 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,11n,51p,8818b,644s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/share/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on BigData.pdf (5 pages, 139456 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on BigData.pdf (5 pages, 151165 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23046 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 25094 words of extra memory for PDF output out of 29859 (max. 10000000)
 

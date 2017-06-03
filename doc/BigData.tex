@@ -166,22 +166,19 @@ Il Redoucer elabora l'input raggruppato dal GroupComparator e, per ogni valore i
 Quando la costruzione di \textit{list} è terminata e tutti i valori abbinati alla chiave K sono stati inseriti esegue il processo di scrittura dell'output delle coppie \textit{chiave-valore} in cui le chiavi sono date dalla combinazione di tutte le possibili coppie di valori presenti in \textit{list}, mentre il valore è il nodo K.
 
 \paragraph{Job2 Mapper}
-Il mapper del secondo Job unisce l'outut del primo Job all' file iniziale. Il secondo mapper elabora tutti gli elementi presenti nei files, se l'input del mapper A B è una relazione di quelle presenti nel file iniziale, scrive in output un elemento chiave-valore con una chiave strutturata (A-B,false) e come valore 0, se invece l'input è una coppia chiave-valore (A-B)-K generata dal Job 1 scrive in output un elemento con chiave (A,B,true) e valore K.
+Il Mapper del secondo Job unisce l'outut del primo Job al grafo iniziale. Se l'elemento in INPUT A-B è una relazione di quelle presenti nel grafo iniziale, scrive in output un elemento \textit{chiave-valore} con una chiave strutturata (A-B,false) e come valore 0, se invece l'input è una coppia \textit{chiave-valore} (A-B)-K generata dal Job 1, scrive in output un elemento con chiave (A,B,true) e valore K.
 \paragraph{Job2 GroupComparator}
-Il secondo GroupComparator raggruppa tutti gli elementi generati dal mapper mettendo insieme quelli che hanno la stessa prima parte di chiave (A-B) indipendentemente dal valore booleano che viene utilizzato solo per l'ordinamento dei valori.
+Il secondo GroupComparator raggruppa tutti gli elementi generati dal Mapper mettendo insieme quelli che hanno la stessa prima parte di chiave (A-B) indipendentemente dal valore booleano che viene utilizzato solo per l'ordinamento degli elementi da sottoporre al Redoucer.
 
 \paragraph{Job2 Reducer}
-Il secondo Redoucer per ogni iterazione analizza una chiave (A-B) che raggruppa i valori sia di (A-B,false) che di (A-B,true). Se come primo elemento trova un (A-B,false) allora tutti i valori successivi positivi sono nodi che chiudono un trianogolo. Se invece il primo nodo non è un valore negativo allora puo' saltare completamente l'iterazione per qualla chiave (A-B)
-
-
-
+Il secondo Redoucer per ogni iterazione analizza una chiave (A-B) che raggruppa i valori sia di (A-B,false) che di (A-B,true). Se come primo elemento trova un (A-B,false) allora tutti i valori successivi positivi sono nodi che chiudono un trianogolo. Se invece il primo nodo analizzato ha chiave (A,B,true) allora l'iterazione del gruppo (A,B) puo' essere completamente saltata.
 \subsection{Algoritmo 4 Jobs}
 L'algoritmo a 4 Jobs prevede prima una fase in cui i primi 2 Jobs costuiscono una struttura dati che poi verrà usata negli ultimi 2 Jobs, i quali andranno ad eseguire il calcolo dei triangoli.
 \paragraph{Job 1}
 Il primo Job è molto semplice e per ogni arco emette un valore 1. Il redoucer conta tutti questi valori, ne fa la somma che poi scrive come output, questo valore rappresenta la quantità di nodi presenti nel grafo.
 \paragraph{Job 2}
-Il mapper del secondo Job per ogni arco (A,B) emette 2 valori (A 1 e B 1) uno per ogni nodo che compone (A,B).\\
-Le funzioni di grouping e il partitioner mi garantiscono che tutti i valori di uno stesso nodo vengono accumulati nello stesso redoucer e nello stesso ciclo iterativo. Completato il ciclo scrive in output per ogni nodo la somma di tutti i valori emessi dal mapper. Questo valore rappresenta il grado del nodo.
+Il Mapper del secondo Job per ogni relazione A-B emette 2 valori A-1 e B-1, uno per ogni nodo che compone A-B.\\
+Le funzioni di grouping e il Partitioner mi garantiscono che tutti i valori di uno stesso nodo vengono accumulati nello stesso redoucer e nello stesso ciclo iterativo. Completato il ciclo scrive in output, per ogni nodo, la somma di tutti i valori emessi dal mapper. Questo valore rappresenta il grado del nodo.
 \paragraph{Job 3}
 Nella seconda fase viene eseguito l'algoritmo vero e proprio.\\
 Obiettivo del Job 3 è di trovare tutti i triangoli che sono composti da nodi Heavy Hitter, ovvero con un grado maggiore di $\sqrt{} m$ dove m è il numero degli archi delgrafo.\\

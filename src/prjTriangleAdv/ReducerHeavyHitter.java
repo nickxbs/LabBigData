@@ -30,10 +30,10 @@ public class ReducerHeavyHitter extends
 		//WriteDebug("\t NEW",context);
 		while(it.hasNext()) {
 
-			int from =bucketItem.getFrom().get();
+			int from =bucketItem.getFrom();
 			IntWritable toW=it.next();
 			int to= toW.get();
-			WriteDebug(new Integer(from).toString()+"\t"+new Integer(to).toString()+"\t"+new Integer(bucketItem.getFromDegree().get()).toString() ,context);
+			//WriteDebug(new Integer(from).toString()+"\t"+new Integer(to).toString()+"\t"+new Integer(bucketItem.getFromDegree().get()).toString() ,context);
 			//Populate edge
 			Pair myedge=new Pair(from,to);
 			if(!edges.contains(myedge)){
@@ -88,8 +88,10 @@ public class ReducerHeavyHitter extends
 			throws IOException, InterruptedException {
 		context.write(new Text(a.toString()+ "\t"+b.toString()+ "\t"+c.toString()+ "\t"), new Text());
 	}
+/*
 	private void WriteDebug(String a, Context context)
 			throws IOException, InterruptedException {
 		context.write(new Text(a.toString()), new Text());
 	}
+	*/
 }

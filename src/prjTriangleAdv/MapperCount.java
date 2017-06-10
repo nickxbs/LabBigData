@@ -14,8 +14,6 @@ public class MapperCount extends
 	@Override
 	public void map(LongWritable key, Text value, Context context)
 			throws IOException, InterruptedException {
-
-		Configuration conf = context.getConfiguration();
 		String line = value.toString();
 		if(!line.contains("#")){
 			context.write(new IntWritable(1), new Text());

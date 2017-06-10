@@ -50,6 +50,8 @@ public class MapperOthers extends
             String[] sp = line.split("\\s+");// splits on TAB
             int lp0 = Integer.parseInt(sp[0]);
             int lp1 = Integer.parseInt(sp[1]);
+            if (degreeMap.containsKey(lp0) &&) {
+                degreeMap.put(node, degree);
 
                 int dg0 = degreeMap.get(lp0);
                 int dg1 = degreeMap.get(lp1);
@@ -62,6 +64,7 @@ public class MapperOthers extends
                         SetContext(context, lp1, dg1, lp0, dg0);
                     }
                 }
+            }
         }
     }
 

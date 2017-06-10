@@ -17,14 +17,14 @@ public class BucketItem implements WritableComparable<BucketItem> {
 	public Text getTypeRel() {
 		return _typeRel;
 	}
-	public IntWritable getBucketIndex() {
-		return _bucketIndex;
+	public Integer getBucketIndex() {
+		return new Integer(_bucketIndex.get());
 	}
-	public IntWritable getFrom() {
-		return _from;
+	public Integer getFrom() {
+		return new Integer(_from.get());
 	}
-	public IntWritable getFromDegree() {
-		return _fromDegree;
+	public Integer getFromDegree() {
+		return new Integer(_fromDegree.get());
 	}
 
 	public BucketItem() {

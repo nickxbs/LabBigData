@@ -9,6 +9,6 @@ public class PartitionerBucket extends Partitioner<BucketItem, Writable> {
 
 	public int getPartition(BucketItem bucketItem, Writable intWritable, int numPartitions) {
 
-		return bucketItem.getBucketIndex().get()%numPartitions;
+		return bucketItem.getBucketIndex()%numPartitions;
 	}
 }

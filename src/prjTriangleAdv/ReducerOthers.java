@@ -50,11 +50,11 @@ public class ReducerOthers extends
 		//WriteDebug("\t NEW",context);
 		while(it.hasNext()) {
 			String typeRel = bucketItem.getTypeRel().toString();
-			int from =bucketItem.getFrom().get();
-			int fromDegree =bucketItem.getFromDegree().get();
+			int from =bucketItem.getFrom();
+			int fromDegree =bucketItem.getFromDegree();
 			BucketItem toW=it.next();
-			int to= toW.getFrom().get();
-			int toDegree =toW.getFromDegree().get();
+			int to= toW.getFrom();
+			int toDegree =toW.getFromDegree();
 
 			if(typeRel.equals("A")){
 				if(fromOld==null || !fromOld.equals(from)) {

@@ -15,7 +15,6 @@ public class MapperDegree extends
 	public void map(LongWritable key, Text value, Context context)
 			throws IOException, InterruptedException {
 
-		Configuration conf = context.getConfiguration();
 		String line = value.toString();
 		if(!line.contains("#")){
 			line = line.replaceAll("^\\s+", "");

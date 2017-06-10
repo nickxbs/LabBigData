@@ -18,7 +18,7 @@ public class GroupingComparatorHeavyHitter extends WritableComparator {
             if (la.getBucketIndex().equals(lb.getBucketIndex())){
                 return 0;
             } else{
-                return (la.getBucketIndex().compareTo(lb.getBucketIndex()));
+                return (new Integer(la.getBucketIndex()).compareTo(new Integer(lb.getBucketIndex())));
             }
         }
         return super.compare(a, b);

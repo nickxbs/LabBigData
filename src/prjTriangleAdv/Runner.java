@@ -122,9 +122,8 @@ public class Runner {
         jobHH.setMapOutputKeyClass(BucketItemDegree.class);
         jobHH.setMapOutputValueClass(BucketItemDegree.class);
 
-        //jobHH.setGroupingComparatorClass(GroupingComparatorHeavyHitter.class);
         jobHH.setPartitionerClass(PartitionerBucketDegree.class);
-        jobHH.setSortComparatorClass(ComparatorHeavyHitter.class);
+        jobHH.setSortComparatorClass(ComparatorBucketItemDegree.class);
 
         jobHH.setReducerClass(ReducerHeavyHitter.class);
         jobHH.setOutputKeyClass(Text.class);
@@ -145,7 +144,7 @@ public class Runner {
 
         return this;
     }
-    public Runner runOthers1(Class map,Class reduce) throws IOException, ClassNotFoundException, InterruptedException {
+    public Runner runOthers1(Class map,Class reduce, Class key, Class partitioner, Class sortcomparator) throws IOException, ClassNotFoundException, InterruptedException {
 
         Job jobOthers1 = new Job(_conf, "jobOthers");
         jobOthers1.setJarByClass(Finder.class);
@@ -153,12 +152,12 @@ public class Runner {
         jobOthers1.setInputFormatClass(TextInputFormat.class);
 
         jobOthers1.setMapperClass(map);
-        jobOthers1.setMapOutputKeyClass(BucketItem.class);
-        jobOthers1.setMapOutputValueClass(BucketItem.class);
+        jobOthers1.setMapOutputKeyClass(key);
+        jobOthers1.setMapOutputValueClass(key);
 
         //jobOthers.setGroupingComparatorClass(GroupingComparatorOthers2.class);
-        jobOthers1.setPartitionerClass(PartitionerBucket.class);
-        jobOthers1.setSortComparatorClass(ComparatorHeavyHitter.class);
+        jobOthers1.setPartitionerClass(partitioner);
+        jobOthers1.setSortComparatorClass(sortcomparator);
 
         jobOthers1.setReducerClass(reduce);
         jobOthers1.setOutputKeyClass(Text.class);
@@ -193,7 +192,7 @@ public class Runner {
         jobOthers2.setOutputKeyClass(Text.class);
         jobOthers2.setOutputValueClass(Text.class);
         jobOthers2.setGroupingComparatorClass(GroupingComparatorOthers2.class);
-        jobOthers2.setSortComparatorClass(ComparatorOthers2.class);
+        jobOthers2.setSortComparatorClass(ComparatorKeyClosure.class);
         jobOthers2.setNumReduceTasks(((int) Math.pow(_b, 3)));
         jobOthers2.setOutputFormatClass(TextOutputFormat.class);
 

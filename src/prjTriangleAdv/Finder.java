@@ -21,11 +21,11 @@ public class Finder extends Configured implements Tool {
     public int run(String[] args) throws Exception {
         Runner runner = new Runner(outputDir, inputPath, partialDir, b, this);
         runner
-//                .runCounter()
-//                .runDegree()
-//                .runHH()
-
-                .runOthers1(MapperOthers1.class,ReducerOthers1.class)
+                //.runCounter()
+                //.runDegree()
+                //.runHH()
+                ////.runOthers1(MapperOthers1.class,ReducerOthers1.class, BucketItem.class,PartitionerBucket.class,ComparatorBucketItemDegree.class)
+                //.runOthers1(MapperDegreeOthers1.class,ReducerDegreeOthers1.class, BucketItemDegree.class,PartitionerBucketDegree.class, ComparatorBucketItemDegree.class)
                 .runOthers2(MapperOthers2.class, ReducerOthers2.class)
         ;
         return 1;

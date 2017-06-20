@@ -25,12 +25,12 @@ public class ReducerOthers2 extends
 		if(iteratorA.hasNext())
 		{
 			IntWritable firstValue=iteratorA.next();
-			WriteContextDebug("#I",key.getBucketIndex(),firstValue.get(),key.getB(),key.getC(),context);
+			//WriteContextDebug("#I",key.getBucketIndex(),firstValue.get(),key.getB(),key.getC(),context);
 			//è un arco do chiusura
 			if(firstValue.get()<0){
 				while(iteratorA.hasNext()) {
 					IntWritable a=iteratorA.next();
-					WriteContextDebug("#W",key.getBucketIndex(),a.get(),key.getB(),key.getC(),context);
+					//WriteContextDebug("#W",key.getBucketIndex(),a.get(),key.getB(),key.getC(),context);
 					if(a.get()>0)
 						WriteContext(a.get(),key.getB(),key.getC(),context);
 				}

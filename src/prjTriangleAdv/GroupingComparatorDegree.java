@@ -14,8 +14,8 @@ public class GroupingComparatorDegree extends WritableComparator {
     public int compare(WritableComparable a, WritableComparable b) {
         if (a instanceof IntWritable && b instanceof IntWritable ) {
             IntWritable  la = (IntWritable) a;
-            IntWritable  lb = (IntWritable ) b;
-            return (la.compareTo(lb));
+            IntWritable  lb = (IntWritable) b;
+            return (new Integer(la.get()).compareTo(lb.get()));
         }
         return super.compare(a, b);
     }

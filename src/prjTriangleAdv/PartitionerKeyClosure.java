@@ -3,10 +3,10 @@ package prjTriangleAdv;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.mapreduce.Partitioner;
 
-public class PartitionerBucket extends Partitioner<BucketItem, Writable> {
+public class PartitionerKeyClosure extends Partitioner<KeyClosure, Writable> {
 
 
-	public int getPartition(BucketItem bucketItem, Writable intWritable, int numPartitions) {
+	public int getPartition(KeyClosure bucketItem, Writable intWritable, int numPartitions) {
 
 		return bucketItem.getBucketIndex()%numPartitions;
 	}

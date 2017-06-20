@@ -2,7 +2,6 @@ package prjTriangleAdv;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.javatuples.Pair;
@@ -14,71 +13,71 @@ public class ReducerOthers extends
 		Reducer<BucketItem, BucketItem, Text, Text> {
 	private static final Log _log = LogFactory.getLog(ReducerOthers.class);
 
-	private Integer fromOld;
-	private HashSet<Pair<Integer,Integer>> tmpAList = new HashSet<Pair<Integer,Integer>>();
-	//private List<Integer> tmpBListTmp = new ArrayList<Integer>();
-	private Map<Pair<Integer, Integer>,List<Integer>> tmpBList = new HashMap<Pair<Integer, Integer>, List<Integer>>();
+	private Long priviusFrom;
+	private HashSet<Pair<Long,Long>> listToWithDegree = new HashSet<Pair<Long,Long>>();
+	//private List<Long> mapPairTo_From = new ArrayList<Long>();
+	private Map<Pair<Long, Long>,List<Long>> mapPairTo_From = new HashMap<Pair<Long, Long>, List<Long>>();
 
-	private void Init(int from){
-		tmpAList = new HashSet<Pair<Integer,Integer>>();
-		fromOld=from;
+	private void Init(long from){
+		listToWithDegree = new HashSet<Pair<Long,Long>>();
+		priviusFrom =from;
 	}
 	private void cleanUp(int from){
 
-		for(Iterator<Map.Entry<Pair<Integer,Integer>,List<Integer>>> it = tmpBList.entrySet().iterator(); it.hasNext(); ) {
-			Map.Entry<Pair<Integer,Integer>,List<Integer>> entry = it.next();
-			Pair<Integer,Integer> k=entry.getKey();
+		for(Iterator<Map.Entry<Pair<Long,Long>,List<Long>>> it = mapPairTo_From.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<Pair<Long,Long>,List<Long>> entry = it.next();
+			Pair<Long,Long> k=entry.getKey();
 			if(from==k.getValue0()) {
 				it.remove();
 			}
 		}
 
 		/*
-		for(Iterator<Integer> it = tmpBListTmp.iterator(); it.hasNext(); ) {
-			Integer entry = it.next();
+		for(Iterator<Long> it = mapPairTo_From.iterator(); it.hasNext(); ) {
+			Long entry = it.next();
 			if(from>entry) {
 				it.remove();
 			}
 		}*/
 	}
 	@Override
-	protected void reduce(BucketItem bucketItem, Iterable<BucketItem> values,
+	protected void reduce(BucketItem bucketKey, Iterable<BucketItem> values,
 						  Context context) throws IOException, InterruptedException {
 
-		Iterator<BucketItem> it = values.iterator();
+		Iterator<BucketItem> toBuckets = values.iterator();
 
 		//WriteDebug("\t NEW",context);
-		while(it.hasNext()) {
-			String typeRel = bucketItem.getTypeRel().toString();
-			int from =bucketItem.getFrom();
-			int fromDegree =bucketItem.getFromDegree();
-			BucketItem toW=it.next();
-			int to= toW.getFrom();
-			int toDegree =toW.getFromDegree();
+		while(toBuckets.hasNext()) {
+			String typeRel = bucketKey.getTypeRel().toString();
+			long from =bucketKey.getFrom();
+
+			BucketItem toBucket=toBuckets.next();
+			long to= toBucket.getFrom();
+			long toDegree =toBucket.getFromDegree();
 
 			if(typeRel.equals("A")){
-				if(fromOld==null || !fromOld.equals(from)) {
+				if(priviusFrom ==null || !priviusFrom.equals(from)) {
 					Init(from);
 				}
-				Pair<Integer,Integer> p=new Pair<Integer, Integer>(to, toDegree);
-				if(!tmpAList.contains(p)){
-					tmpAList.add(p);
+				Pair<Long,Long> p=new Pair<Long, Long>(to, toDegree);
+				if(!listToWithDegree.contains(p)){
+					listToWithDegree.add(p);
 				}
 			}
-			//WriteDebug(new Integer(from).toString()+"\t"+new Integer(to).toString()+"\t"+typeRel+new Integer(bucketItem.getBucketIndex().get()).toString() ,context);
+			//WriteDebug(new Long(from).toString()+"\t"+new Long(to).toString()+"\t"+typeRel+new Long(bucketItem.getBucketIndex().get()).toString() ,context);
 
 			if(typeRel.equals("B")){
-
-				if(fromOld !=null &&fromOld.equals(from)){
-					for (Pair<Integer,Integer> vPB : tmpAList) {
-						if(vPB.getValue1()<toDegree || (vPB.getValue1()==toDegree && vPB.getValue0()<to )){
-							Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vPB.getValue0(),to);
-							if(!tmpBList.containsKey(pair)){
-								List<Integer> listFrom= new LinkedList<Integer>();
+				// B ha senso solo se per lo stesso from ho avuto una relazione A
+				if(priviusFrom !=null && priviusFrom.equals(from)){
+					for (Pair<Long,Long> toWithDegree : listToWithDegree) {
+						if(toWithDegree.getValue1()<toDegree || (toWithDegree.getValue1()==toDegree && toWithDegree.getValue0()!=to )){
+							Pair<Long,Long> pairTo= new Pair<Long, Long>(toWithDegree.getValue0(),to);
+							if(!mapPairTo_From.containsKey(pairTo)){
+								List<Long> listFrom= new LinkedList<Long>();
 								listFrom.add(from);
-								tmpBList.put(pair, listFrom);
+								mapPairTo_From.put(pairTo, listFrom);
 							} else{
-								List<Integer> listFrom= tmpBList.get(pair);
+								List<Long> listFrom= mapPairTo_From.get(pairTo);
 								if(!listFrom.contains(from))
 									listFrom.add(from);
 							}
@@ -88,18 +87,18 @@ public class ReducerOthers extends
 			}
 
 
-			if(typeRel.equals("C") && fromOld !=null ){
-				tmpAList= new HashSet<Pair<Integer, Integer>>();
-				//WriteContextStr("tmpBList: "+new Integer(tmpBList.size()).toString(),context);
+			if(typeRel.equals("C") && priviusFrom !=null ){
+				listToWithDegree = new HashSet<Pair<Long, Long>>();
+				//WriteContextStr("mapPairTo_From: "+new Long(mapPairTo_From.size()).toString(),context);
 				//cleanUp(from);
 
-				int vB=from;
-				int vC=to;
-				Pair<Integer,Integer> pair= new Pair<Integer, Integer>(vB,vC);
-				if(tmpBList.containsKey(pair)){
-					List<Integer> listvA = tmpBList.get(pair);
-					tmpBList.remove(pair);
-					for (int vA : listvA) {
+				long vB=from;
+				long vC=to;
+				Pair<Long,Long> pair= new Pair<Long, Long>(vB,vC);
+				if(mapPairTo_From.containsKey(pair)){
+					List<Long> listvA = mapPairTo_From.get(pair);
+					mapPairTo_From.remove(pair);
+					for (long vA : listvA) {
 						//ok trovato triangolo
 						WriteContext(vA,vB,vC,context);
 					}
@@ -111,7 +110,7 @@ public class ReducerOthers extends
 		}
 	}
 
-	private void WriteContext(Integer a, Integer b, Integer c, Context context)
+	private void WriteContext(Long a, Long b, Long c, Context context)
 			throws IOException, InterruptedException {
 		context.write(new Text(a.toString()+ "\t"+b.toString()+ "\t"+c.toString()+ "\t"), new Text());
 	}

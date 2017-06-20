@@ -10,11 +10,12 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class MapperHeavyHitter extends
-        Mapper<LongWritable, Text, BucketItemDegree, BucketItemDegree> {
-    private BucketItemDegree toW = new BucketItemDegree();
+public class MapperOthers1 extends
+        Mapper<LongWritable, Text, BucketItem, BucketItem> {
+    private BucketItem toW = new BucketItem();
     private int buckets;
     private int count = 0;
     private double sqrt = 0;
@@ -29,8 +30,7 @@ public class MapperHeavyHitter extends
     {
         Configuration conf = context.getConfiguration();
 
-        try
-        {
+        try {
 
             cachefiles = DistributedCache.getLocalCacheFiles(conf);
             BufferedReader readerCount = new BufferedReader(new FileReader(cachefiles[0].toString()));
@@ -57,14 +57,14 @@ public class MapperHeavyHitter extends
                     }
                 }
             }
-        }
 
-        catch (IOException e)
-        {
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
+
     @Override
     public void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException {
@@ -72,16 +72,17 @@ public class MapperHeavyHitter extends
         Configuration conf = context.getConfiguration();
         this.buckets = conf.getInt("b", 2);
 
-
         String line = value.toString();
+
         if (!line.startsWith("#") && !line.startsWith("COUNT") && !line.startsWith("DEGREE")) {
             line = line.replaceAll("^\\s+", "");
             String[] sp = line.split("\\s+");// splits on TAB
             int lp0 = Integer.parseInt(sp[0]);
             int lp1 = Integer.parseInt(sp[1]);
-            if (degreeMap.containsKey(lp0) && degreeMap.containsKey(lp1)) {
-                int dg0 = degreeMap.get(lp0);
-                int dg1 = degreeMap.get(lp1);
+          //  if (degreeMap.containsKey(lp0) && degreeMap.containsKey(lp1)) {
+                int dg0 =degreeMap.containsKey(lp0)&&degreeMap.containsKey(lp1)?Integer.MAX_VALUE:1;// degreeMap.get(lp0);
+                int dg1 =degreeMap.containsKey(lp0)&&degreeMap.containsKey(lp1)?Integer.MAX_VALUE:1;// degreeMap.get(lp1);
+
                 //questo emit lo faccio solo se sono entrambi nodi HeavyHitter degree > sqrt(count)
                 if (lp0 != lp1) {
                     if (dg0 < dg1 || (dg0 == dg1 && lp0 < lp1)) {
@@ -90,21 +91,22 @@ public class MapperHeavyHitter extends
                         SetContext(context, lp1, dg1, lp0, dg0);
                     }
                 }
-
-            }
+           // }
         }
     }
 
     private void SetContext(Context context, int from, int fromDegree, int to, int toDegree)
             throws IOException, InterruptedException {
-        toW = new BucketItemDegree("", -1, to, toDegree);
+        toW = new BucketItem("", -1, to, toDegree);
         for (int j = 0; j < buckets; j++) {
-            int aIndex = (int) (((Math.pow(buckets, 2)) * (from % buckets)) + (buckets * (to % buckets)) + j);
-            context.write(new BucketItemDegree("A", aIndex, from, fromDegree), toW);
-            int bIndex = (int) (((Math.pow(buckets, 2)) * (from % buckets)) + (buckets * (j)) + (to % buckets));
-            context.write(new BucketItemDegree("B", bIndex, from, fromDegree), toW);
+            if (fromDegree < sqrt) {
+                int aIndex = (int) (((Math.pow(buckets, 2)) * (from % buckets)) + (buckets * (to % buckets)) + j);
+                context.write(new BucketItem("A", aIndex, from, fromDegree), toW);
+                int bIndex = (int) (((Math.pow(buckets, 2)) * (from % buckets)) + (buckets * (j)) + (to % buckets));
+                context.write(new BucketItem("B", bIndex, from, fromDegree), toW);
+            }
             int cIndex = (int) (((Math.pow(buckets, 2)) * (j)) + (buckets * (from % buckets)) + (to % buckets));
-            context.write(new BucketItemDegree("C", cIndex, from, fromDegree), toW);
+            context.write(new BucketItem("C", cIndex, from, fromDegree), toW);
         }
     }
 

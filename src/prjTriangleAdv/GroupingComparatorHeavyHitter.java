@@ -3,6 +3,7 @@ package prjTriangleAdv;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
+
 public class GroupingComparatorHeavyHitter extends WritableComparator {
 
     public GroupingComparatorHeavyHitter() {
@@ -18,7 +19,7 @@ public class GroupingComparatorHeavyHitter extends WritableComparator {
             if (la.getBucketIndex().equals(lb.getBucketIndex())){
                 return 0;
             } else{
-                return (new Integer(la.getBucketIndex()).compareTo(new Integer(lb.getBucketIndex())));
+                return (new Integer(la.getBucketIndex()).compareTo(lb.getBucketIndex()));
             }
         }
         return super.compare(a, b);

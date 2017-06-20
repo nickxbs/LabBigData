@@ -6,84 +6,100 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class BucketItem implements WritableComparable<BucketItem> {
+public class KeyClosure implements WritableComparable<KeyClosure> {
 
-	private Text _typeRel;
+
 	private IntWritable _bucketIndex;
-	private IntWritable _from;
+	private IntWritable _b;
+	private IntWritable _c;
+	private IntWritable _value;
 
 
-	public Text getTypeRel() {
-		return _typeRel;
-	}
 	public Integer getBucketIndex() {
 		return new Integer(_bucketIndex.get());
 	}
-	public Integer getFrom() {
-		return new Integer(_from.get());
+	public Integer getB() {
+		return new Integer(_b.get());
+	}
+	public Integer getC() {
+		return new Integer(_c.get());
+	}
+	public Integer getValue() {
+		return new Integer(_value.get());
 	}
 
+	public KeyClosure() {
 
-	public BucketItem() {
-		_typeRel=new Text();
 		_bucketIndex= new IntWritable();
-		_from= new IntWritable();
+		_b = new IntWritable();
+		_c = new IntWritable();
+		_value = new IntWritable();
 	}
 
-	public BucketItem(String rel,int indexBucket, int from, int fromDegree) {
-		this.set(new Text(rel),  new IntWritable(indexBucket), new IntWritable(from),new IntWritable(fromDegree));
+	public KeyClosure(int indexBucket, int b, int c, int value) {
+		this.set(new IntWritable(indexBucket), new IntWritable(b),new IntWritable(c), new IntWritable(value));
 	}
 
-	public void set(Text rel, IntWritable indexBucket, IntWritable from, IntWritable fromDegree) {
-		_typeRel=rel;
+	public void set(IntWritable indexBucket, IntWritable b, IntWritable c, IntWritable value) {
 		_bucketIndex=indexBucket;
-		_from=from;
-
+		_b =b;
+		_c =c;
+		_value=value;
 	}
 
 	public void write(DataOutput out) throws IOException {
-		_typeRel.write(out);
 		_bucketIndex.write(out);
-		_from.write(out);
+		_b.write(out);
+		_c.write(out);
+		_value.write(out);
 	}
 
 
 	public void readFields(DataInput in) throws IOException {
-		_typeRel.readFields(in);
 		_bucketIndex.readFields(in);
-		_from.readFields(in);
+		_b.readFields(in);
+		_c.readFields(in);
+		_value.readFields(in);
 	}
 
 	public int hashCode() {
-		return _bucketIndex.hashCode() * 163* 163+ _from.hashCode()*163 +_typeRel.hashCode();
+		return _bucketIndex.hashCode() * 163* 163*163+ _b.hashCode()*163*163+ _c.hashCode()*163+_value.hashCode();
 	}
 
 
 	public boolean equals(Object o) {
-		if (o instanceof BucketItem) {
-			BucketItem tp = (BucketItem) o;
-			return _bucketIndex.equals(tp.getBucketIndex()) && _from.equals(tp.getFrom()) && _typeRel.equals(tp.getTypeRel()) ;
+		if (o instanceof KeyClosure) {
+			KeyClosure tp = (KeyClosure) o;
+			return _bucketIndex.equals(tp.getBucketIndex()) && _b.equals(tp.getB()) ;
 		}
 		return false;
 	}
 
 
 	public String toString() {
-		return _bucketIndex + "\t" + _from;
+		return _bucketIndex + "\t" + _b;
 	}
 
 
-	public int compareTo(BucketItem tp) {
-		BucketItem la=this;
-		BucketItem lb=tp;
+	public int compareTo(KeyClosure tp) {
+		KeyClosure la=this;
+		KeyClosure lb=tp;
 
 		if(!la.getBucketIndex().equals(lb.getBucketIndex()))
 			return (la.getBucketIndex().compareTo(lb.getBucketIndex()));
 		else{
-				if(!la.getFrom().equals(lb.getFrom()))
-					return (la.getFrom().compareTo(lb.getFrom()));
-			}
+			if(!la.getB().equals(lb.getB()))
+				return (la.getB().compareTo(lb.getB()));
+			else{
+				if(!la.getC().equals(lb.getC()))
+					return (la.getC().compareTo(lb.getC()));
+				else{
+					if(!la.getValue().equals(lb.getValue()))
+						return (la.getValue().compareTo(lb.getValue()));
+				}
 
+			}
+		}
 		return 1;
 	}
 
@@ -98,7 +114,7 @@ public class BucketItem implements WritableComparable<BucketItem> {
 		private static final IntWritable.Comparator LongWritable_COMPARATOR = new IntWritable.Comparator();
 
 		public Comparator() {
-			super(BucketItem.class);
+			super(KeyClosure.class);
 		}
 
 		@Override
@@ -121,7 +137,7 @@ public class BucketItem implements WritableComparable<BucketItem> {
 	}
 
 	static {
-		WritableComparator.define(BucketItem.class, new Comparator());
+		WritableComparator.define(KeyClosure.class, new Comparator());
 	}
 
 

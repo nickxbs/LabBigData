@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduzione}{}% 1
+\BOOKMARK [1][-]{section.2}{Il problema}{}% 2
+\BOOKMARK [1][-]{section.3}{Strumenti e Framework}{}% 3
+\BOOKMARK [1][-]{section.4}{Implementazioni}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Algoritmo 2 Jobs}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Algoritmo 5 Jobs}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{Test}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Prima iterazione}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Seconda iterazione}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.3}{Terza iterazione}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.4}{Conclusione}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{Risultati}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{Social circles: Facebookhttp://snap.stanford.edu/data/egonets-Facebook.html}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.2}{Amazon product co-purchasing network and ground-truth communitieshttp://snap.stanford.edu/data/com-Amazon.html}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.3}{Youtube social networkhttp://snap.stanford.edu/data/com-Youtube.html}{section.6}% 15
+\BOOKMARK [1][-]{section.7}{Sviluppi futuri}{}% 16

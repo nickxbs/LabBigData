@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f62b255-593c-4771-95a5-d42c73734bb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
+    <list default="true" id="1f62b255-593c-4771-95a5-d42c73734bb9" name="Default" comment="" />
     <ignored path="LabBigData.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,7 +54,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
               <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#269#270#0" expanded="false" />
+                <element signature="e#315#316#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,6 +69,7 @@
             <state relative-caret-position="846">
               <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <marker date="1498000007084" expanded="true" signature="4345:4399" ph="{...}" />
               </folding>
             </state>
@@ -78,7 +81,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3240">
               <caret line="193" column="71" lean-forward="false" selection-start-line="193" selection-start-column="46" selection-end-line="193" selection-end-column="71" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1016,6 +1021,7 @@
         <state relative-caret-position="846">
           <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1498000007084" expanded="true" signature="4345:4399" ph="{...}" />
           </folding>
         </state>
@@ -1049,7 +1055,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#315#316#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,7 +1083,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
           <caret line="193" column="71" lean-forward="false" selection-start-line="193" selection-start-column="46" selection-end-line="193" selection-end-column="71" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,7 +1102,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

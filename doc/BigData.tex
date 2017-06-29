@@ -7,7 +7,7 @@
 %%% Preamble
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
 
-
+\usepackage[section]{placeins}
 \usepackage[italian]{babel}															% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
 \usepackage{amsmath,amsfonts,amsthm}										% Math packages
@@ -202,41 +202,161 @@ Nella terza iterazione ho analizzato le strutture in memoria più pesanti e ho d
 Durante l'analisi di alcuni risultati sul cluster ho riscontrato un bug molto evidente. Il bug era causato dalle dimensioni del file contenente il grado dei nodi, questo per grafi molto grandi veniva suddiviso su più Mapper e quindi in alcuni casi risultava parziale.
 \subsection{Conclusione} 
 Nell'ultima iterazione ho corretto il bug introducendo delle DistributedCache che mi consentivano di vincolare il caricamento dell'intero file dei gradi dei nodi su ogni singolo Mapper. Inoltre ho aggiunto delle classi di Helper per agevolarmi nel testing e nel debugging dei singoli Job.
-\section{Risultati}
+\section{Risultati} 
 \subsection{Social circles: Facebook\protect\footnote{http://snap.stanford.edu/data/egonets-Facebook.html}} 
-\protect\begin{table}[]
+\protect\begin{table}[!h]
 	\centering
 	\caption{Facebook}
 	\label{my-label}
 	\begin{tabular}{ll}
 		Nodi		 & 4039 \\
 		Archi		 & 88234 \\
-		Triangoli	& 1612010 \\
+		\textbf{\textcolor{red}{Triangoli}}	& \textbf{\textcolor{red}{1612010}} \\
 	\end{tabular}
 \end{table}
-Riferimenti:\\	
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12286}{Job1}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12287}{Job2}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12288}{Job3}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12289}{Job4}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12290}{Job5}\\
 
+\begin{table}[!h]
+	\centering
+	\caption{Facebook \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12301}{Job1}}
+	\label{my-label}
+	\begin{tabular}{llll}
+		Counter&	Map&	Reduce&	Total\\
+		Launched reduce tasks&	0&	0&	2\\
+		Rack-local map tasks&	0&	0&	1\\
+		Launched map tasks&	0&	0&	1\\
+		FILE BYTES READ&	0&	617,650&	617,650\\
+		HDFS BYTES READ&	854,362&	0&	854,362\\
+		FILE BYTES WRITTEN&	617,706&	617,650&	1,235,356\\
+		HDFS BYTES WRITTEN&	0&	14&	14\\
+		Reduce input groups&	0&	1&	1\\
+		Combine output records&	0&	0&	0\\
+		Map input records&	88,234&	0&	88,234\\
+		Reduce shuffle bytes&	0&	617,644&	617,644\\
+		Reduce output records&	0&	1&	1\\
+		Spilled Records&	88,234&	88,234&	176,468\\
+		Map output bytes&	441,170&	0&	441,170\\
+		Map output records&	88,234&	0&	88,234\\
+		Combine input records&	0&	0&	0\\
+		Reduce input records&	0&	88,234&	88,234\\
+	\end{tabular}
+\end{table}
+\begin{table}[!h]
+	\centering
+	\caption{Facebook \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12302}{Job2}}
+	\label{my-label}
+	\begin{tabular}{llll}
+		Counter&	Map&	Reduce&	Total\\
+		Launched reduce tasks&	0&	0&	2\\
+		Launched map tasks&	0&	0&	1\\
+		Data-local map tasks&	0&	0&	1\\
+		FILE BYTES READ&	0&	1,235,288&	1,235,288\\
+		HDFS BYTES READ&	854,362&	0&	854,362\\
+		FILE BYTES WRITTEN&	1,235,344&	1,235,288&	2,470,632\\
+		HDFS BYTES WRITTEN&	0&	67,180&	67,180\\
+		Reduce input groups&	0&	4,039&	4,039\\
+		Combine output records&	0&	0&	0\\
+		Map input records&	88,234&	0&	88,234\\
+		Reduce shuffle bytes&	0&	0&	0\\
+		Reduce output records&	0&	4,039&	4,039\\
+		Spilled Records&	176,468&	176,468&	352,936\\
+		Map output bytes&	882,340&	0&	882,340\\
+		Map output records&	176,468&	0&	176,468\\
+		Combine input records&	0&	0&	0\\
+		Reduce input records&	0&	176,468&	176,468\\
+	\end{tabular}
+\end{table}
+\begin{table}[!h]
+	\centering
+	\caption{Facebook \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12303}{Job3}}
+	\label{my-label}
+	\begin{tabular}{llll}
+		Counter&	Map&	Reduce&	Total\\
+		Launched reduce tasks&	0&	0&	8\\
+		Launched map tasks&	0&	0&	2\\
+		Data-local map tasks&	0&	0&	2\\
+		FILE BYTES READ&	0&	744&	744\\
+		HDFS BYTES READ&	1,708,724&	0&	1,708,724\\
+		FILE BYTES WRITTEN&	1,192&	744&	1,936\\
+		Reduce input groups&	0&	12&	12\\
+		Combine output records&	0&	0&	0\\
+		Map input records&	176,468&	0&	176,468\\
+		Reduce shuffle bytes&	0&	780&	780\\
+		Reduce output records&	0&	0&	\textbf{\textcolor{red}{0}}\\
+		Spilled Records&	24&	24&	48\\
+		Map output bytes&	648&	0&	648\\
+		Map output records&	24&	0&	24\\
+		Combine input records&	0&	0&	0\\
+		Reduce input records&	0&	24&	24\\
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Facebook \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12304}{Job4}}
+	\label{my-label}
+	\begin{tabular}{llll}
+		Counter&	Map&	Reduce&	Total\\
+		Launched reduce tasks&	0&	0&	8\\
+		Launched map tasks&	0&	0&	2\\
+		Data-local map tasks&	0&	0&	2\\
+		FILE BYTES READ&	0&	744&	744\\
+		HDFS BYTES READ&	1,708,724&	0&	1,708,724\\
+		FILE BYTES WRITTEN&	1,192&	744&	1,936\\
+		Reduce input groups&	0&	12&	12\\
+		Combine output records&	0&	0&	0\\
+		Map input records&	176,468&	0&	176,468\\
+		Reduce shuffle bytes&	0&	780&	780\\
+		Reduce output records&	0&	0&	0\\
+		Spilled Records&	24&	24&	48\\
+		Map output bytes&	648&	0&	648\\
+		Map output records&	24&	0&	24\\
+		Combine input records&	0&	0&	0\\
+		Reduce input records&	0&	24&	24\\
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Facebook \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12305}{Job5}}
+	\label{my-label}
+	\begin{tabular}{llll}
+		Counter&	Map&	Reduce&	Total\\
+		Launched reduce tasks&	0&	0&	8\\
+		Rack-local map tasks&	0&	0&	1\\
+		Launched map tasks&	0&	0&	8\\
+		Data-local map tasks&	0&	0&	7\\
+		FILE BYTES READ&	30,200,322&	46,749,432&	76,949,754\\
+		HDFS BYTES READ&	37,415,156&	0&	37,415,156\\
+		FILE BYTES WRITTEN&	76,824,154&	46,749,432&	123,573,586\\
+		HDFS BYTES WRITTEN&	0&	27,078,245&	27,078,245\\
+		Reduce input groups&	0&	287,102&	287,102\\
+		Combine output records&	0&	0&	0\\
+		Map input records&	2,124,972&	0&	2,124,972\\
+		Reduce shuffle bytes&	0&	40,871,664&	40,871,664\\
+		Reduce output records&	0&	1,612,010&	\textbf{\textcolor{red}{1,612,010}}\\
+		Spilled Records&	3,491,895&	2,124,972&	5,616,867\\
+		Map output bytes&	42,499,440&	0&	42,499,440\\
+		Map output records&	2,124,972&	0&	2,124,972\\
+		Combine input records&	0&	0&	0\\
+		Reduce input records&	0&	2,124,972&	2,124,972\\
+		
+	\end{tabular}
+\end{table}
+\FloatBarrier
 \subsection{Amazon product co-purchasing network and ground-truth communities\protect\footnote{http://snap.stanford.edu/data/com-Amazon.html}} 
-\protect\begin{table}[]
+\protect\begin{table}[!h]
 	\centering
 	\caption{Amazon}
 	\label{my-label}
 	\begin{tabular}{ll}
 		Nodi		 & 334863 \\
 		Archi		 & 925872 \\
-		Triangoli	& 667129 \\
+		\textbf{\textcolor{red}{Triangoli}}	& \textbf{\textcolor{red}{667129}} \\
 	\end{tabular}
 \end{table}
-
-
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Amazon job1}
+	\caption{Amazon \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12296}{Job1}\\}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter&	Map&	Reduce&	Total\\
@@ -261,9 +381,9 @@ Riferimenti:\\
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Amazon job2}
+	\caption{Amazon \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12297}{Job2}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter	&Map	&Reduce	&Total\\
@@ -288,9 +408,9 @@ Riferimenti:\\
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Amazon job3}
+	\caption{Amazon \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12298}{Job3}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter&	Map&	Reduce&	Total\\
@@ -305,7 +425,7 @@ Riferimenti:\\
 		Combine output records&	0&	0&	0\\
 		Map input records&	1,851,752&	0&	1,851,752\\
 		Reduce shuffle bytes&	0&	294	294\\
-		Reduce output records&	0&	0&	0\\
+		Reduce output records&	0&	0&	\textbf{\textcolor{red}{0}}\\
 		Spilled Records&	0&	0&	0\\
 		Map output bytes&	0&	0&	0\\
 		Map output records&	0&	0&	0\\
@@ -314,9 +434,9 @@ Riferimenti:\\
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Amazon job4}
+	\caption{Amazon \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12299}{Job4}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter&	Map&	Reduce&	Total\\
@@ -340,9 +460,9 @@ Riferimenti:\\
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Amazon job5}
+	\caption{Amazon \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_122300}{Job5}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter&	Map&	Reduce&	Total\\
@@ -357,7 +477,7 @@ Riferimenti:\\
 		Combine output records&	0&	0&	0\\
 		Map input records&	3,077,513&	0&	3,077,513\\
 		Reduce shuffle bytes&	0&	67,709,642&	67,709,642\\
-		Reduce output records&	0&	667,129&	667,129\\
+		Reduce output records&	0&	667,129&	\textbf{\textcolor{red}{667,129}}\\
 		Spilled Records&	6,155,026&	3,077,513&	9,232,539\\
 		Map output bytes&	61,550,260&	0&	61,550,260\\
 		Map output records&	3,077,513&	0&	3,077,513\\
@@ -365,28 +485,22 @@ Riferimenti:\\
 		Reduce input records&	0&	3,077,513&	3,077,513\\
 	\end{tabular}
 \end{table}
-Riferimenti:\\	
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12271}{Job1}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12272}{Job2}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12273}{Job3}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12274}{Job4}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12275}{Job5}\\
-
+\FloatBarrier
 \subsection{Youtube social network\protect\footnote{http://snap.stanford.edu/data/com-Youtube.html}} 
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
 	\caption{Youtube}
 	\label{my-label}
 	\begin{tabular}{ll}
 		Nodi		 & 1134890\\
 		Archi		 & 2987624 \\
-		Triangoli	& 3056386 \\		
+		\textbf{\textcolor{red}{Triangoli}}	& \textbf{\textcolor{red}{3056386}} \\		
 	\end{tabular}
 \end{table}
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Youtube Job1}
+	\caption{Youtube \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12291}{Job1}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter	&Map	&Reduce	&Total\\
@@ -410,9 +524,9 @@ Riferimenti:\\
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Youtube jonb2}
+	\caption{Youtube \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12292}{Job2}}
 	\label{my-label}
 	\begin{tabular}{llll}
 Counter	&Map	&Reduce	&Total\\
@@ -437,9 +551,9 @@ Reduce input records	&0	&5,975,248	&5,975,248\\
 \end{table}
 
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Youtube jonb3}
+	\caption{Youtube \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12293}{Job3}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter&	Map	&Reduce	&Total\\
@@ -455,7 +569,7 @@ Reduce input records	&0	&5,975,248	&5,975,248\\
 		Combine output records	&0	&0	&0\\
 		Map input records	&5,975,256	&0	&5,975,256\\
 		Reduce shuffle bytes	&0	&246,584	&246,584\\
-		Reduce output records	&0	&2,396	&2,396\\
+		Reduce output records	&0	&2,396	&\textbf{\textcolor{red}{2,396}}\\
 		Spilled Records	&9,876	&9,876	&19,752\\
 		Map output bytes	&266,652	&0	&266,652\\
 		Map output records	&9,876	&0	&9,876\\
@@ -466,9 +580,9 @@ Reduce input records	&0	&5,975,248	&5,975,248\\
 \end{table}
 
 
-\begin{table}[]
+\begin{table}[!h]
 	\centering
-	\caption{Youtube jonb4}
+	\caption{Youtube \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12294}{Job4}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter	&Map	&Reduce	&Total\\
@@ -492,9 +606,9 @@ Reduce input records	&0	&5,975,248	&5,975,248\\
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!htbp]
 	\centering
-	\caption{Youtube job5}
+	\caption{Youtube \href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12295}{Job5}}
 	\label{my-label}
 	\begin{tabular}{llll}
 		Counter&	Map&	Reduce&	Total\\
@@ -509,7 +623,7 @@ Reduce input records	&0	&5,975,248	&5,975,248\\
 		Combine output records&	0&	0&	1\\
 		Map input records&	21,716,418&	0&	21,716,418\\
 		Reduce shuffle bytes&	0&	477,761,568&	477,761,568\\
-		Reduce output records&	0&	3,053,990&	3,053,990\\
+		Reduce output records&	0&	3,053,990&	\textbf{\textcolor{red}{3,053,990}}\\
 		Spilled Records&	46,578,558&	21,716,418&	68,294,976\\
 		Map output bytes&	434,328,360&	0&	434,328,360\\
 		Map output records&	21,716,418&	0&	21,716,418\\
@@ -517,14 +631,7 @@ Reduce input records	&0	&5,975,248	&5,975,248\\
 		Reduce input records&	0&	21,716,418&	21,716,418\\
 	\end{tabular}
 \end{table}
-
-Riferimenti:\\	
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12291}{Job1}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12292}{Job2}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12293}{Job3}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12294}{Job4}\\
-\href{http://hadoop-compute0.di.univr.it:50030/jobdetails.jsp?jobid=job_201603141010_12295}{Job5}\\
-
+\FloatBarrier
 \section{Sviluppi futuri}
 Mi sarebbe piaciuto completare il progetto generando come artefatto del processo un immagine Docker pronta all'uso \protect\footnote{Una prima versione è disponibile su https://hub.docker.com/r/nickxbs/labbigdata }. Sarebbe interessante provare a fare un deploy per testare questo container in un ambiente cloud che supporta Docker.\\
 Un secondo aspetto che mi sarebbe piaciuto approfondire è l'uso di un framework di Unit testing per Hadoop. L'unico che ho provato velocemente è Mrunit, tuttavia il progetto sembra non essere più mantenuto.

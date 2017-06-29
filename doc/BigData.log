@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  29 JUN 2017 20:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.2)  29 JUN 2017 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -98,7 +98,10 @@ LaTeX Info: Redefining \textsubscript on input line 4036.
 \c@table=\count87
 Class scrartcl Info: Redefining `\numberline' on input line 5049.
 \bibindent=\dimen102
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/04/23 3.9r The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
@@ -587,6 +590,24 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
 )
 \openout1 = `BigData.aux'.
 
@@ -741,88 +762,65 @@ Package pdftex.def Info: Graph1.png used on input line 147.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 206.
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 207.
-
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 217--223
 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 224.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 225.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 237.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 264.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 291.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 317.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 343.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--374
-
- []
-
+[6] [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 375.
+(hyperref)                removing `\@ifnextchar' on input line 346.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 377.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 387.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 413.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 440.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9
+
+] [10] [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 489.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 469.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 495.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--527
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- []
+[12
 
-[6] [7] [8] [9] [10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
- [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
+]
+
+LaTeX Warning: Text page 13 contains only floats.
+
+[13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 638.
+ [14] [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 638.
  (./BigData.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 638.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 638.
 Package rerunfilecheck Info: File `BigData.out' has not changed.
 (rerunfilecheck)             Checksum: A5F257658DD827F1BCC05E7746CE4384;1130.
 
@@ -831,11 +829,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14883 strings out of 493013
- 233339 string characters out of 6135683
- 496534 words of memory out of 5000000
- 18019 multiletter control sequences out of 15000+600000
- 33709 words of font info for 141 fonts, out of 8000000 for 9000
+ 14914 strings out of 493013
+ 233913 string characters out of 6135683
+ 474776 words of memory out of 5000000
+ 18038 multiletter control sequences out of 15000+600000
+ 34017 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,11n,51p,8818b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -850,10 +848,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on BigData.pdf (12 pages, 179006 bytes).
+Output written on BigData.pdf (15 pages, 182684 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 25734 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 26246 words of extra memory for PDF output out of 29859 (max. 10000000)
 
